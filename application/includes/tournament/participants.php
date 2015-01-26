@@ -1,8 +1,5 @@
 <?php
-$return = [
-    'filename' => 'participants/main.phtml',
-    'data' => []
-];
+$return = [];
 
 $db = Db::getInstance();
 
@@ -24,7 +21,7 @@ if (!$result->num_rows) {
     throw new \Exception('no players found');
 } else {
     while ($row = $result->fetch_assoc()) {
-        $return['data']['players'][] = $row;
+        $return['players'][] = $row;
     }
 }
 

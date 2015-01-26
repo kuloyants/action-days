@@ -24,7 +24,7 @@
         <? include('participants/main.php') ?>
     </div>
     <div class="content seeded" data-cat="seeded" data-toggle="modal">
-        <?include('participants/seeded.php')?>
+        <? include('participants/seeded.php') ?>
     </div>
     <div class="content doubles_cup" data-cat="doubles_cup" data-toggle="modal">
         HIER STEHEH DIE doubles cup Spieler

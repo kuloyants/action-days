@@ -1,10 +1,7 @@
 <?php
-$return = [
-    'filename' => 'participants/seeded.phtml',
-    'data' => []
-];
+$return = [];
 
-$db = getDB();
+$db = Db::getInstance();
 
 $sql = "
 SELECT
@@ -23,7 +20,7 @@ if (!$result->num_rows) {
     throw new \Exception('no players found');
 } else {
     while ($row = $result->fetch_assoc()) {
-        $return['data']['players'][] = $row;
+        $return['players'][] = $row;
     }
 }
 

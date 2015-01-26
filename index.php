@@ -4,10 +4,14 @@ ini_set('display_errors', 1);
 include('Bootstrap.php');
 include('service/Db.php');
 include('config.php');
-$section = [];
-$section['participants_seeded']          = APPLICATION_PATH . 'includes/participants/seeded.php';
-$section['participants_main']            = APPLICATION_PATH . 'includes/participants/main.php';
-$section['registration']    = APPLICATION_PATH . 'includes/participants/registration.php';
+$section = [
+    'tournament' => APPLICATION_PATH . 'includes/tournament.php',
+    'tournament_participants_main'      => APPLICATION_PATH . 'includes/tournament/participants/main.php',
+    'tournament_participants_seeded'    => APPLICATION_PATH . 'includes/tournament/participants/seeded.php',
+    'wcop' => '',
+    'gambling' => '',
+    'registration' => APPLICATION_PATH . 'includes/tournament/participants/registration.php'
+];
 
 include 'header.html'; // doctype, <html> und das komplette <head>-element
 echo "    <body class='page-top'>\n";
@@ -27,6 +31,10 @@ $ret = 1;
  */
 if (isset($_GET['section'], $section[$_GET['section']])) {
     if (file_exists($section[$_GET['section']])) {
+        $activeTab = null;
+        if (isset($_GET['tab'])) {
+            $activeTab = $_GET['tab'];
+        }
         $ret = include $section[$_GET['section']];
     } else {
         $ret = "Include-Datei konnte nicht geladen werden: 'includes/".$section[$_GET['section']]."'";
