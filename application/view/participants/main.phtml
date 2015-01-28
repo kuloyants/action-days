@@ -22,8 +22,8 @@
             <td><?=$player['surname']?></td>
             <td><?=translate("country." . mb_strtolower($player['country_code']) . "")?></td>
             <td class="text-center">
-                <span class="label label-<?=$player['registration_status'] == 'confirmed' ? 'success' : 'danger'?>">
-                    <?=translate("player.register_status." . $player['registration_status'])?></span></td>
+                <span class="label label-<?=$player['reg_status'] == 'confirmed' ? 'success' : 'danger'?>">
+                    <?=translate("player.register_status." . $player['reg_status'])?></span></td>
             <td class="text-right"><?=$player['start_day']?></td>
             <td class="text-right"><?=$player['start_time']?></td>
         </tr>

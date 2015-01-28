@@ -4,11 +4,12 @@ $return = [
     'data' => []
 ];
 
-$db = getDb();
+$db = Db::getInstance();
 $formElements = [
     'gender' => [
         'name' => 'gender',
         'type' => 'select',
+        'required' => true,
         'options' => [
             'label' => 'common.gender',
             'value_options' => [
@@ -17,7 +18,9 @@ $formElements = [
             ]
         ],
         'attributes' => [
-            'value' => 'common.gender.mail',
+            'id' => 'gender',
+            'value' => 'common.gender.male',
+            'data-validation-required-message' => 'validate.message.required'
         ]
     ],
     'firstname' => [
@@ -59,6 +62,7 @@ $formElements = [
     'message' => [
         'name' => 'message',
         'type'  => 'textarea',
+        'required' => false,
         'options' => [
             'label' => 'common.message',
         ],
@@ -81,15 +85,18 @@ $formElements = [
     'country' => [
         'name' => 'country',
         'type'  => 'select',
+        'required' => true,
         'options' => [
             'label' => 'common.country'
         ],
         'attributes' => [
+            'data-validation-required-message' => 'validate.message.required'
         ]
     ],
     'start_day' => [
         'name' => 'start_day',
         'type' => 'select',
+        'required' => true,
         'options' => [
             'label' => 'common.start_day',
             'value_options' => [
@@ -98,11 +105,14 @@ $formElements = [
             ]
         ],
         'attributes' => [
+            'id' => 'start_day',
+            'data-validation-required-message' => 'validate.message.required'
         ]
     ],
     'start_time' => [
         'name' => 'start_time',
         'type' => 'select',
+        'required' => true,
         'options' => [
             'label' => 'common.start_time',
             'value_options' => [
@@ -114,44 +124,72 @@ $formElements = [
             ],
         ],
         'attributes' => [
+            'id' => 'start_time',
+            'data-validation-required-message' => 'validate.message.required'
         ]
     ]
 ];
 
 if ('POST' == $_SERVER['REQUEST_METHOD']) {
-    foreach (array_keys($formElements) as $elementName) {
-        if (!isset($_POST[$elementName])) {
-            die ('Benutzen sie nur Formulare von der Homepage.');
-        } elseif ('' == $content = trim($_POST[$elementName])) {
-            die ('Bitte füllen sie das Formular vollständig aus.');
+    foreach($_POST as $element => $value) {
+        if (!array_key_exists($element, $formElements)) {
+            throw new Exception('unregistered post param: ' . $element . ' => '. $value);
         }
     }
-    $sql = 'INSERT INTO player (created, firstname, surname, email, country_code, gender)
-            VALUES(NOW(), ?, ?, ?, ?, ?)';
+
+    $errorMessages = [];
+    foreach ($formElements as $element => $config) {
+        if (
+            (isset($config['required']) && $config['required'] == true)
+            &&
+            (!isset($_POST[$element]) || '' == trim($_POST[$element]))
+        ) {
+            $errorMessages[$element] = translate('error.validate.required.' . $element);
+        }
+
+//        if (!isset($_POST[$element])) {
+//            $_POST[$element] = null;
+//        }
+    }
+    if (!empty($errorMessages)) {
+        $return['data'] = [
+            'valid' => false,
+            'errorMessages' => $errorMessages,
+            'formElements' => $formElements
+        ];
+        return $return;
+    }
+
+    $sql = 'INSERT INTO
+              player (created, firstname, surname, email, country_code, gender)
+            VALUES
+              (NOW(), ?, ?, ?, ?, ?)';
     $stmt = $db->prepare($sql);
     if (!$stmt) {
-        die ('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
+        throw new Exception('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
     }
+
     $stmt->bind_param('sssss', $_POST['firstname'], $_POST['surname'], $_POST['email'], $_POST['country'], $_POST['gender']);
     if (!$stmt->execute()) {
-        die ('Query konnte nicht ausgeführt werden: '.$stmt->error);
+        throw new Exception ('Query konnte nicht ausgeführt werden: '.$stmt->error);
     }
 
-    $sql = "INSERT INTO player_registration (player_id, registration_status, start_day, start_time)
-            VALUES({$stmt->insert_id}, 'pending', ?, ?)";
+    $sql = "INSERT INTO
+              player_registration (player_id, reg_status, start_day, start_time, message)
+            VALUES
+              ({$stmt->insert_id}, 'pending', ?, ?, ?)";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
-        die ('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
+        throw new Exception('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
     }
-    $stmt->bind_param('ss', $_POST['start_day'], $_POST['start_time']);
+    $stmt->bind_param('sss', $_POST['start_day'], $_POST['start_time'], $_POST['message']);
     if (!$stmt->execute()) {
-        die ('Query konnte nicht ausgeführt werden: '.$stmt->error);
+        throw new Exception ('Query konnte nicht ausgeführt werden: '.$stmt->error);
     }
-    // @todo REMOVE;
-    var_dump((__METHOD__ ? __METHOD__ : __FILE__) . ' (' . __LINE__ . '): ','DONE' );die;
+    $return['data']['valid'] = true;
+    return $return;
 } else {
     $return['data']['formElements'] = $formElements;
-
     return $return;
 }
 ?>

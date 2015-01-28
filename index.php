@@ -5,18 +5,28 @@ include('Bootstrap.php');
 include('service/Db.php');
 include('config.php');
 $section = [
-    'tournament' => APPLICATION_PATH . 'includes/tournament.php',
-    'tournament_participants_main'      => APPLICATION_PATH . 'includes/tournament/participants/main.php',
-    'tournament_participants_seeded'    => APPLICATION_PATH . 'includes/tournament/participants/seeded.php',
-    'wcop' => '',
-    'gambling' => '',
-    'registration' => APPLICATION_PATH . 'includes/tournament/participants/registration.php'
+    'participants'  => APPLICATION_PATH . 'includes/participants.php',
+    'results'       => APPLICATION_PATH . 'includes/results.php',
+    'registration'  => APPLICATION_PATH . 'includes/registration.php'
 ];
 
 include 'header.html'; // doctype, <html> und das komplette <head>-element
 echo "    <body class='page-top'>\n";
 include 'menu.phtml';
 
+if (get_magic_quotes_gpc()) {
+    $in = array(&$_GET, &$_POST, &$_COOKIE);
+    while (list($k,$v) = each($in)) {
+        foreach ($v as $key => $val) {
+            if (!is_array($val)) {
+                $in[$k][$key] = stripslashes($val);
+                continue;
+            }
+            $in[] =& $in[$k][$key];
+        }
+    }
+    unset($in);
+}
 /**
  * saves the return value of include, default : 1
  */

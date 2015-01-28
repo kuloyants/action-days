@@ -1,0 +1,56 @@
+<div class="row">
+    <h2><?=translate('registration.title')?></h2>
+    <div class="col-lg-12 text-center">
+        <hr class="colored">
+        <p>Please tell us about your next project and we will let you know what we can do to help you.</p>
+    </div>
+</div>
+<div class="row content-row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <form action="?section=registration" name="sentMessage" id="registerForm" method="post" novalidate>
+            <?foreach ($data['formElements'] as $elementName => $element):?>
+                <?$required = ''?>
+                <? if (isset($element['required']) && $element['required'] === true) : ?>
+                    <? $required = " required data-validation-required-message=\""
+                        . translate($element['attributes']['data-validation-required-message'])
+                        . "\""?>
+                <? endif?>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <? if ($element['type'] == 'select'):?>
+                            <? if ($element['name'] == 'country') : ?>
+                                <div class="bfh-selectbox bfh-countries" data-name="<?=$element['name']?>" data-country="DE" data-flags="true">
+                                    <select name="<?$element['name']?>" class="form-control bfh-countries" data-country="DE" data-language="de"></select>
+                                </div>
+                            <? else : ?>
+                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="You must agree to the terms and conditions">
+                                    <option value="" selected="selected" style="display: none"><?=$element['options']['label']?></option>
+                                    <? foreach ($element['options']['value_options'] as $value => $option) : ?>
+                                        <option value="<?=$value?>"><?=$option?></option>
+                                    <? endforeach?>
+                                </select>
+                            <? endif?>
+                            <? if (isset($data['errorMessages']) && isset($data['errorMessages'][$elementName]) ) : ?>
+                                <p class="help-block text-danger"><?=$data['errorMessages'][$elementName]?></p>
+                            <? endif ?>
+                        <? else : ?>
+                            <label><?=translate($element['options']['label'])?></label>
+                            <input type="<?=$element['type']?>" class="form-control"
+                                   placeholder="<?=translate($element['options']['label'])?>"
+                                   name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                <?=$required?>>
+                            <p class="help-block text-danger"></p>
+                        <?endif?>
+                    </div>
+                </div>
+            <?endforeach?>
+            <br>
+            <div id="success"></div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-outline-dark"><?=translate('form.button.register')?></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
