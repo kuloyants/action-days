@@ -11,7 +11,7 @@
                 <?$playerFullName = "{$player['firstname']}  {$player['nickname']} {$player['surname']}"?>
                 <li class="zoomIn animated" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
                     <a target="_blank" href="" class="more">
-                        <img src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.png'?>" alt="<?=$playerFullName?>">
+                        <img height="300" src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.png'?>" alt="<?=$playerFullName?>">
                         <div class="project-info">
                             <div class="project-details">
                                 <? if($player['surname'] != 'unknown') : ?>

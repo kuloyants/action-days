@@ -2,6 +2,11 @@
 /* Daten:
  *  'msg' - Die Fehlermeldung
  */
-?><p class="error">
-	<?php echo htmlspecialchars($data['msg']); ?>
-</p>
+?>
+<section id="error">
+	<div class="container">
+		<p class="error">
+			<?php echo htmlspecialchars($data['msg']); ?>
+		</p>
+	</div>
+</section>

@@ -24,7 +24,7 @@
                                 </div>
                             <? else : ?>
                                 <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="You must agree to the terms and conditions">
-                                    <option value="" selected="selected" style="display: none"><?=$element['options']['label']?></option>
+                                    <option value="" selected="selected"><?=$element['options']['label']?></option>
                                     <? foreach ($element['options']['value_options'] as $value => $option) : ?>
                                         <option value="<?=$value?>"><?=$option?></option>
                                     <? endforeach?>

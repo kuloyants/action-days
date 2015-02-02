@@ -7,8 +7,7 @@
 <table class="table table-hover text-left">
     <thead>
     <tr>
-        <th><?=translate('table.lable.firstname')?></th>
-        <th><?=translate('table.lable.surname')?></th>
+        <th><?=translate('table.lable.name')?></th>
         <th><?=translate('table.lable.country')?></th>
         <th class="text-center"><?=translate('table.lable.register_status')?></th>
         <th class="text-right"><?=translate('table.lable.startday')?></th>
@@ -18,8 +17,7 @@
     <tbody>
     <? foreach ($data['players'] as $player) : ?>
         <tr>
-            <td><?=$player['firstname']?></td>
-            <td><?=$player['surname']?></td>
+            <td><?=$view->playerName($player['firstname'], $player['surname'])?></td>
             <td><?=translate("country." . mb_strtolower($player['country_code']) . "")?></td>
             <td class="text-center">
                 <span class="label label-<?=$player['reg_status'] == 'confirmed' ? 'success' : 'danger'?>">

@@ -19,6 +19,16 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <?=translate('nav.actiondays')?> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="?section=info&tab=main_tournament"><?=translate('nav.main_tournament')?></a></li>
+                        <li><a href="?section=info&tab=wcop"><?=translate('nav.wcop')?></a></li>
+                        <li><a href="?section=info&tab=gambling"><?=translate('nav.gambling')?></a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="?section=participants"><?=translate('nav.participants')?></a>
                 </li>
@@ -36,6 +46,9 @@
                 </li>
                 <li>
                     <a href="#sponsors"><?=translate('nav.sponsors')?></a>
+                </li>
+                <li>
+                    <a href="?section=contact"><?=translate('nav.contact')?></a>
                 </li>
             </ul>
         </div>

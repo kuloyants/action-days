@@ -187,6 +187,9 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
         throw new Exception ('Query konnte nicht ausgeführt werden: '.$stmt->error);
     }
     $return['data']['valid'] = true;
+
+//    mail('v.kuloyants@letspool24.com', 'Bestätigung', 'Sie wurden registriert', 'From: valery.kuloyants@live.de');
+
     return $return;
 } else {
     $return['data']['formElements'] = $formElements;

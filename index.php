@@ -4,10 +4,14 @@ ini_set('display_errors', 1);
 include('Bootstrap.php');
 include('service/Db.php');
 include('config.php');
+include(APPLICATION_PATH . 'view/helpers.php');
 $section = [
+    'info'          => APPLICATION_PATH . 'includes/info.php',
     'participants'  => APPLICATION_PATH . 'includes/participants.php',
     'results'       => APPLICATION_PATH . 'includes/results.php',
-    'registration'  => APPLICATION_PATH . 'includes/registration.php'
+    'registration'  => APPLICATION_PATH . 'includes/registration.php',
+    'contact'       => APPLICATION_PATH . 'includes/contact.php',
+    'gallery'       => APPLICATION_PATH . 'includes/gallery.php',
 ];
 
 include 'header.html'; // doctype, <html> und das komplette <head>-element
@@ -51,7 +55,7 @@ if (isset($_GET['section'], $section[$_GET['section']])) {
     }
 } else {
     //load default section
-    $ret = include $section['main'];
+    $ret = include $section['participants'];
 }
 
 if (
@@ -62,6 +66,7 @@ if (
     // valid return value
     if (file_exists($file = VIEW_PATH . $ret['filename'])) {
         $data = $ret['data']; // $data is available in the template
+        $view = new View();
         include $file;
     } else {
         $data = [];
@@ -84,7 +89,7 @@ if (
     $data['msg'] = 'Die Include-Datei hat einen ungültigen Wert zurückgeliefert.';
     include VIEW_PATH . '/error.phtml';
 }
-
+include('footer.html');
 echo "    </body>\n";
 echo "</html>\n";
 ?>
