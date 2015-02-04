@@ -14,9 +14,14 @@ $section = [
     'gallery'       => APPLICATION_PATH . 'includes/gallery.php',
 ];
 
-include 'header.html'; // doctype, <html> und das komplette <head>-element
-echo "    <body class='page-top'>\n";
-include 'menu.phtml';
+$isXmlHttpRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+if (!$isXmlHttpRequest) {
+    include 'header.html'; // doctype, <html> und das komplette <head>-element
+    echo "    <body class='page-top'>\n";
+    include 'menu.phtml';
+} else {
+
+}
 
 if (get_magic_quotes_gpc()) {
     $in = array(&$_GET, &$_POST, &$_COOKIE);
@@ -89,7 +94,9 @@ if (
     $data['msg'] = 'Die Include-Datei hat einen ungültigen Wert zurückgeliefert.';
     include VIEW_PATH . '/error.phtml';
 }
-include('footer.html');
-echo "    </body>\n";
-echo "</html>\n";
+if (!$isXmlHttpRequest) {
+    include('footer.html');
+    echo "    </body>\n";
+    echo "</html>\n";
+}
 ?>

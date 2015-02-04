@@ -34,10 +34,12 @@ function init_map() {
 	var_marker.setMap(var_map);
 
 }
+google.maps.event.addDomListener(window, 'load', init_map);
 
+$(document).ready(function () {
 
-jQuery(document).ready(function () {
-	jQuery('#mygallery').justifiedGallery({
+	var $galelryContainer = $("#galleryContainer");
+	$galelryContainer.justifiedGallery({
 		rowHeight: 200,
 		fixedHeight: false,
 		lastRow: 'nojustify',
@@ -52,7 +54,9 @@ jQuery(document).ready(function () {
 			'lt1024':''
 		}
 	}).on('jg.complete', function () {
-		$('#mygallery a').swipebox();
+		$galelryContainer.find('a').swipebox({
+			//useCSS : false // false will force the use of jQuery for animations
+		});
 	});
 });
 
