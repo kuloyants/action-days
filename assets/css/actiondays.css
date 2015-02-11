@@ -158,7 +158,7 @@
 	display: none;
 }
 #loader .loader-icon {
-	background: url(../images/loading.gif) no-repeat center center;
+	background: url(../img/icons/loading.gif) no-repeat center center;
 	background-color: #FFF;
 	margin: -22px -22px;
 	top: 50%;
@@ -204,5 +204,18 @@ footer.footer {
 
 #map {
 	height: 450px;
+}
+
+.btn-blue {
+	background-color: #0a8fd5;
+	border-color: #0a8fd5;
+	color: #fff;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+	background-color: #337ab7;
+	border-color: #337ab7;
+	color: #fff;
 }
 

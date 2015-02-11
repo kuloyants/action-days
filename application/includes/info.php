@@ -1,12 +1,12 @@
 <?php
 $tabs = [
-    'main'      => [],
-    'gambling'  => [],
-    'wcop'      => [],
+    'main_tournament'   => [],
+    'gambling'          => [],
+    'wcop'              => [],
 ];
 
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
-    $activeTab = 'main';
+    $activeTab = 'main_tournament';
 }
 
 return [

@@ -5,7 +5,7 @@
         <p>Please tell us about your next project and we will let you know what we can do to help you.</p>
     </div>
 </div>
-<div class="row content-row">
+<div class="row content-row text-left">
     <div class="col-lg-8 col-lg-offset-2">
         <form action="?section=registration" name="sentMessage" id="registerForm" method="post" novalidate>
             <?foreach ($data['formElements'] as $elementName => $element):?>
@@ -23,10 +23,10 @@
                                     <select name="<?$element['name']?>" class="form-control bfh-countries" data-country="DE" data-language="de"></select>
                                 </div>
                             <? else : ?>
-                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="You must agree to the terms and conditions">
-                                    <option value="" selected="selected"><?=$element['options']['label']?></option>
+                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="<?=translate('validate.message.required')?>">
+                                    <option value="" selected="selected"><?=translate($element['options']['label'])?></option>
                                     <? foreach ($element['options']['value_options'] as $value => $option) : ?>
-                                        <option value="<?=$value?>"><?=$option?></option>
+                                        <option value="<?=$value?>"><?=translate($option)?></option>
                                     <? endforeach?>
                                 </select>
                             <? endif?>
@@ -38,6 +38,9 @@
                             <input type="<?=$element['type']?>" class="form-control"
                                    placeholder="<?=translate($element['options']['label'])?>"
                                    name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                   <? if (isset($element['attributes']['data-validation-validemail-message'])) : ?>
+                                       data-validation-validemail-message="<?=translate($element['attributes']['data-validation-validemail-message'])?>"
+                                   <? endif?>
                                 <?=$required?>>
                             <p class="help-block text-danger"></p>
                         <?endif?>
@@ -48,7 +51,7 @@
             <div id="success"></div>
             <div class="row">
                 <div class="form-group col-xs-12">
-                    <button type="submit" class="btn btn-outline-dark"><?=translate('form.button.register')?></button>
+                    <button type="button" class="col-md-5 pull-right btn btn-blue"><?=translate('form.button.register')?></button>
                 </div>
             </div>
         </form>

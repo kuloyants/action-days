@@ -1,3 +1,19 @@
+<?php
+$navigation = [
+    'info' => [
+        'main_tournament',
+        'wcop',
+        'gambling'
+    ],
+    'participants',
+    'results',
+    'registration',
+    'gallery',
+    'team',
+    'sponsors',
+    'contact'
+]
+?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,37 +35,22 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <?=translate('nav.actiondays')?> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="?section=info&tab=main_tournament"><?=translate('nav.main_tournament')?></a></li>
-                        <li><a href="?section=info&tab=wcop"><?=translate('nav.wcop')?></a></li>
-                        <li><a href="?section=info&tab=gambling"><?=translate('nav.gambling')?></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="?section=participants"><?=translate('nav.participants')?></a>
-                </li>
-                <li>
-                    <a href="?section=results"><?=translate('nav.results')?></a>
-                </li>
-                <li>
-                    <a href="?section=registration"><?=translate('nav.registration')?></a>
-                </li>
-                <li>
-                    <a href="?section=gallery"><?=translate('nav.gallery')?></a>
-                </li>
-                <li>
-                    <a href="?section=team"><?=translate('nav.team')?></a>
-                </li>
-                <li>
-                    <a href="#sponsors"><?=translate('nav.sponsors')?></a>
-                </li>
-                <li>
-                    <a href="?section=contact"><?=translate('nav.contact')?></a>
-                </li>
+                <? foreach ($navigation as $key => $value) : ?>
+                    <? if(is_array($value)) : ?>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <b><?=translate('nav.' . $key)?></b> <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <?foreach ($value as $submenu) : ?>
+                                    <li><a href="?section=<?=$key?>&tab=<?=$submenu?>"><b><?=translate('nav.' . $submenu)?></b></a></li>
+                                <?endforeach?>
+                            </ul>
+                        </li>
+                    <? else : ?>
+                        <li><a href="?section=<?=$value?>"><b><?=translate('nav.' . $value)?></b></a></li>
+                    <? endif?>
+                <? endforeach ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

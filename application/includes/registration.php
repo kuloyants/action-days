@@ -56,7 +56,8 @@ $formElements = [
         ],
         'attributes' => [
             'id' => 'email',
-            'data-validation-required-message' => 'validate.message.required'
+            'data-validation-required-message' => 'validate.message.required',
+            'data-validation-validemail-message' => 'validation.message.invalid_email'
         ]
     ],
     'message' => [
@@ -64,7 +65,7 @@ $formElements = [
         'type'  => 'textarea',
         'required' => false,
         'options' => [
-            'label' => 'common.message',
+            'label' => 'form.label.message.optional',
         ],
         'attributes' => [
             'id' => 'message',
@@ -98,10 +99,10 @@ $formElements = [
         'type' => 'select',
         'required' => true,
         'options' => [
-            'label' => 'common.start_day',
+            'label' => 'form.label.start_day',
             'value_options' => [
-                'friday' => 'form.start_day.friday',
-                'saturday' => 'form.start_day.saturday'
+                'friday' => 'form.start_day.value.friday',
+                'saturday' => 'form.start_day.value.saturday'
             ]
         ],
         'attributes' => [
@@ -114,13 +115,10 @@ $formElements = [
         'type' => 'select',
         'required' => true,
         'options' => [
-            'label' => 'common.start_time',
+            'label' => 'form.label.start_time',
             'value_options' => [
-                '9:00' => '9:00',
-                '11:00' => '11:00',
-                '13:00' => '13:00',
-                '15:00' => '15:00',
-                '17:00' => '17:00',
+                '1000' => 'form.start_time.value.1000',
+                '1200' => 'form.start_time.value.1200',
             ],
         ],
         'attributes' => [

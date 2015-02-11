@@ -1,7 +1,7 @@
 <?php
 
-define('APPLICATION_PATH', realpath(__DIR__) . '\application\\');
-define('VIEW_PATH', APPLICATION_PATH . '\\view\\');
+define('APPLICATION_PATH', realpath(__DIR__) . '/application/');
+define('VIEW_PATH', APPLICATION_PATH . 'view/');
 define('IMG_PATH', 'assets/img/');
 define('CSS_PATH', realpath(__DIR__) . '\\assets\\css');
 define('CSV_PATH', realpath(__DIR__) . '\\assets\\csv');
