@@ -2,7 +2,7 @@
 $tabs = $data['tabs'];
 $activeTab =$data['activeTab'];
 
-$folder = "{$_SERVER['DOCUMENT_ROOT']}/assets/img/gallery/{$activeTab}/";
+$folder = IMG_PATH . "gallery/{$activeTab}/";
 $filetype = '*.*';
 $files = glob($folder.$filetype);
 $filenames = [];
