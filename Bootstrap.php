@@ -26,7 +26,7 @@ elseif (isSet($_COOKIE['lang'])) {
     $GLOBALS['locale'] = $_COOKIE['lang'];
 }
 else {
-    $GLOBALS['locale'] = 'd';
+    $GLOBALS['locale'] = 'de';
 }
 
 function translate($key, $locale = null)
