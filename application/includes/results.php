@@ -1,6 +1,6 @@
 <?php
 $tabs = [
-    'friday'    => [],
+    'friday'    => include(APPLICATION_PATH . 'includes/results/friday.php'),
     'saturday'  => [],
     'sunday'    => [],
     'wcop'      => [],

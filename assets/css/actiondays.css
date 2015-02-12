@@ -219,3 +219,16 @@ footer.footer {
 	color: #fff;
 }
 
+#results table {
+	background-color: #444;
+	color: #fff
+}
+
+#results .table thead tr {
+	background-color: #0a8fd5;
+}
+
+#results .table-hover tbody tr:hover {
+	background-color: #0a8fd5;
+}
+

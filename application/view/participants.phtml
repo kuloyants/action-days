@@ -12,7 +12,9 @@ $activeTab =$data['activeTab'];
                     <ul id="filters" class="clearfix">
                         <? foreach ($tabs as $name => $tab) : ?>
                             <li>
-                                <span class="filter<?=$activeTab == $name ? ' active' : ''?>" data-filter="<?=$name?>"><?=translate('tab.' . $name)?></span>
+                                <a href="?section=participants&tab=<?=$name?>">
+                                    <span class="filter<?=$activeTab == $name ? ' active' : ''?>" data-filter="<?=$name?>"><?=translate('tab.' . $name)?></span>
+                                </a>
                             </li>
                         <? endforeach ?>
                     </ul>
@@ -20,12 +22,10 @@ $activeTab =$data['activeTab'];
             </div>
         </div>
         <div id="sliderlist">
-            <? foreach($tabs as $name => $dataPartial) : ?>
-                <div class="content <?=$name?> <?=$activeTab == $name ? 'active' : ''?>" data-cat="<?=$name?>>" data-toggle="modal">
-                    <? $data = $dataPartial?>
-                    <? include("participants/{$name}.phtml") ?>
+            <? $data = $tabs[$activeTab] ?>
+                <div class="content active" data-cat="<?=$activeTab?>" data-toggle="modal">
+                    <? include("participants/{$activeTab}.phtml") ?>
                 </div>
-            <? endforeach ?>
         </div>
         <div id="loaded-content"></div>
         <button href="#" class="red-btn" id="back-button"><i class="icon-fontawesome-webfont-27"></i> Go Back</button>
