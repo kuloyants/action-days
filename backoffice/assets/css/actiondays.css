@@ -224,22 +224,6 @@ footer.footer {
 	color: #fff
 }
 
-#results table th {
-	text-align: center;
-}
-
-#results table td{
-	vertical-align: middle;
-}
-
-#results table td.match_score{
-	font-size: 25px;
-}
-
-#results table td.winner{
-	font-weight: bold;
-}
-
 #results .table thead tr {
 	background-color: #0a8fd5;
 }

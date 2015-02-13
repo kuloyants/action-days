@@ -1,0 +1,157 @@
+<?php
+
+$matches = $data['matches'];
+$players = $data['players'];
+$matchRace = 2;
+$setsRace = [
+    1 => 5,
+    2 => 5,
+    3 => 5
+];
+
+$rounds = [
+    'l32' => [
+        'title' => 'results.table.L32',
+        'iterationStart' => 0,
+        'iterationEnd' => 16,
+    ],
+    'l16' => [
+        'title' => 'results.table.L16',
+        'iterationStart' => 16,
+        'iterationEnd' => 24
+    ]
+]
+?>
+<? foreach ($rounds as $roundName => $roundData) : ?>
+<table class="table table-hover table-bordered text-left">
+    <thead>
+    <tr>
+        <th><?=translate('results.table.match_nr')?></th>
+        <th><?=translate('results.table.startdate')?></th>
+        <th><?=translate('results.table.starttime')?></th>
+        <th colspan="6"><?=translate($roundData['title'])?></th>
+        <th><?=translate('results.table.match_status')?></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <? for ($i=$roundData['iterationStart'];$i<$roundData['iterationEnd'];$i++) : ?>
+        <? if (array_key_exists($i, $matches)) : ?>
+        <tr data-winnertomatch="<?=$matches[$i]['winner_to_match']?>" data-winnertoslot="<?=$matches[$i]['winner_to_slot']?>">
+            <td class="text-center"><?=$matches[$i]['Nr']?></td>
+            <td class="text-center"><?=$matches[$i]['startdate']?></td>
+            <td class="text-center"><?=$matches[$i]['starttime']?></td>
+            <td class="text-right col-md-2">
+                <? if ($roundName == 'l32') : ?>
+                <select type="select" class="form-control" name="player1">
+                    <option selected="selected" value="">&nbsp;</option>
+                    <? foreach ($players as $player) : ?>
+                        <? $selected = ''?>
+                        <? if ($player['id'] == $matches[$i]['player_1']) : ?>
+                            <? $selected = 'selected'?>
+                        <? endif ?>
+                        <option <?=$selected?> value="<?=$player['id']?>">
+                            <?=$view->playerName($player['firstname'], $player['surname'])?>
+                        </option>
+                    <? endforeach ?>
+                </select>
+                <? else :?>
+                    <select type="select" class="form-control" name="player1">
+                        <option selected="selected" value="<?=$matches[$i]['player_1']?>">
+                            <?=$view->playerName($matches[$i]['p1_firstname'], $matches[$i]['p1_surname'])?>
+                        </option>
+                    </select>
+                <? endif ?>
+            </td>
+            <td class="text-center" data-role="score" data-player="<?=$matches[$i]['player_1']?>">
+                <select type="select" class="form-control" name="score_p1_match">
+                    <? for ($k=0;$k<=$matchRace;$k++) : ?>
+                        <? $selected = ''?>
+                        <? if ($k == $matches[$i]['score_p1_match']) : ?>
+                            <? $selected = 'selected'?>
+                        <? endif ?>
+                        <option <?=$selected?> value="<?=$k?>"><?=$k?></option>
+                    <? endfor ?>
+                </select>
+            <td class="text-center">
+                <? foreach ($setsRace as $setNr => $race) : ?>
+                    <? $elementName = 'score_p1_set' . $setNr ?>
+                    <select type="select" class="form-control" name="<?=$elementName?>">
+                        <? for ($k=0;$k<=$race;$k++) : ?>
+                            <? $selected = ''?>
+                            <? if ($k == $matches[$i][$elementName]) : ?>
+                                <? $selected = 'selected'?>
+                            <? endif ?>
+                            <option <?=$selected?> value="<?=$k?>"><?=$k?></option>
+                        <? endfor ?>
+                    </select>
+                <? endforeach ?>
+            </td>
+            <td class="text-center">
+                <? foreach ($setsRace as $setNr => $race) : ?>
+                    <? $elementName = 'score_p2_set' . $setNr ?>
+                    <select type="select" class="form-control" name="<?=$elementName?>">
+                        <? for ($k=0;$k<=$race;$k++) : ?>
+                            <? $selected = ''?>
+                            <? if ($k == $matches[$i][$elementName]) : ?>
+                                <? $selected = 'selected'?>
+                            <? endif ?>
+                            <option <?=$selected?> value="<?=$k?>"><?=$k?></option>
+                        <? endfor ?>
+                    </select>
+                <? endforeach ?>
+            </td>
+            <td class="text-center" data-role="score" data-player="<?=$matches[$i]['player_2']?>">
+                <select type="select" class="form-control" name="score_p2_match">
+                    <? for ($k=0;$k<=$matchRace;$k++) : ?>
+                        <? $selected = ''?>
+                        <? if ($k == $matches[$i]['score_p2_match']) : ?>
+                            <? $selected = 'selected'?>
+                        <? endif ?>
+                        <option <?=$selected?> value="<?=$k?>"><?=$k?></option>
+                    <? endfor ?>
+                </select>
+            </td>
+            <td class="text-left col-md-2">
+                <? if ($roundName == 'l32') : ?>
+                    <select type="select" class="form-control" name="player2">
+                        <option selected="selected" value="">&nbsp;</option>
+                        <? foreach ($players as $player) : ?>
+                            <? $selected = ''?>
+                            <? if ($player['id'] == $matches[$i]['player_2']) : ?>
+                                <? $selected = 'selected'?>
+                            <? endif ?>
+                            <option <?=$selected?> value="<?=$player['id']?>">
+                                <?=$view->playerName($player['firstname'], $player['surname'])?>
+                            </option>
+                        <? endforeach ?>
+                    </select>
+                <? else :?>
+                    <select type="select" class="form-control" name="player2">
+                        <option selected="selected" value="<?=$matches[$i]['player_2']?>">
+                            <?=$view->playerName($matches[$i]['p2_firstname'], $matches[$i]['p2_surname'])?>
+                        </option>
+                    </select>
+                <? endif ?>
+            </td>
+            <td>
+                <select type="select" class="form-control" name="status">
+                    <? foreach (['scheduled', 'progress', 'finished'] as $status) : ?>
+                        <? $selected = ''?>
+                        <? if ($status == $matches[$i]['status']) : ?>
+                            <? $selected = 'selected'?>
+                        <? endif ?>
+                        <option <?=$selected?> value="<?=$status?>">
+                            <?=$status?>
+                        </option>
+                    <? endforeach ?>
+                </select>
+            </td>
+            <td><button data-role="edit" data-match="<?=$matches[$i]['Nr']?>" class="btn btn-info" type="button">OK</button></td>
+        </tr>
+        <? endif ?>
+        <?unset($matches[$i])?>
+    <? endfor ?>
+    </tbody>
+</table>
+<? endforeach ?>

@@ -1,0 +1,926 @@
+.clickable {
+	cursor: pointer;
+	cursor: hand
+}
+
+.challonge_tournaments td {
+	vertical-align: top
+}
+
+.vr {
+	border-right: 1px solid #EEE;
+	height: 80%;
+	margin: 1% 0;
+	display: table-cell;
+	vertical-align: middle;
+	width: 1px;
+	float: left;
+	background-color: white
+}
+
+.challonge_tournaments .challonge_bracket {
+	font-family: Arial, sans-serif;
+
+@-moz-document url-prefix() {
+	table.bracket_lines_table td.lfix {
+		border-left: 1px solid transparent
+	}
+	table.bracket_lines_table td.rfix {
+		border-right: 1px solid transparent
+	}
+}
+
+}
+.challonge_tournaments .challonge_bracket img {
+	border: 0
+}
+
+.challonge_tournaments .challonge_bracket img.help {
+	vertical-align: -3px
+}
+
+.challonge_tournaments .challonge_bracket h3 {
+	color: white;
+	margin: 1.4em 0 0.5em 0;
+	font-size: 16px;
+	line-height: 24px
+}
+
+.challonge_tournaments .challonge_bracket h3 a.round-label {
+	color: white;
+	text-decoration: none
+}
+
+.challonge_tournaments .challonge_bracket h3 a.round-label.editable:hover {
+	cursor: pointer;
+	background-color: #626262
+}
+
+.challonge_tournaments .challonge_bracket h3 .best-of {
+	font-size: 12px;
+	color: #6cf;
+	font-weight: bold;
+	display: none
+}
+
+.challonge_tournaments .challonge_bracket h3 .best-of.gt1 {
+	display: block
+}
+
+.challonge_tournaments .challonge_bracket h3 em.swiss_tbd {
+	color: white;
+	font-weight: normal;
+	font-size: 14px
+}
+
+.challonge_tournaments .challonge_bracket ul {
+	margin-left: 0
+}
+
+.challonge_tournaments .challonge_bracket form {
+	margin: 0
+}
+
+.challonge_tournaments .challonge_bracket table {
+	border-collapse: collapse
+}
+
+.challonge_tournaments .challonge_bracket td {
+	vertical-align: top
+}
+
+.challonge_tournaments .challonge_bracket table.label_form tr td {
+	padding: 6px
+}
+
+.challonge_tournaments .challonge_bracket table.label_form tr td ul {
+	margin: 6px 0 6px 0;
+	padding: 0 0 0 20px
+}
+
+.challonge_tournaments .challonge_bracket .ui-effects-wrapper ul, .challonge_tournaments .challonge_bracket .ui-effects-wrapper li {
+	list-style: none
+}
+
+.challonge_tournaments .challonge_bracket span.tp_name {
+	font-weight: normal
+}
+
+.challonge_tournaments .challonge_bracket table.label_form tr td.middle {
+	vertical-align: middle;
+	text-align: right
+}
+
+.challonge_tournaments .challonge_bracket table.label_form tr td.top {
+	padding-top: 10px;
+	text-align: right
+}
+
+.challonge_tournaments .challonge_bracket div.rounds {
+	position: relative;
+	font-size: 12px;
+	margin: 0 auto 10px auto;
+	z-index: 1
+}
+
+.challonge_tournaments .challonge_bracket div.rounds td.round {
+	text-align: center;
+	line-height: 15px;
+	background-color: #3c3c3c;
+	border-right: 1px solid #444444
+}
+
+.challonge_tournaments .challonge_bracket div.rounds td.round a.round-label {
+	display: block;
+	width: 262px;
+	padding: 5px 0;
+	color: #f0f0f0;
+	text-decoration: none
+}
+
+.challonge_tournaments .challonge_bracket div.rounds td.best-of {
+	text-align: center;
+	background-color: #3c3c3c;
+	border-top: 1px dotted #444444;
+	border-right: 1px solid #444444;
+	font-size: 11px;
+	color: #6cf;
+	font-weight: bold
+}
+
+.challonge_tournaments .challonge_bracket div.rounds td.blank-round a.round-label {
+	display: block;
+	width: 262px;
+	padding: 5px 0
+}
+
+.challonge_tournaments .challonge_bracket div.rounds.for-groups {
+	margin: 0
+}
+
+.challonge_tournaments .challonge_bracket div.rounds.for-groups td.round {
+	border-right: 0
+}
+
+.challonge_tournaments .challonge_bracket div.rounds.for-groups td.round a.round-label {
+	width: 308px
+}
+
+.challonge_tournaments .challonge_bracket div.rounds.editable td.round:hover {
+	cursor: pointer;
+	background: #626262
+}
+
+.challonge_tournaments .challonge_bracket div.rounds.seeds_hidden td.round a.round-label {
+	width: 245px
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_controls a {
+	text-decoration: none
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_controls a:hover {
+	text-decoration: underline
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_controls img {
+	margin: 0 3px;
+	vertical-align: middle
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_controls {
+	background-color: #333;
+	padding: 3px 5px;
+	line-height: 16px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td {
+	border-color: #f0f0f0;
+	border-style: solid;
+	border-width: 0
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_lines {
+	padding: 0 1px;
+	font-size: 6px;
+	width: 23px;
+	height: 52px
+}
+
+.challonge_tournaments .challonge_bracket div.bl_container {
+	height: 52px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.one_col {
+	width: 23px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.one_row {
+	height: 52px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.left_col {
+	width: 12px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.right_col {
+	width: 9px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.top_row {
+	height: 26px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.bottom_row {
+	height: 26px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.border_left {
+	border-left-width: 2px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.border_right {
+	border-right-width: 2px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.border_top {
+	border-top-width: 2px
+}
+
+.challonge_tournaments .challonge_bracket table.bracket_lines_table td.border_bottom {
+	border-bottom-width: 2px
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_lines.half_height, .challonge_tournaments .challonge_bracket div.bracket_lines.half_height table.bracket_lines_table td.one_row {
+	height: 26px
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_lines.half_height table.bracket_lines_table td.top_row {
+	height: 13px
+}
+
+.challonge_tournaments .challonge_bracket div.bracket_lines.half_height table.bracket_lines_table td.bottom_row {
+	height: 13px
+}
+
+.challonge_tournaments .challonge_bracket table.match_table {
+	background-color: #444444
+}
+
+.challonge_tournaments .challonge_bracket table.match_table a.match_identifier {
+	width: 26px;
+	text-align: center;
+	font-size: 11px;
+	margin-right: 1px;
+	background: #444444;
+	color: #cccccc;
+	text-shadow: none;
+	padding: 0
+}
+
+.challonge_tournaments .challonge_bracket table.match_table a.match_identifier.btn-success {
+	border-color: #27a
+}
+
+.challonge_tournaments .challonge_bracket table.match_table a.match_identifier span.caret {
+	border-top-color: #999999
+}
+
+.challonge_tournaments .challonge_bracket table.match_table a.match_identifier + ul.dropdown-menu.enabled:not(:hover) {
+	margin-top: 0;
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0ms ease-out 25ms;
+	-moz-transition: all 0ms ease-out 25ms;
+	-o-transition: all 0ms ease-out 25ms;
+	transition: all 0ms ease-out 25ms
+}
+
+.challonge_tournaments .challonge_bracket table.match_table a.match_identifier:hover {
+	background-image: none;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+}
+
+.challonge_tournaments .challonge_bracket table.match_table a.match_identifier:hover + ul.dropdown-menu.enabled {
+	margin-top: 0;
+	display: block;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none
+}
+
+.challonge_tournaments .challonge_bracket table.match_table ul.dropdown-menu:hover {
+	margin-top: 0;
+	display: block;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none
+}
+
+.challonge_tournaments .challonge_bracket table.match_table .mark-underway, .challonge_tournaments .challonge_bracket table.match_table .unmark-underway, .challonge_tournaments .challonge_bracket table.match_table .underway-divider {
+	display: none
+}
+
+.challonge_tournaments .challonge_bracket table.match_table.open-underway a.match_identifier {
+	color: #ff7324
+}
+
+.challonge_tournaments .challonge_bracket table.match_table.open-underway a.match_identifier span.caret {
+	border-top-color: #ff7324
+}
+
+.challonge_tournaments .challonge_bracket span.match_name_placeholder {
+	font-style: italic;
+	color: #bbbbbb;
+	font-size: 0.9em
+}
+
+.challonge_tournaments .challonge_bracket span.win, .challonge_tournaments .challonge_bracket span.loss, .challonge_tournaments .challonge_bracket span.blank {
+	display: block;
+	float: left;
+	font-weight: bold;
+	width: 25px;
+	text-align: center
+}
+
+.challonge_tournaments .challonge_bracket span.win {
+	background-color: #f68800;
+	color: black
+}
+
+.challonge_tournaments .challonge_bracket span.loss {
+	background-color: #888888;
+	color: black
+}
+
+.challonge_tournaments .challonge_bracket div.match_spacer {
+	height: 52px;
+	width: 210px
+}
+
+.challonge_tournaments .challonge_bracket div.match_half_spacer {
+	height: 26px;
+	width: 210px
+}
+
+.challonge_tournaments .challonge_bracket div.spacer.full_width_spacer {
+	width: 210px
+}
+
+.challonge_tournaments .challonge_bracket div.spacer.full_width_spacer.seed_hidden {
+	width: 193px
+}
+
+.challonge_tournaments .challonge_bracket div.de_vertical_spacer {
+	height: 25px
+}
+
+.challonge_tournaments .challonge_bracket div.de_finals_spacer1 {
+	height: 100%;
+	width: 259px
+}
+
+.challonge_tournaments .challonge_bracket div.de_finals_spacer2 {
+	height: 100%;
+	width: 233px
+}
+
+.challonge_tournaments .challonge_bracket td.blank_id {
+	padding: 0;
+	vertical-align: middle;
+	width: 29px
+}
+
+.challonge_tournaments .challonge_bracket td.blank_id div {
+	width: 29px
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half, .challonge_tournaments .challonge_bracket div.match_bottom_half {
+	background: #626262;
+	height: 22px;
+	width: 210px;
+	font-size: 12px;
+	overflow: hidden;
+	color: white
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half div.inner_content, .challonge_tournaments .challonge_bracket div.match_bottom_half div.inner_content {
+	padding: 2px 0;
+	margin: 0 28px 0 22px;
+	line-height: 16px;
+	text-shadow: 1px 1px 1px #222222
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half div.inner_content.no_user, .challonge_tournaments .challonge_bracket div.match_bottom_half div.inner_content.no_user {
+	padding: 0 0 0 7px;
+	line-height: 22px
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half div.inner_content span, .challonge_tournaments .challonge_bracket div.match_bottom_half div.inner_content span {
+	display: block;
+	width: 148px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: hidden
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half div.inner_content img, .challonge_tournaments .challonge_bracket div.match_bottom_half div.inner_content img {
+	vertical-align: -5px;
+	margin-right: 1px;
+	padding: 0
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half div.inner_content.over, .challonge_tournaments .challonge_bracket div.match_bottom_half div.inner_content.over {
+	background-color: #222222;
+	color: white;
+	text-shadow: none
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half.seed_hidden, .challonge_tournaments .challonge_bracket div.match_bottom_half.seed_hidden {
+	width: 193px
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half.seed_hidden div.inner_content, .challonge_tournaments .challonge_bracket div.match_bottom_half.seed_hidden div.inner_content {
+	margin-left: 0
+}
+
+.challonge_tournaments .challonge_bracket div.match_top_half {
+	margin-top: 3px;
+	background: #626262
+}
+
+.challonge_tournaments .challonge_bracket div.match_bottom_half {
+	margin-bottom: 3px;
+	border-top: 1px solid #444444;
+	background: #626262
+}
+
+.challonge_tournaments .challonge_bracket div.top_seed, .challonge_tournaments .challonge_bracket div.bottom_seed, .challonge_tournaments .challonge_bracket div.top_score, .challonge_tournaments .challonge_bracket div.bottom_score, .challonge_tournaments .challonge_bracket div.top_score_dark, .challonge_tournaments .challonge_bracket div.bottom_score_dark, .challonge_tournaments .challonge_bracket div.no_top_seed, .challonge_tournaments .challonge_bracket div.no_bottom_seed {
+	float: left;
+	height: 22px;
+	width: 22px;
+	line-height: 22px;
+	margin: 0 3px 0 0;
+	text-align: center;
+	background: #888888;
+	color: black
+}
+
+.challonge_tournaments .challonge_bracket div.no_top_seed, .challonge_tournaments .challonge_bracket div.no_bottom_seed {
+	width: 5px;
+	padding-left: 0
+}
+
+.challonge_tournaments .challonge_bracket div.top_seed, .challonge_tournaments .challonge_bracket div.bottom_seed {
+	font-size: 0.8em;
+	letter-spacing: -1px;
+	padding-left: 0;
+	color: black;
+	text-shadow: none
+}
+
+.challonge_tournaments .challonge_bracket div.top_seed {
+	background: #888 url(//challonge.com/assets/rounded_corners/seed-tl-dark-e1d0c7998037e4b68675a1851b16f215.png) no-repeat top left
+}
+
+.challonge_tournaments .challonge_bracket div.bottom_seed {
+	background: #888 url(//challonge.com/assets/rounded_corners/seed-bl-dark-82b6a3fc69ed1630c8bca3ed87777d1e.png) no-repeat bottom left
+}
+
+.challonge_tournaments .challonge_bracket div.no_top_seed {
+	background: #626262 url(//challonge.com/assets/rounded_corners/tl-dark-81b11bed07cb4f64465ea25a572d0cf3.png) no-repeat top left
+}
+
+.challonge_tournaments .challonge_bracket div.no_bottom_seed {
+	background: #626262 url(//challonge.com/assets/rounded_corners/bl-dark-1881dcdb9fce23c294168122209fedbc.png) no-repeat bottom left
+}
+
+.challonge_tournaments .challonge_bracket div.top_score, .challonge_tournaments .challonge_bracket div.bottom_score {
+	padding-right: 2px;
+	padding-left: 2px;
+	text-shadow: none
+}
+
+.challonge_tournaments .challonge_bracket div.top_score a, .challonge_tournaments .challonge_bracket div.bottom_score a {
+	text-shadow: 1px 1px 1px #222222
+}
+
+.challonge_tournaments .challonge_bracket div.top_score {
+	background: #888 url(//challonge.com/assets/rounded_corners/score-tr-dark-2caaa3b8bacac742673cda45473e1672.png) no-repeat top right
+}
+
+.challonge_tournaments .challonge_bracket div.bottom_score {
+	background: #888 url(//challonge.com/assets/rounded_corners/score-br-dark-d2c8940618aeb85d997238053ca26956.png) no-repeat bottom right
+}
+
+.challonge_tournaments .challonge_bracket div.top_score, .challonge_tournaments .challonge_bracket div.bottom_score {
+	float: right;
+	margin: 0;
+	width: 25px
+}
+
+.challonge_tournaments .challonge_bracket div.top_dark {
+	background: #626262 url(//challonge.com/assets/rounded_corners/tr-dark-e915bd78a5fe692025f79e4d268f8f6d.png) no-repeat top right
+}
+
+.challonge_tournaments .challonge_bracket div.bottom_dark {
+	background: #626262 url(//challonge.com/assets/rounded_corners/br-dark-82d223087dff2050a02897acf0cd173b.png) no-repeat bottom right
+}
+
+.challonge_tournaments .challonge_bracket div.top_score a, .challonge_tournaments .challonge_bracket div.bottom_score a {
+	color: #99ff88;
+	font-weight: bold
+}
+
+.challonge_tournaments .challonge_bracket div.draggable-selectable {
+	cursor: pointer;
+	background-color: #77c
+}
+
+.challonge_tournaments .challonge_bracket div.dropzone-incomplete {
+	background-color: #944
+}
+
+.challonge_tournaments .challonge_bracket div.dropzone-active {
+	background-color: #77c
+}
+
+.challonge_tournaments .challonge_bracket div.dropzone-hover {
+	background-color: #44b
+}
+
+.challonge_tournaments .challonge_bracket div.correct_prediction {
+	background-image: url(//challonge.com/assets/option-yes-padded-642698b46c45aa46c50a3400603a36f4.png);
+	background-position: right center;
+	background-repeat: no-repeat
+}
+
+.challonge_tournaments .challonge_bracket div.wrong_prediction {
+	background-image: url(//challonge.com/assets/option-no-padded-65c61b1b8651a924e171f734fe063bc0.png);
+	background-position: right center;
+	background-repeat: no-repeat
+}
+
+.challonge_tournaments .challonge_bracket div.top_score.winner, .challonge_tournaments .challonge_bracket div.bottom_score.winner {
+	color: black
+}
+
+.challonge_tournaments .challonge_bracket div.top_score.winner {
+	background: #f68800 url(//challonge.com/assets/rounded_corners/winner-tr-dark-b113ef04f5f231742a6e67619cfee189.png) no-repeat top right
+}
+
+.challonge_tournaments .challonge_bracket div.bottom_score.winner {
+	background: #f68800 url(//challonge.com/assets/rounded_corners/winner-br-dark-6ba0f5492467952adb4b52b99c1fcf1d.png) no-repeat bottom right
+}
+
+.challonge_tournaments .challonge_bracket .graph {
+	margin-bottom: 50px;
+	margin-top: 30px;
+	clear: both;
+	font-size: 11px
+}
+
+.challonge_tournaments .challonge_bracket .graph .label {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px
+}
+
+.challonge_tournaments .challonge_bracket table.legend {
+	width: 200px
+}
+
+.challonge_tournaments .challonge_bracket .graph .legend td, .challonge_tournaments .challonge_bracket .graph .legend, .challonge_tournaments .challonge_bracket .graph .legend tr {
+	padding: 0px;
+	margin: 0px;
+	border-collapse: collapse
+}
+
+.challonge_tournaments .challonge_bracket .graph .legend {
+	margin-left: 10px;
+	font-size: 13px
+}
+
+.challonge_tournaments .challonge_bracket .graph .legend td {
+	padding-right: 5px;
+	padding-bottom: 2px
+}
+
+.challonge_tournaments .challonge_bracket .graph .legend .color-box {
+	width: 14px;
+	height: 14px;
+	overflow: hidden
+}
+
+.challonge_tournaments .challonge_bracket .graph svg {
+	border-bottom: 1px solid #666
+}
+
+.challonge_tournaments .challonge_bracket div.padding-for-drop-down {
+	height: 105px
+}
+
+.challonge_tournaments .challonge_bracket .match_table img.portrait {
+	height: 18px;
+	width: 18px
+}
+
+.challonge_tournaments .challonge_bracket .match-location-container {
+	position: relative;
+	display: none;
+	height: 0;
+	width: 0
+}
+
+.challonge_tournaments .challonge_bracket .match-location-container .match-location {
+	position: absolute;
+	left: -133px;
+	top: 18px;
+	width: 100px;
+	height: 11px;
+	text-align: center;
+	background-color: #3c3c3c;
+	color: #f0f0f0;
+	font-size: 11px;
+	line-height: 11px;
+	text-shadow: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 2px
+}
+
+.tipsy {
+	padding: 5px;
+	font-size: 10px;
+	position: absolute;
+	z-index: 100000
+}
+
+.tipsy .tipsy-inner {
+	max-width: 200px;
+	text-align: center;
+	background-color: #626262;
+	color: black;
+	padding: 5px
+}
+
+.tipsy .tipsy-inner {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px
+}
+
+.tipsy .tipsy-arrow {
+	position: absolute;
+	width: 9px;
+	height: 5px
+}
+
+.tipsy .tipsy-n .tipsy-arrow {
+	top: 0;
+	left: 50%;
+	margin-left: -4px
+}
+
+.tipsy .tipsy-n .tipsy-arrow .tipsy-nw .tipsy-arrow {
+	top: 0;
+	left: 10px
+}
+
+.tipsy .tipsy-n .tipsy-arrow .tipsy-ne .tipsy-arrow {
+	top: 0;
+	right: 10px
+}
+
+.tipsy .tipsy-s .tipsy-arrow {
+	bottom: 0;
+	left: 50%;
+	margin-left: -4px;
+	background-position: bottom left
+}
+
+.tipsy .tipsy-s .tipsy-arrow .tipsy-sw .tipsy-arrow {
+	bottom: 0;
+	left: 10px;
+	background-position: bottom left
+}
+
+.tipsy .tipsy-s .tipsy-arrow .tipsy-se .tipsy-arrow {
+	bottom: 0;
+	right: 10px;
+	background-position: bottom left
+}
+
+.tipsy .tipsy-e .tipsy-arrow {
+	top: 50%;
+	margin-top: -4px;
+	right: 0;
+	width: 5px;
+	height: 9px;
+	background-position: top right
+}
+
+.tipsy .tipsy-w .tipsy-arrow {
+	top: 50%;
+	margin-top: -4px;
+	left: 0;
+	width: 5px;
+	height: 9px
+}
+
+td.qtip_top_score, td.qtip_bottom_score {
+	color: black;
+	vertical-align: middle;
+	text-align: center;
+	border-right: 2px solid #626262;
+	background-color: #888888;
+	text-shadow: none
+}
+
+td.qtip_top_score.winner, td.qtip_bottom_score.winner {
+	background-color: #f68800
+}
+
+td.qtip_top_score {
+	border-bottom: 1px solid #626262
+}
+
+body.admin-visibility .challonge_tournaments .challonge_bracket table.match_table.open-underway .underway-divider, body.admin-visibility .challonge_tournaments .challonge_bracket table.match_table.open-underway .unmark-underway {
+	display: block
+}
+
+body.admin-visibility .challonge_tournaments .challonge_bracket table.match_table.open-not-underway .underway-divider, body.admin-visibility .challonge_tournaments .challonge_bracket table.match_table.open-not-underway .mark-underway {
+	display: block
+}
+
+#participant-management {
+	width: 500px
+}
+
+#participant-management input[type="text"].tt-hint {
+	color: #999
+}
+
+#participant-management input[type="text"].tt-hint, #participant-management .team-name {
+	width: 154px;
+	background-color: #eeeeee
+}
+
+#participant-management .inline-edit .tt-hint, #participant-management .inline-edit .team-name {
+	margin-top: -4px
+}
+
+#participant-management #new_participant .input-append {
+	margin-bottom: 0;
+	vertical-align: middle;
+	width: 207px;
+	display: inline-block
+}
+
+#participant-management .error-description {
+	margin: 15px 0 0 0;
+	padding: 3px;
+	background: #aa4444;
+	color: #eeeeee
+}
+
+#participant-management .error-description i {
+	margin: 0 3px
+}
+
+#participant-management .loader-gif img {
+	padding-top: 7px
+}
+
+#participant-management .saved-state {
+	color: #47b4eb
+}
+
+#participant-management ol#participants {
+	margin: 15px 0 25px 0;
+	padding: 0 0 0 20px
+}
+
+#participant-management ol#participants.sortable.editable:hover {
+	cursor: move
+}
+
+#participant-management ol#participants li {
+	background-color: #494949;
+	border-bottom: 1px solid #565656;
+	padding: 2px 4px;
+	line-height: 20px;
+	margin-bottom: 3px
+}
+
+#participant-management ol#participants li .tp_name {
+	display: inline-block;
+	margin-left: 5px;
+	max-width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: bottom
+}
+
+#participant-management ol#participants li img {
+	float: left;
+	vertical-align: -4px
+}
+
+#participant-management ol#participants li.empty {
+	padding: 10px 5px 5px 5px;
+	text-align: center;
+	list-style: none;
+	border: none
+}
+
+#participant-management ol#participants li.waiting_list {
+	background-color: #444444;
+	background-image: url(//challonge.com/assets/circular/clock-7fbc4333ac749d502306f3724c3aa19a.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 22px;
+	color: #999
+}
+
+#participant-management ol#participants li.waiting_list .tp_name {
+	max-width: 225px
+}
+
+#participant-management ol#participants li .attached-user-portrait {
+	height: 18px;
+	width: 18px
+}
+
+#participant-management ol#participants li .invitation-notification {
+	margin: 0 0 0 5px;
+	font-size: 11px;
+	color: #bbb;
+	font-style: italic
+}
+
+#participant-management ol#participants li .participant-controls {
+	float: right;
+	width: 110px;
+	text-align: right
+}
+
+#participant-management ol#participants li .participant-controls i {
+	opacity: 0.3;
+	margin: -7px 2px 0 0;
+	cursor: pointer;
+	cursor: hand
+}
+
+#participant-management ol#participants li .participant-controls i:hover {
+	opacity: 1.0
+}
+
+#participant-management ol#participants li .participant-controls i.not-clickable:hover {
+	opacity: 0.3;
+	cursor: default
+}
+
+#participant-management ol#participants li .participant-modify {
+	text-shadow: none;
+	color: #ddd
+}
+
+#participant-management ol#participants li .inline-edit {
+	text-align: center
+}
+
+#participant-management ol#participants li .inline-edit h4 {
+	text-align: left;
+	padding-left: 37px
+}
+
+#participant-management ol#participants li .participant-remove {
+	text-shadow: none;
+	color: #aaa
+}
+
+#participant-management ol#participants li.participant-model i {
+	margin: -7px 2px 0 0;
+	cursor: pointer;
+	cursor: hand
+}
+
+#participant-management #bulk_participant_field {
+	width: 445px
+}
+
+/*!

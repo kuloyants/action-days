@@ -38,15 +38,6 @@ google.maps.event.addDomListener(window, 'load', init_map);
 
 $(document).ready(function () {
 
-	$(".match_score").each(function() {
-		if ($(this).text() == 2) {
-			var dataScore = $(this).data("score");
-			$(this).addClass("winner");
-			$(this).closest("tr").find("[data-player=" + dataScore + "]").addClass("winner");
-		}
-	});
-
-
 	var $galleryContainer = $("#galleryContainer");
 	$galleryContainer.justifiedGallery({
 		rowHeight: 200,
