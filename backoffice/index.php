@@ -116,7 +116,7 @@ function getUserID() {
     $sql = 'SELECT
                 ID
             FROM
-                User
+                user
             WHERE
                 ID = ? AND
                 Password = ?';
