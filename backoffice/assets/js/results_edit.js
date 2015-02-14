@@ -30,8 +30,7 @@ $(document).ready(function () {
             type: "POST",
             data: data,
             success: function(response) {
-                console.log('BIN DURCH')
-                //$("#registration").replaceWith($(response));
+
             },
             error: function() {
                 $( '<div/>' ).dialog({

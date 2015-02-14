@@ -219,13 +219,6 @@ footer.footer {
 	color: #fff;
 }
 
-@media screen and (max-width: 640px) {
-	#results table {
-		overflow-x: auto;
-		display: block;
-	}
-}
-
 #results table {
 	width: 1139px;
 	background-color: #444;
@@ -273,4 +266,15 @@ footer.footer {
 
 #results .table-hover tbody tr:hover {
 	background-color: #444444;
+}
+
+@media screen and (max-width: 640px) {
+	#results table {
+		overflow-x: auto;
+		display: block;
+		font-size: 12px;
+	}
+	#results table td.match_score{
+		font-size: 12px;
+	}
 }

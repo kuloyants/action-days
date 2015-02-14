@@ -3,7 +3,7 @@ $return = [
     'matches' => []
 ];
 
-$return['matches'] = getMatchesForDay('friday');
+$return['matches'] = getMatchesForDay('saturday');
 
 return $return;
 ?>

@@ -1,6 +1,7 @@
 <?php
+include(APPLICATION_PATH . 'includes/results/methods.php');
 $tabs = [
-    'friday'    => include(APPLICATION_PATH . 'backoffice/includes/results/friday.php'),
+    'friday'    => [],
     'saturday'  => [],
     'sunday'    => [],
     'wcop'      => [],
@@ -9,6 +10,8 @@ $tabs = [
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
     $activeTab = 'friday';
 }
+
+$tabs[$activeTab] = include(APPLICATION_PATH . "backoffice/includes/results/{$activeTab}.php");
 
 return [
     'filename' => 'results.phtml',

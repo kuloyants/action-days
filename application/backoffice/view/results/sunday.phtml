@@ -1,10 +1,18 @@
 <?php
 $matches = $data['matches'];
+$players = $data['players'];
+$matchRace = 2;
+$setsRace = [
+    1 => 5,
+    2 => 5,
+    3 => 5
+];
+
 $rounds = [
     'l32' => [
         'title' => 'results.table.L32',
         'iterationStart' => 0,
-        'iterationEnd' => 16
+        'iterationEnd' => 16,
     ],
     'l16' => [
         'title' => 'results.table.L16',

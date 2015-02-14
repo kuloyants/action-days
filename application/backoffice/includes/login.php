@@ -10,7 +10,7 @@ $return = [
 $db = Db::getInstance();
 if ('POST' == $_SERVER['REQUEST_METHOD']) {
     if (!isset($_POST['Username'], $_POST['Password'], $_POST['formaction'])) {
-        throw new Exception('unregistered post params');
+        return $return;
     }
     if (('' == $Username = trim($_POST['Username'])) OR
         ('' == $Password = trim($_POST['Password']))) {
