@@ -219,6 +219,13 @@ footer.footer {
 	color: #fff;
 }
 
+@media screen and (max-width: 640px) {
+	#results table {
+		overflow-x: auto;
+		display: block;
+	}
+}
+
 #results table {
 	background-color: #444;
 	color: #fff
@@ -240,11 +247,29 @@ footer.footer {
 	font-weight: bold;
 }
 
+#results .table td.matchNr,
+#results .table td.startDate,
+#results .table td.startTime,
+#results .table td.status{
+	width: 1%;
+	font-size: 12px;
+}
+
+#results .table td.player1,
+#results .table td.player2{
+	width: 38%;
+}
+
+#results .table td.match_score,
+#results .table td.set_score{
+	width: 3%;
+}
+
 #results .table thead tr {
 	background-color: #0a8fd5;
 }
 
 #results .table-hover tbody tr:hover {
-	background-color: #0a8fd5;
+	background-color: #66afe9;
 }
 

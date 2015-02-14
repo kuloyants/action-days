@@ -33,15 +33,15 @@ $rounds = [
         <? for ($i=$roundData['iterationStart'];$i<$roundData['iterationEnd'];$i++) : ?>
             <tr>
                 <? if (array_key_exists($i, $matches)) : ?>
-                    <td class="text-center"><?=$matches[$i]['Nr']?></td>
-                    <td class="text-center"><?=$matches[$i]['startdate']?></td>
-                    <td class="text-center"><?=$matches[$i]['starttime']?></td>
-                    <td data-player="<?=$matches[$i]['player_1']?>" class="col-md-4 text-right">
+                    <td class="matchNr text-center"><?=$matches[$i]['Nr']?></td>
+                    <td class="startDate text-center"><?=$matches[$i]['startdate']?></td>
+                    <td class="startTime text-center"><?=$matches[$i]['starttime']?></td>
+                    <td data-player="<?=$matches[$i]['player_1']?>" class="player1 text-right">
                         <?=$view->playerName($matches[$i]['p1_firstname'], $matches[$i]['p1_surname'])?>
                         <span class="glyphicon bfh-flag-<?=$matches[$i]['p1_country']?>">&nbsp;</span>
                     </td>
                     <td data-score="<?=$matches[$i]['player_1']?>" class="match_score text-center"><?=$matches[$i]['score_p1_match']?></td>
-                    <td class="text-center">
+                    <td class="set_score text-center">
                         <?=$matches[$i]['score_p1_set1']?>:<?=$matches[$i]['score_p2_set1']?>
                         <br>
                         <?=$matches[$i]['score_p1_set2']?>:<?=$matches[$i]['score_p2_set2']?>
@@ -51,7 +51,7 @@ $rounds = [
                         <?endif?>
                     </td>
                     <td data-score="<?=$matches[$i]['player_2']?>" class="match_score text-center"><?=$matches[$i]['score_p2_match']?></td>
-                    <td data-player="<?=$matches[$i]['player_2']?>" class="col-md-4 text-left">
+                    <td data-player="<?=$matches[$i]['player_2']?>" class="player2 text-left">
                         <span class="glyphicon bfh-flag-<?=$matches[$i]['p2_country']?>">&nbsp;</span>
                         <?=$view->playerName($matches[$i]['p2_firstname'], $matches[$i]['p2_surname'])?></td>
                     <td class="status text-center"><?=$matches[$i]['status']?></td>
