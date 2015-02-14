@@ -227,6 +227,7 @@ footer.footer {
 }
 
 #results table {
+	width: 1139px;
 	background-color: #444;
 	color: #fff
 }
@@ -237,6 +238,7 @@ footer.footer {
 
 #results table td{
 	vertical-align: middle;
+	white-space: nowrap;
 }
 
 #results table td.match_score{
@@ -257,7 +259,7 @@ footer.footer {
 
 #results .table td.player1,
 #results .table td.player2{
-	width: 38%;
+	width: 380px;
 }
 
 #results .table td.match_score,
@@ -270,6 +272,5 @@ footer.footer {
 }
 
 #results .table-hover tbody tr:hover {
-	background-color: #66afe9;
+	background-color: #444444;
 }
-
