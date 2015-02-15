@@ -6,6 +6,28 @@
 	display: block;
 }
 
+#languages {
+	padding: 15px 0;
+}
+
+#languages a {
+	font-weight: bold;
+	color: #fff;
+}
+
+#languages a:hover,
+#languages a:focus {
+	color: #fff;
+	padding: 5px;
+	background-color: #0a8fd5;
+}
+
+.navbar-default .navbar-nav li a:hover,
+.navbar-inverse .navbar-nav li a:hover {
+	background-color: #0a8fd5;
+	color: #fff
+}
+
 
 /*---------------------------------------
  **   SECTION:  PORTFOLIO          -----
@@ -176,14 +198,18 @@
 	color: #ffffff;
 }
 
-.red-border-bottom:before {
+.blue-text {
+	color: #0a8fd5;
+}
+
+.blue-border-bottom:before {
 	position: absolute;
 	margin: auto;
 	z-index: 1;
 	content: "";
 	width: 75%;
 	height: 2px;
-	background: #e96656;
+	background: #0a8fd5;
 	bottom: -9px;
 	left: 12.5%;
 }
@@ -277,4 +303,53 @@ footer.footer {
 	#results table td.match_score{
 		font-size: 12px;
 	}
+}
+
+#seeded .project-info .description {
+	margin-top: 40px;
+}
+
+footer.footer .contact-details {
+	margin: 0 0 75px 0;
+}
+
+footer.footer .social {
+	margin-bottom: 75px;
+}
+
+footer .margin-top {
+	margin-top: 40px;
+}
+
+#contact .venue i {
+	margin-right: 5px;
+}
+
+#profile {
+	margin: 20px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.ui-dialog {
+	background: #444;
+	border: 0;
+	padding: 0;
+}
+
+.ui-widget-header {
+	background-color: #0a8fd5;
+	border: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.ui-dialog-buttonpane {
+	background-color: #444;
+}
+
+.ui-dialog-buttonset button {
+	padding: 5px 25px;
+	margin: 0;
 }

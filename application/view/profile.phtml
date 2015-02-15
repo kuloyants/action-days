@@ -1,0 +1,18 @@
+<?php
+$player = $data;
+?>
+<?$playerFullName = "{$player['firstname']}  {$player['nickname']} {$player['surname']}"?>
+<div id="profile">
+    <img height="300" src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.png'?>" alt="<?=$playerFullName?>">
+    <div class="project-info">
+        <div class="project-details">
+            <h5 class="playerFullName white-text blue-border-bottom">
+                <?=$playerFullName?>
+            </h5>
+            <div class="details white-text">
+                <?=translate("country." . mb_strtolower($player['country']) . "")?>
+            </div>
+            <p class="description white-text"><?=translate('seeded.player.desc.' . mb_strtolower($player['surname']))?></p>
+        </div>
+    </div>
+</div>

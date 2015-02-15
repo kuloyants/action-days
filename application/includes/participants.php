@@ -1,13 +1,15 @@
 <?php
 $tabs = [
-    'main_tournament'    => include(APPLICATION_PATH . 'includes/participants/main.php'),
-    'seeded'  => include(APPLICATION_PATH . 'includes/participants/seeded.php'),
-    'wcop'    => include(APPLICATION_PATH . 'includes/participants/wcop.php')
+    'main_tournament'   => [],
+    'seeded'            => [],
+    'wcop'              => [],
 ];
 
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
-    $activeTab = 'seeded';
+    $activeTab = 'main_tournament';
 }
+
+$tabs[$activeTab] = include(APPLICATION_PATH . "includes/participants/{$activeTab}.php");
 
 return [
     'filename' => 'participants.phtml',

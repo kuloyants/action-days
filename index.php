@@ -12,6 +12,7 @@ $section = [
     'registration'  => APPLICATION_PATH . 'includes/registration.php',
     'contact'       => APPLICATION_PATH . 'includes/contact.php',
     'gallery'       => APPLICATION_PATH . 'includes/gallery.php',
+    'profile'       => APPLICATION_PATH . 'includes/profile.php'
 ];
 
 $isXmlHttpRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';

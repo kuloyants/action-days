@@ -5,6 +5,7 @@ $db = Db::getInstance();
 
 $sql = "
 SELECT
+    p.id,
     p.firstname,
     p.surname,
     p.nickname,
