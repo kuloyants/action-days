@@ -19,7 +19,8 @@ $(document).ready(function () {
 
         $match.find("[data-role=score]").each(function (){
             if ($(this).find("select").val() == 2) {
-                data.winner = $(this).data("player");
+                var winnerSelector = "select[name='" + $(this).data("player") + "']";
+                data.winner = $match.find(winnerSelector).val();
                 data.winnerToMatch = $match.data("winnertomatch");
                 data.winnerToSlot = $match.data("winnertoslot");
             }

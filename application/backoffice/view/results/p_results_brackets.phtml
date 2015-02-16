@@ -49,7 +49,7 @@
                             </select>
                         <? endif ?>
                     </td>
-                    <td class="text-center" data-role="score" data-player="<?=$matches[$i]['player_1']?>">
+                    <td class="text-center" data-role="score" data-player="player1">
                         <select type="select" class="form-control" name="score_p1_match">
                             <? for ($k=0;$k<=$matchRace;$k++) : ?>
                                 <? $selected = ''?>
@@ -87,7 +87,7 @@
                             </select>
                         <? endforeach ?>
                     </td>
-                    <td class="text-center" data-role="score" data-player="<?=$matches[$i]['player_2']?>">
+                    <td class="text-center" data-role="score" data-player="player2">
                         <select type="select" class="form-control" name="score_p2_match">
                             <? for ($k=0;$k<=$matchRace;$k++) : ?>
                                 <? $selected = ''?>
