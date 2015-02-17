@@ -1,3 +1,13 @@
+<?php
+$required = [];
+foreach ($data['formElements'] as $elementName => $element) {
+    if (isset($element['required']) && $element['required'] === true) {
+        $required[$elementName] = " required data-validation-required-message=\""
+            . translate($element['attributes']['data-validation-required-message'])
+            . "\"";
+    }
+}
+?>
 <div class="row">
     <h2><?=translate('registration.title')?></h2>
     <div class="col-lg-12 text-center">
@@ -8,50 +18,156 @@
 <div class="row content-row text-left">
     <div class="col-lg-8 col-lg-offset-2">
         <form action="?section=registration" name="sentMessage" id="registerForm" method="post" novalidate>
-            <?foreach ($data['formElements'] as $elementName => $element):?>
-                <?$required = ''?>
-                <? if (isset($element['required']) && $element['required'] === true) : ?>
-                    <? $required = " required data-validation-required-message=\""
-                        . translate($element['attributes']['data-validation-required-message'])
-                        . "\""?>
-                <? endif?>
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <? if ($element['type'] == 'select'):?>
-                            <? if ($element['name'] == 'country') : ?>
-                                <div class="bfh-selectbox bfh-countries" data-name="<?=$element['name']?>" data-country="DE" data-flags="true">
-                                    <select name="<?$element['name']?>" class="form-control bfh-countries" data-country="DE" data-language="de"></select>
-                                </div>
-                            <? else : ?>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group controls">
+                            <? if (array_key_exists('gender', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['gender'] ?>
                                 <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="<?=translate('validate.message.required')?>">
                                     <option value="" selected="selected"><?=translate($element['options']['label'])?></option>
                                     <? foreach ($element['options']['value_options'] as $value => $option) : ?>
                                         <option value="<?=$value?>"><?=translate($option)?></option>
                                     <? endforeach?>
                                 </select>
-                            <? endif?>
-                            <? if (isset($data['errorMessages']) && isset($data['errorMessages'][$elementName]) ) : ?>
-                                <p class="help-block text-danger"><?=$data['errorMessages'][$elementName]?></p>
+                                <p class="help-block text-danger"></p>
                             <? endif ?>
-                        <? else : ?>
-                            <label><?=translate($element['options']['label'])?></label>
-                            <input type="<?=$element['type']?>" class="form-control"
-                                   placeholder="<?=translate($element['options']['label'])?>"
-                                   name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
-                                   <? if (isset($element['attributes']['data-validation-validemail-message'])) : ?>
-                                       data-validation-validemail-message="<?=translate($element['attributes']['data-validation-validemail-message'])?>"
-                                   <? endif?>
-                                <?=$required?>>
-                            <p class="help-block text-danger"></p>
-                        <?endif?>
+                        </div>
                     </div>
                 </div>
-            <?endforeach?>
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group controls">
+                            <? if (array_key_exists('country', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['country'] ?>
+                                <div class="bfh-selectbox bfh-countries" data-name="<?=$element['name']?>" data-country="DE" data-flags="true">
+                                    <select name="<?$element['name']?>" class="form-control bfh-countries" data-country="DE" data-language="de"></select>
+                                </div>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <? if (array_key_exists('firstname', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['firstname'] ?>
+                                <label><?=translate($element['options']['label'])?></label>
+                                <input type="<?=$element['type']?>" class="form-control"
+                                       placeholder="<?=translate($element['options']['label'])?>"
+                                       name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                    <?=$required[$element['name']]?>>
+                                <p class="help-block text-danger"></p>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <? if (array_key_exists('playerEmail', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['playerEmail'] ?>
+                                <label><?=translate($element['options']['label'])?></label>
+                                <input type="<?=$element['type']?>" class="form-control"
+                                       placeholder="<?=translate($element['options']['label'])?>"
+                                       name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                       data-validation-validemail-message="<?=translate($element['attributes']['data-validation-validemail-message'])?>"
+                                    <?=$required[$element['name']]?>>
+                                <p class="help-block text-danger"></p>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <? if (array_key_exists('surname', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['surname'] ?>
+                                <label><?=translate($element['options']['label'])?></label>
+                                <input type="<?=$element['type']?>" class="form-control"
+                                       placeholder="<?=translate($element['options']['label'])?>"
+                                       name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                    <?=$required[$element['name']]?>>
+                                <p class="help-block text-danger"></p>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <? if (array_key_exists('playerPhone', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['playerPhone'] ?>
+                                <label><?=translate($element['options']['label'])?></label>
+                                <input type="<?=$element['type']?>" class="form-control"
+                                       placeholder="<?=translate($element['options']['label'])?>"
+                                       name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                    <?=$required[$element['name']]?>>
+                                <p class="help-block text-danger"></p>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-row text-center">
+                <p><?=translate('registration.start_timestamp.hint')?></p>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group controls">
+                            <? if (array_key_exists('start_day', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['start_day'] ?>
+                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="<?=translate('validate.message.required')?>">
+                                    <option value="" selected="selected"><?=translate($element['options']['label'])?></option>
+                                    <? foreach ($element['options']['value_options'] as $value => $option) : ?>
+                                        <option value="<?=$value?>"><?=translate($option)?></option>
+                                    <? endforeach?>
+                                </select>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="control-group">
+                        <div class="form-group controls">
+                            <? if (array_key_exists('start_time', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['start_time'] ?>
+                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="<?=translate('validate.message.required')?>">
+                                    <option value="" selected="selected"><?=translate($element['options']['label'])?></option>
+                                    <? foreach ($element['options']['value_options'] as $value => $option) : ?>
+                                        <option value="<?=$value?>"><?=translate($option)?></option>
+                                    <? endforeach?>
+                                </select>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <? if (array_key_exists('message', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['message'] ?>
+                                <label><?=translate($element['options']['label'])?></label>
+                                <input type="<?=$element['type']?>" class="form-control"
+                                       placeholder="<?=translate($element['options']['label'])?>"
+                                       name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>">
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <br>
             <div id="success"></div>
             <div class="row">
                 <div class="form-group col-xs-12">
-                    <button type="button" class="col-md-5 pull-right btn btn-blue"><?=translate('form.button.register')?></button>
+                    <button type="submit" class="col-md-5 pull-right btn btn-blue"><?=translate('form.button.register')?></button>
                 </div>
             </div>
         </form>

@@ -353,3 +353,10 @@ footer .margin-top {
 	padding: 5px 25px;
 	margin: 0;
 }
+
+#registration .help-block ul {
+	color: #db1729;
+	font-size: 14px;
+	list-style: none;
+	padding: 0;
+}

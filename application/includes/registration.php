@@ -47,8 +47,8 @@ $formElements = [
             'data-validation-required-message' => 'validate.message.required'
         ],
     ],
-    'email' => [
-        'name' => 'email',
+    'playerEmail' => [
+        'name' => 'playerEmail',
         'type'  => 'email',
         'required' => true,
         'options' => [
@@ -71,8 +71,8 @@ $formElements = [
             'id' => 'message',
         ]
     ],
-    'phone' => [
-        'name' => 'phone',
+    'playerPhone' => [
+        'name' => 'playerPhone',
         'type'  => 'tel',
         'required' => true,
         'options' => [
@@ -159,15 +159,15 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
     }
 
     $sql = 'INSERT INTO
-              player (created, firstname, surname, email, country_code, gender)
+              player (created, firstname, surname, email, phone, country_code, gender)
             VALUES
-              (NOW(), ?, ?, ?, ?, ?)';
+              (NOW(), ?, ?, ?, ?, ?, ?)';
     $stmt = $db->prepare($sql);
     if (!$stmt) {
         throw new Exception('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
     }
 
-    $stmt->bind_param('sssss', $_POST['firstname'], $_POST['surname'], $_POST['email'], $_POST['country'], $_POST['gender']);
+    $stmt->bind_param('ssssss', $_POST['firstname'], $_POST['surname'], $_POST['playerEmail'], $_POST['playerPhone'], $_POST['country'], $_POST['gender']);
     if (!$stmt->execute()) {
         throw new Exception ('Query konnte nicht ausgeführt werden: '.$stmt->error);
     }
@@ -175,7 +175,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
     $sql = "INSERT INTO
               player_registration (player_id, reg_status, start_day, start_time, message)
             VALUES
-              ({$stmt->insert_id}, 'pending', ?, ?, ?)";
+              ({$stmt->insert_id}, 'registered', ?, ?, ?)";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
         throw new Exception('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
@@ -186,7 +186,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
     }
     $return['data']['valid'] = true;
 
-//    mail('v.kuloyants@letspool24.com', 'Bestätigung', 'Sie wurden registriert', 'From: valery.kuloyants@live.de');
+    mail('valery.kuloyants@live.de', 'Bestätigung', 'Sie wurden registriert', 'From: info@stage.action-days.de');
 
     return $return;
 } else {
