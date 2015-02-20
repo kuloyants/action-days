@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("[data-role='edit']").on("click", function(event) {
         event.preventDefault(); // prevent default submit behaviour
         var data = {};
-        $match = $(this.closest("tr"));
+        $match = $(this).closest("tr");
         data.match_nr           = $(this).data("match");
         data.player1_id         = $match.find("select[name='player1']").val();
         data.player2_id         = $match.find("select[name='player2']").val();
