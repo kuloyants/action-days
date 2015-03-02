@@ -1330,11 +1330,11 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 	background-repeat: none;
 	opacity: 0;
 	z-index: 0;
-	animation: imageAnimation 12s linear infinite 0s;
-	-webkit-animation: imageAnimation 12s linear infinite 0s;
-	-moz-animation: imageAnimation 12s linear infinite 0s;
-	-ms-animation: imageAnimation 12s linear infinite 0s;
-	-o-animation: imageAnimation 12s linear infinite 0s;
+	animation: imageAnimation 15s linear infinite 0s;
+	-webkit-animation: imageAnimation 15s linear infinite 0s;
+	-moz-animation: imageAnimation 15s linear infinite 0s;
+	-ms-animation: imageAnimation 15s linear infinite 0s;
+	-o-animation: imageAnimation 15s linear infinite 0s;
 }
 
 
@@ -1368,6 +1368,15 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 	-o-animation-delay: 9s;
 }
 
+.cb-slideshow li:nth-child(5) span {
+	background-image: url(../img/slideshow5.jpg);
+	animation-delay: 12s;
+	-webkit-animation-delay: 12s;
+	-moz-animation-delay: 12s;
+	-ms-animation-delay: 12s;
+	-o-animation-delay: 12s;
+}
+
 
 @keyframes imageAnimation {
 	0% {
@@ -1375,13 +1384,13 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 		-webkit-animation-timing-function: ease-in;
 		animation-timing-function: ease-in;
 	}
-	12.5% {
+	10% {
 		opacity: 1;
 		animation-timing-function: ease-out;
 		-webkit-animation-timing-function: ease-out;
 	}
-	25% { opacity: 1 }
-	37.5% { opacity: 0 }
+	20% { opacity: 1 }
+	30% { opacity: 0 }
 	100% { opacity: 0 }
 }
 
@@ -1391,13 +1400,13 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 		-webkit-animation-timing-function: ease-in;
 		animation-timing-function: ease-in;
 	}
-	12.5% {
+	10% {
 		opacity: 1;
 		animation-timing-function: ease-out;
 		-webkit-animation-timing-function: ease-out;
 	}
-	25% { opacity: 1 }
-	37.5% { opacity: 0 }
+	20% { opacity: 1 }
+	30% { opacity: 0 }
 	100% { opacity: 0 }
 }
 
@@ -1407,13 +1416,13 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 		-webkit-animation-timing-function: ease-in;
 		animation-timing-function: ease-in;
 	}
-	12.5% {
+	10% {
 		opacity: 1;
 		animation-timing-function: ease-out;
 		-webkit-animation-timing-function: ease-out;
 	}
-	25% { opacity: 1 }
-	37.5% { opacity: 0 }
+	20% { opacity: 1 }
+	30% { opacity: 0 }
 	100% { opacity: 0 }
 }
 
@@ -1423,13 +1432,13 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 		-webkit-animation-timing-function: ease-in;
 		animation-timing-function: ease-in;
 	}
-	12.5% {
+	10% {
 		opacity: 1;
 		animation-timing-function: ease-out;
 		-webkit-animation-timing-function: ease-out;
 	}
-	25% { opacity: 1 }
-	37.5% { opacity: 0 }
+	20% { opacity: 1 }
+	30% { opacity: 0 }
 	100% { opacity: 0 }
 }
 
@@ -1439,13 +1448,13 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 		-webkit-animation-timing-function: ease-in;
 		animation-timing-function: ease-in;
 	}
-	12.5% {
+	10% {
 		opacity: 1;
 		animation-timing-function: ease-out;
 		-webkit-animation-timing-function: ease-out;
 	}
-	25% { opacity: 1 }
-	37.5% { opacity: 0 }
+	20% { opacity: 1 }
+	30% { opacity: 0 }
 	100% { opacity: 0 }
 }
 
