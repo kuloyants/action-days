@@ -1,0 +1,144 @@
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Teilnehmerzahl</strong>
+    </div>
+    <div class="col-md-6">
+        <a href="?section=participants&tab=main_tournament">Hauptfeld: 64 Teilnehmer</a>
+        +
+        <a href="?section=participants&tab=seeded">16 gesetzte Top Spieler</a>
+    </div>
+</div>
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Startzeiten der Qualifikationsgruppen</strong>
+    </div>
+    <div class="col-md-6">
+        <p>
+            32er Feld am Freitag 01.05.2015<br>
+            Gruppe 1: 16 Spieler um 10 Uhr (4 Qualifikanten)<br>
+            Gruppe 2: 16 Spieler um 12 Uhr (4 Qualifikanten)
+        </p>
+        <p>
+            32er Feld am Samstag 02.05.2015<br>
+            Gruppe 3: 16 Spieler um 10 Uhr (4 Qualifikanten)<br>
+            Gruppe 4: 16 Spieler um 12 Uhr (4 Qualifikanten)
+        </p>
+        <p>
+            Startzeiten der einzelnen Partien sind unter <a href="?section=results&tab=friday">Auslosung / Ergebnisse</a> aufgeführt
+            Anwesenheitspflicht ist jeweils 30 Min. vor Startzeit.
+        </p>
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Spielmodus über das gesamte Turnier</strong>
+    </div>
+    <div class="col-md-6">
+        <p>
+            Einfach-KO 2 Gewinnsätze
+            10Ball á race to 5
+            Winnerbreak nach Regeln der WPA: <a href="http://wpa-pool.com">www.wpa-pool.com</a>
+        </p>
+        <p>
+            16 Spieler Qualifizieren sich für die <strong>Knock-Out-Challenge</strong>
+        </p>
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Knock-Out-Challenge</strong>
+    </div>
+    <div class="col-md-6">
+        <p>
+            Sonntag, 03.05.2015
+            Anstoß um 10 Uhr
+            16 gesetzte Top Spieler + 16 Qualifikanten
+        </p>
+        <p>
+            Anwesenheitspflicht ist jeweils 30 Min. vor Startzeit.
+        </p>
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Dresscode</strong>
+    </div>
+    <div class="col-md-6">
+        Es wird auf ein gepflegtes Erscheinungsbild Wert gelegt.
+    </div>
+</div>
+
+<?php
+$priceMoney = [
+    'Winner'    => '2.000,00',
+    'Runner-up' => '1.000,00',
+    '3 - 4'     => '500,00',
+    '5 - 8'     => '350,00',
+    '9 - 16'    => '250,00',
+    '17 - 32'   => '100,00'
+]
+?>
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Preisgeld</strong>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <? foreach ($priceMoney as $place => $price) : ?>
+                <div class="col-md-3">
+                    <?=$place?>:
+                </div>
+                <div class="col-md-9">
+                    <?=$price?>
+                </div>
+            <? endforeach ?>
+        </div>
+        Die Einnahme von Preisgeld ist steuerpflichtig.
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Anmeldung</strong>
+    </div>
+    <div class="col-md-6">
+        Die Anmeldung erfolgt über das <a href="?section=registration">Anmeldeformular</a> oder vor Ort und verpflichtet zur Zahlung des Startgelds.
+        <br><br>
+        <p class="label label-danger">Der Startplatz wird erst durch Geldeingang reserviert.</p>
+        <br><br>
+        Bei Abmeldung nach Geldeingang wird das Startgeld zurückerstattet, wenn das gewählte Feld komplett besetzt ist.
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Startgebühr</strong>
+    </div>
+    <div class="col-md-6">
+        60 € bei Geldeingang bis 27.04.2015
+        <br>
+        80 € bei Geldeingang ab 28.04.2015
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Konto</strong>
+    </div>
+    <div class="col-md-6">
+        BSV Playhouse Fürstenfeldbruck e.V.
+        <br>
+        Konto Nr.: 31817885
+        <br>
+        IBAN: DE59700530700031817885
+    </div>
+</div>
+
+<div class="alert alert-danger margin-top">
+    Mit Abgabe der Anmeldung erklären sich die Teilnehmer einverstanden,
+    dass Turnierergebnisse mit Namen sowie Fotos und Videos in den Medien (Presse, Internet etc.) veröffentlicht werden.
+    Die Weitergabe an Dritte ist ausgeschlossen.
+</div>

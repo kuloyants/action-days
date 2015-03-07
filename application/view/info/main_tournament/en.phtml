@@ -1,0 +1,146 @@
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Participants</strong>
+    </div>
+    <div class="col-md-6">
+        <a href="?section=participants&tab=main_tournament">Main tournament: 64 Teilnehmer</a>
+        +
+        <a href="?section=participants&tab=seeded">16 seeded Top Players</a>
+    </div>
+</div>
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Start times of the qualification rounds</strong>
+    </div>
+    <div class="col-md-6">
+        <p>
+            32er players on friday, Mai 01, 2015<br>
+            Group 1: 16 players at 10 am (4 qualifiers)<br>
+            Group 2: 16 players at 12 noon (4 qualifiers)
+        </p>
+        <p>
+            32er players on saturday, Mai 02, 2015<br>
+            Group 3: 16 players at 10 am (4 qualifiers)<br>
+            Group 4: 16 players at 12 noon (4 qualifiers)
+        </p>
+        <p>
+            Navigate to <a href="?section=results&tab=friday">Draw / Results</a> to see start times of all matches
+            Compulsary attendance is 30 min. before starting time.
+        </p>
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Playing mode through the whole tournament</strong>
+    </div>
+    <div class="col-md-6">
+        <p>
+            10 Ball<br>
+            single elimination 2 winning sets<br>
+            each set is a race to 5<br>
+            winnerbreak by rules of WPA: <a href="http://wpa-pool.com">www.wpa-pool.com</a>
+        </p>
+        <p>
+            16 players qualify for the <strong>Knock-Out-Challenge</strong>
+        </p>
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Knock-Out-Challenge</strong>
+    </div>
+    <div class="col-md-6">
+        <p>
+            Sunday, 03 May, 2015
+            16 seeded players + 16 qualifiers
+            First round (last 32): 10 am
+        </p>
+        <p>
+            Compulsary attendance is 30 min. before starting time.
+        </p>
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Dresscode</strong>
+    </div>
+    <div class="col-md-6">
+        Es wird auf ein gepflegtes Erscheinungsbild Wert gelegt.
+    </div>
+</div>
+
+<?php
+$priceMoney = [
+    'Winner'    => '2.000,00',
+    'Runner-up' => '1.000,00',
+    '3 - 4'     => '500,00',
+    '5 - 8'     => '350,00',
+    '9 - 16'    => '250,00',
+    '17 - 32'   => '100,00'
+]
+?>
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Price money</strong>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <? foreach ($priceMoney as $place => $price) : ?>
+                <div class="col-md-3">
+                    <?=$place?>:
+                </div>
+                <div class="col-md-9">
+                    <?=$price?>
+                </div>
+            <? endforeach ?>
+        </div>
+        Receipt of prize money is taxable.
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Registration</strong>
+    </div>
+    <div class="col-md-6">
+        The registration has to be done via the registration form or on location at the tournament management.
+        Registration obligates to payment of the starting fee.
+        <br><br>
+        <p class="label label-danger">The starting place will be reserved not until money receipt. </p>
+        <br><br>
+        In case of deregistration after payment the registration fee will be refunded if the chosen field is completely filled.
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Entry fee</strong>
+    </div>
+    <div class="col-md-6">
+        60 EUR with receipt until April 27, 2015
+        <br>
+        80 EUR with receipt from April 28, 2015
+    </div>
+</div>
+
+<div class="row information-detail-row">
+    <div class="col-md-6">
+        <strong>Konto</strong>
+    </div>
+    <div class="col-md-6">
+        BSV Playhouse Fürstenfeldbruck e.V.
+        <br>
+        Account: 31817885
+        <br>
+        IBAN: DE59700530700031817885
+    </div>
+</div>
+
+<div class="alert alert-danger margin-top">
+    By registration the participants agree that tournament results including name,
+    photos and videos are published in various media (press, internet etc.).
+    The transfer of personal data to third parties is excluded.
+</div>
