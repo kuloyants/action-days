@@ -4,7 +4,7 @@ class View {
 
         $return = null;
         if (!empty(trim($firstname)) && !empty(trim($surname))) {
-            $return = strtoupper($surname) . ', ' . $firstname;
+            $return = $firstname . ' ' . strtoupper($surname);
         }
         return $return;
     }

@@ -24,7 +24,9 @@
                     <td class="startTime text-center"><?=$matches[$i]['starttime']?></td>
                     <td data-player="<?=$matches[$i]['player_1']?>" class="player1 text-right">
                         <?=$view->playerName($matches[$i]['p1_firstname'], $matches[$i]['p1_surname'])?>
-                        <span class="glyphicon bfh-flag-<?=$matches[$i]['p1_country']?>">&nbsp;</span>
+                        <span
+                            title="<?=translate('country.' . mb_strtolower($matches[$i]['p1_country']))?>"
+                            class="glyphicon bfh-flag-<?=$matches[$i]['p1_country']?>">&nbsp;</span>
                     </td>
                     <td data-score="<?=$matches[$i]['player_1']?>" class="match_score text-center"><?=$matches[$i]['score_p1_match']?></td>
                     <td class="set_score text-center">
@@ -38,7 +40,9 @@
                     </td>
                     <td data-score="<?=$matches[$i]['player_2']?>" class="match_score text-center"><?=$matches[$i]['score_p2_match']?></td>
                     <td data-player="<?=$matches[$i]['player_2']?>" class="player2 text-left">
-                        <span class="glyphicon bfh-flag-<?=$matches[$i]['p2_country']?>">&nbsp;</span>
+                        <span
+                            title="<?=translate('country.' . mb_strtolower($matches[$i]['p2_country']))?>"
+                            class="glyphicon bfh-flag-<?=$matches[$i]['p2_country']?>">&nbsp;</span>
                         <?=$view->playerName($matches[$i]['p2_firstname'], $matches[$i]['p2_surname'])?></td>
                     <td class="status text-center"><?=$matches[$i]['status']?></td>
                 <? else : ?>

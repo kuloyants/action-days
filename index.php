@@ -1,7 +1,13 @@
 <?php
+include('Bootstrap.php');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-include('Bootstrap.php');
+ini_set('display_startup_errors', 1);
+ini_set('log_errors', 0);
+ini_set('error_log', 'logs/application.log');
+//set_error_handler("errorHandler");
+//set_exception_handler("exceptionHandler");
+//register_shutdown_function("fatalHandler");
 include('service/Db.php');
 include('config.php');
 include(APPLICATION_PATH . 'view/helpers.php');
@@ -16,13 +22,6 @@ $section = [
 ];
 
 $isXmlHttpRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
-if (!$isXmlHttpRequest) {
-    include 'header.html'; // doctype, <html> und das komplette <head>-element
-    echo "    <body class='page-top'>\n";
-    include 'menu.phtml';
-} else {
-
-}
 
 if (get_magic_quotes_gpc()) {
     $in = array(&$_GET, &$_POST, &$_COOKIE);
@@ -73,7 +72,22 @@ if (
     if (file_exists($file = VIEW_PATH . $ret['filename'])) {
         $data = $ret['data']; // $data is available in the template
         $view = new View();
-        include $file;
+        if ($isXmlHttpRequest) {
+            header('Content-Type: application/json');
+            ob_start();
+            include $file;
+            $string = ob_get_clean();
+            $data['content'] = $string;
+            echo json_encode($data);
+            return;
+        } else {
+            include 'header.html'; // doctype, <html> und das komplette <head>-element
+            echo "<html><body class='page-top'>\n";
+            include 'menu.phtml';
+            include $file;
+            include('footer.html');
+            echo "</body></html>\n";
+        }
     } else {
         $data = [];
         $data['msg'] = 'File "'.$file.'" is missing.';
@@ -94,10 +108,5 @@ if (
     $data = [];
     $data['msg'] = 'Die Include-Datei hat einen ungültigen Wert zurückgeliefert.';
     include VIEW_PATH . '/error.phtml';
-}
-if (!$isXmlHttpRequest) {
-    include('footer.html');
-    echo "    </body>\n";
-    echo "</html>\n";
 }
 ?>

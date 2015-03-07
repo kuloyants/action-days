@@ -133,7 +133,12 @@
                             <? endforeach ?>
                         </select>
                     </td>
-                    <td><button data-role="edit" data-match="<?=$matches[$i]['Nr']?>" class="btn btn-info" type="button">OK</button></td>
+                    <td>
+                        <div class="text-center">
+                            <button data-role="edit" data-match="<?=$matches[$i]['Nr']?>" class="btn btn-info buttonConfirm" type="button">OK</button>
+                            <img id="waitTillConfirmed" class="hidden" src="assets/img/icons/loading.gif" />
+                        </div>
+                    </td>
                 </tr>
             <? endif ?>
             <?unset($matches[$i])?>

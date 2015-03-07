@@ -18,8 +18,24 @@ foreach ($data['formElements'] as $elementName => $element) {
 <div class="row content-row text-left">
     <div class="col-lg-8 col-lg-offset-2">
         <form action="?section=registration" name="sentMessage" id="registerForm" method="post" novalidate>
+            <? if (array_key_exists('time', $data['formElements'])) : ?>
+                <? $element = $data['formElements']['time'] ?>
+                <input type="<?=$element['type']?>"
+                       value="<?=translate($element['attributes']['value'])?>"
+                       name="<?=$element['name']?>">
+            <? endif ?>
+            <? if (array_key_exists('email', $data['formElements'])) : ?>
+                <? $element = $data['formElements']['email'] ?>
+                <p class="hide">
+                    <label for="<?=$element['attributes']['id']?>"><?=$element['options']['label']?></label>
+                    <input type="<?=$element['type']?>"
+                           value="<?=translate($element['attributes']['value'])?>"
+                           size="<?=translate($element['attributes']['size'])?>"
+                           name="<?=$element['name']?>"/>
+                </p>
+            <? endif ?>
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group controls">
                             <? if (array_key_exists('gender', $data['formElements'])) : ?>
@@ -35,21 +51,22 @@ foreach ($data['formElements'] as $elementName => $element) {
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group controls">
                             <? if (array_key_exists('country', $data['formElements'])) : ?>
-                                <? $element = $data['formElements']['country'] ?>
-                                <div class="bfh-selectbox bfh-countries" data-name="<?=$element['name']?>" data-country="DE" data-flags="true">
-                                    <select name="<?$element['name']?>" class="form-control bfh-countries" data-country="DE" data-language="de"></select>
-                                </div>
+                                <? $element = $data['formElements']['country'];?>
+                                    <select name="<?=$element['name']?>" class="form-control">
+                                        <? include(VIEW_PATH . "/partials/countries_select_options_" . getLang() . ".phtml")?>
+                                    </select>
+
                             <? endif ?>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <? if (array_key_exists('firstname', $data['formElements'])) : ?>
@@ -64,7 +81,7 @@ foreach ($data['formElements'] as $elementName => $element) {
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <? if (array_key_exists('playerEmail', $data['formElements'])) : ?>
@@ -82,7 +99,7 @@ foreach ($data['formElements'] as $elementName => $element) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <? if (array_key_exists('surname', $data['formElements'])) : ?>
@@ -97,7 +114,7 @@ foreach ($data['formElements'] as $elementName => $element) {
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <? if (array_key_exists('playerPhone', $data['formElements'])) : ?>
@@ -117,7 +134,7 @@ foreach ($data['formElements'] as $elementName => $element) {
                 <p><?=translate('registration.start_timestamp.hint')?></p>
             </div>
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group controls">
                             <? if (array_key_exists('start_day', $data['formElements'])) : ?>
@@ -132,7 +149,7 @@ foreach ($data['formElements'] as $elementName => $element) {
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group controls">
                             <? if (array_key_exists('start_time', $data['formElements'])) : ?>
@@ -149,7 +166,7 @@ foreach ($data['formElements'] as $elementName => $element) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-md-12">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <? if (array_key_exists('message', $data['formElements'])) : ?>
@@ -166,8 +183,8 @@ foreach ($data['formElements'] as $elementName => $element) {
             <br>
             <div id="success"></div>
             <div class="row">
-                <div class="form-group col-xs-12">
-                    <button type="submit" class="col-md-5 pull-right btn btn-blue"><?=translate('form.button.register')?></button>
+                <div class="form-group col-md-12">
+                    <button type="submit" class="col-xs-12 col-md-5 pull-right btn btn-blue"><?=translate('form.button.register')?></button>
                 </div>
             </div>
         </form>

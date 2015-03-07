@@ -12,23 +12,17 @@ $(document).ready($(function() {
                 data: $form.serialize(),
                 cache: false,
                 success: function(response) {
-                    $("#registration").replaceWith($(response));
-                },
-                error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
+                    if ( "content" in response) {
+                        $("#registration").replaceWith($(response.content));
+                    } else if ( "php_error" in response ) {
+                        $("#registration").replaceWith($(response.php_error));
+                    }
                 },
             })
         },
         filter: function() {
             return $(this).is(":visible");
-        },
+        }
     });
 
     $("a[data-toggle=\"tab\"]").click(function(e) {

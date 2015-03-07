@@ -5,15 +5,15 @@
  */
 
 // Smooth Scrolling: Smooth scrolls to an ID on the current page.
-$(function() {
-    $('a').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
+//$(function() {
+//    $('a').bind('click', function(event) {
+//        var $anchor = $(this);
+//        $('html, body').stop().animate({
+//            scrollTop: $($anchor.attr('href')).offset().top
+//        }, 1500, 'easeInOutExpo');
+//        event.preventDefault();
+//    });
+//});
 
 // Activates floating label headings for the contact form.
 $(function() {

@@ -6,6 +6,25 @@ $return = [
 
 $db = Db::getInstance();
 $formElements = [
+    'email' => [
+        'name' => 'email',
+        'type' => 'text',
+        'options' => [
+            'label' => 'don`t fill out',
+        ],
+        'attributes' => [
+            'id' => 'email',
+            'size' => 60,
+            'value' => ''
+        ]
+    ],
+    'time' => [
+        'name' => 'time',
+        'type' => 'hidden',
+        'attributes' => [
+            'value' => time()
+        ]
+    ],
     'gender' => [
         'name' => 'gender',
         'type' => 'select',
@@ -129,6 +148,20 @@ $formElements = [
 ];
 
 if ('POST' == $_SERVER['REQUEST_METHOD']) {
+    if(isset($_POST['email']) && $_POST['email']) {
+        throw new Exception('email field has been filled out => spam suspicion');
+    }
+
+    if ( isset($_POST['time']) && is_numeric($_POST['time'])) {
+        $posted = intval($_POST['time']);
+        $sendTime = (time() - $posted);
+        if ($sendTime < 10 || $sendTime > 36000) {
+            throw new Exception('that was too fast => spam suspicion');
+        }
+    } else {
+        throw new Exception('No time parameter given or time parameter is not integer => spam suspicion');
+    }
+
     foreach($_POST as $element => $value) {
         if (!array_key_exists($element, $formElements)) {
             throw new Exception('unregistered post param: ' . $element . ' => '. $value);
@@ -144,10 +177,6 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
         ) {
             $errorMessages[$element] = translate('error.validate.required.' . $element);
         }
-
-//        if (!isset($_POST[$element])) {
-//            $_POST[$element] = null;
-//        }
     }
     if (!empty($errorMessages)) {
         $return['data'] = [
@@ -186,7 +215,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
     }
     $return['data']['valid'] = true;
 
-    mail('valery.kuloyants@live.de', 'Bestätigung', 'Sie wurden registriert', 'From: info@stage.action-days.de');
+//    mail('admin@localhost', 'Bestätigung', 'Sie wurden registriert', 'From: info@stage.action-days.de');
 
     return $return;
 } else {
