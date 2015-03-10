@@ -40,12 +40,6 @@ section .container {
 	background-color: #0a8fd5;
 }
 
-.navbar-default .navbar-nav li a:hover,
-.navbar-inverse .navbar-nav li a:hover {
-	background-color: #0a8fd5;
-	color: #fff
-}
-
 
 /*---------------------------------------
  **   SECTION:  PORTFOLIO          -----
@@ -233,13 +227,22 @@ section .container {
 }
 
 .dropdown-menu {
-	background-color: #333;
+	background-color: #222;
 }
 
 .navbar-inverse .navbar-nav .dropdown-menu li a:focus,
 .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
 	background-color: #0a8fd5;
 	color: #fff;
+}
+
+/* HOVER NAVIGATION */
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #222;
+    color: #0a8fd5;
 }
 
 footer.footer {

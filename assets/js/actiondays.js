@@ -16,6 +16,11 @@ $(function() {
 });
 
 $(document).ready(function () {
+    $(".dropdown").on("mouseout", function() {
+        $(this).removeClass('open');
+    }).on("mouseover", function() {
+        $(this).addClass('open');
+    });
 
     $("[data-role=languages]").on("click", "a", function(event) {
         event.preventDefault();
