@@ -1,8 +1,8 @@
 <?php
 $tabs = [
     'main_tournament'   => [],
-    'gambling'          => [],
     'wcop'              => [],
+    'gambling'          => [],
 ];
 
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {

@@ -44,7 +44,7 @@
                 <? endfor ?>
                 <? if (!empty($players)) : ?>
                     <tr>
-                        <th colspan="3" class="text-center"><?=translate('table.column.waitinglist')?></th>
+                        <th colspan="3" class="text-center"><?=translate('table.column.waitinglist')?> (<?=count($players)?>)</th>
                     </tr>
                     <? $currentWaitingListCount = 0 ?>
                     <? $maxWaitingListItems = 3 ?>

@@ -152,7 +152,7 @@ hr.colored {
 }
 
 .navbar-inverse {
-	background-color: #222;
+	background-color: #000;
 }
 
 .navbar-default,
@@ -163,13 +163,16 @@ hr.colored {
 
 .navbar-default .navbar-brand,
 .navbar-inverse .navbar-brand {
+    font-weight: bold;
+    font-size: 30px;
 	padding: 0 15px;
 	text-decoration: none;
-	color: #fff;
+	color: #0a8fd5;
 	opacity: 1;
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
 	transition: all .5s;
+    font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -211,7 +214,9 @@ hr.colored {
 	}
 
 	.navbar-fixed-top .navbar-brand:hover {
-		opacity: .5;
+		opacity: .8;
+        background-color: #000;
+        color: #0a8fd5;
 	}
 
 	.navbar-default.navbar-expanded,
