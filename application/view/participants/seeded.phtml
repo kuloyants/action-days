@@ -21,7 +21,7 @@
                                             <h5 class="white-text blue-border-bottom">
                                                 <?=$playerFullName?>
                                             </h5>
-                                            <img style="margin: auto" height="50" src="<?=IMG_PATH . "icons/country/" . $player['country_code'] . '.png'?>"
+                                            <img style="margin: auto" height="50" src="<?=IMG_PATH . "icons/country/" . mb_strtolower($player['country_code']) . '.png'?>"
                                                  alt="<?=translate("country." . mb_strtolower($player['country_code']))?>">
                                             <div class="details white-text">
                                                 <?=translate("country." . mb_strtolower($player['country_code']))?>
