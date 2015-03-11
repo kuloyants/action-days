@@ -16,7 +16,7 @@ function getMatchesForDay($day)
             $matchNr = 'SU%';
             break;
         case 'wcop':
-            $matchNr = '';
+            $matchNr = 'NC%';
             break;
         default:
             throw new Exception("unknown play day {$day} given");

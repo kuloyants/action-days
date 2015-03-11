@@ -28,22 +28,6 @@ section .container {
 	display: block;
 }
 
-/*#languages {*/
-	/*padding: 15px 0;*/
-/*}*/
-
-/*#languages a {*/
-	/*font-weight: bold;*/
-	/*color: #fff;*/
-/*}*/
-
-/*#languages a:hover,*/
-/*#languages a:focus {*/
-	/*color: #fff;*/
-	/*padding: 5px;*/
-	/*background-color: #0a8fd5;*/
-/*}*/
-
 .navbar-default .navbar-nav li a:hover,
 .navbar-inverse .navbar-nav li a:hover {
 	color: #0a8fd5
@@ -114,7 +98,7 @@ section .container {
 	right: 10px;
 	bottom: 10px;
 	background: rgba(0,0,0,0.5);
-	padding-top: 18%;
+	padding-top: 6%;
 	text-align: center;
 	filter: alpha(opacity=0);
 	opacity: 0;
@@ -136,6 +120,7 @@ section .container {
 	margin-bottom: 15px;
 	font-weight: bold;
 	text-transform: uppercase;
+    line-height: 23px;
 }
 .cbp-rfgrid li a:hover .project-info {
 	filter: alpha(opacity=100);
@@ -252,8 +237,8 @@ section .container {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #222;
-    color: #0a8fd5;
+    background-color: #0a8fd5;
+    color: #fff;
 }
 
 footer.footer {
@@ -417,4 +402,11 @@ footer .margin-top {
 
 #info .toRegisterPage i {
     padding-left: 33px;
+}
+
+#participants #wcop .countryTeam {
+    background-color: #0a8fd5;
+    border-bottom: 2px solid #fff;
+    /*margin: 10px 0;*/
+    padding: 10px 0;
 }

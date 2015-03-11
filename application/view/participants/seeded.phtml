@@ -1,15 +1,12 @@
 <?php
 ?>
 <div class="row projects">
-    <div id="loader" style="display: none;">
-        <div class="loader-icon"></div>
-    </div>
     <div class="col-md-12" id="portfolio-list" style="margin-left: 0px; display: block;">
         <!-- PLAYER ITEMS-->
         <div style="background-color: #0a8fd5;">
             <ul class="cbp-rfgrid">
                 <? foreach($data['players'] as $player) : ?>
-                    <?$playerFullName = "{$player['firstname']}  {$player['nickname']} {$player['surname']}"?>
+                    <?$playerFullName = "{$player['firstname']} <br><i style='text-transform: capitalize'>{$player['nickname']}</i><br> {$player['surname']}"?>
                     <? if($player['surname'] != 'unknown') : ?>
                         <li data-profile="<?=mb_strtolower($player['id'])?>" class="moreDialog zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
                             <a class="">
@@ -17,7 +14,6 @@
                                     <img src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.jpg'?>" alt="<?=$playerFullName?>">
                                     <div class="project-info">
                                         <div class="project-details">
-
                                             <h5 class="white-text blue-border-bottom">
                                                 <?=$playerFullName?>
                                             </h5>

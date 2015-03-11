@@ -1,1 +1,16 @@
 <?php
+$countries = $data['countries'];
+$imgHeight = '33%';
+?>
+
+<div class="row">
+    <? foreach($countries as $countryCode => $countryData) : ?>
+        <div class="col-md-6">
+            <div class="countryTeam">
+                <img width="24%" src="<?=IMG_PATH . 'seeded/' . $countryData['player1']['surname'] . '.jpg'?>" alt="<?=translate('country.' . $countryCode)?>">
+                <img width="42%" src="<?=IMG_PATH . 'wcop/participants/' . $countryCode . '.jpg'?>" alt="<?=translate('country.' . $countryCode)?>">
+                <img width="24%" src="<?=IMG_PATH . 'seeded/' . $countryData['player2']['surname'] . '.jpg'?>" alt="<?=translate('country.' . $countryCode)?>">
+            </div>
+        </div>
+    <?endforeach?>
+</div>
