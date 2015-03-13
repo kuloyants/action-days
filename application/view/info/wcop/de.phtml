@@ -1,0 +1,56 @@
+<div class="information-details">
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Wann</strong>
+        </div>
+        <div class="col-md-8">
+            <p>Samstag, 2 Mai 2015</p>
+            <p>Erstes Match: 12:00</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Teilnehmer</strong>
+        </div>
+        <div class="col-md-8">
+            <a href="?section=participants&tab=wcop">8 Länder vertreten durch jeweils 2 Spieler</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Spielmodus</strong>
+        </div>
+        <div class="col-md-8">
+            <p>Wechselstoß</p>
+            <p>Einfach-KO</p>
+            <p>7 Gewinnspiele, Winnerbreak</p>
+            <p>Shot Clock 35(10) Sekunden</p>
+            <p>Alle Matches werden in der Playhouse Fürstenfeldbruck Arena ausgetragen.</p>
+            <p>Startzeiten der einzelnen Partien des Nation`s Cup sind unter <a href="?section=results&tab=wcop">Auslosung / Ergebnisse</a> zu sehen.</p>
+        </div>
+    </div>
+    <?php
+    $priceMoney = [
+        'Winner'    => '1.000,00',
+        'Runner-up' => '500,00',
+        '3 - 4'     => '250,00',
+    ]
+    ?>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Preisgeld</strong>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <? foreach ($priceMoney as $place => $price) : ?>
+                    <div class="col-md-3">
+                        <?=$place?>:
+                    </div>
+                    <div class="col-md-9">
+                        <?=$price?>
+                    </div>
+                <? endforeach ?>
+            </div>
+        </div>
+    </div>
+</div>

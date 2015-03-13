@@ -42,6 +42,7 @@ a {
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
 	transition: all .5s;
+    font-weight: bold;
 }
 
 a:hover,

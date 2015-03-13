@@ -20,12 +20,14 @@ $activeTab =$data['activeTab'];
             </div>
         </div>
         <div id="sliderlist">
-            <? foreach($tabs as $name => $dataPartial) : ?>
-                <div class="content <?=$name?> <?=$activeTab == $name ? 'active' : ''?> text-left" data-cat="<?=$name?>>" data-toggle="modal">
-                    <? $data = $dataPartial?>
-                    <? include("info/{$name}.phtml") ?>
-                </div>
-            <? endforeach ?>
+            <div id="<?=$activeTab?>">
+                <? foreach($tabs as $name => $dataPartial) : ?>
+                    <div class="content <?=$name?> <?=$activeTab == $name ? 'active' : ''?> text-left" data-cat="<?=$name?>>" data-toggle="modal">
+                        <? $data = $dataPartial?>
+                        <? include("info/{$name}.phtml") ?>
+                    </div>
+                <? endforeach ?>
+            </div>
         </div>
     </div>
 </section>

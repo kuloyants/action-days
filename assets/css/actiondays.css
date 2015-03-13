@@ -20,6 +20,11 @@ section .container {
     margin-top: 20px;
 }
 
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+
 #sliderlist div.content {
 	display: none;
 }
@@ -384,27 +389,30 @@ footer .margin-top {
 
 /* INFO */
 
-#info .information-detail-row {
-    border-top: 1px solid #dfdfdf;
+#info .information-details > .row {
+    border-top: 1px solid #0a8fd5;
     margin: 0 15px;
     padding: 15px 0;
 }
 
-#info #sliderlist .content {
-    margin: auto;
-    max-width: 889px;
+#info .information-details > .row:last-of-type {
+    border-bottom: 1px solid #0a8fd5;
 }
 
-#info .information-detail-row div,
-#info .information-detail-row p {
+#info #sliderlist .content {
+    margin: auto;
+}
+
+#info .information-details > .row div,
+#info .information-details > .row p {
     font-size: 16px;
 }
 
-#info .toRegisterPage i {
-    padding-left: 33px;
+#info .btn-blue i {
+    padding-left: 13px;
 }
 
-#participants #wcop .countryTeam {
+#info #wcop .countryTeam {
     background-color: #0a8fd5;
     border-bottom: 2px solid #fff;
     /*margin: 10px 0;*/

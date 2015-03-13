@@ -3,14 +3,16 @@ $tabs = [
     'friday'            => [],
     'saturday'          => [],
     'seeded'            => [],
-    'wcop'              => [],
 ];
 
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
     $activeTab = 'friday';
 }
 
-$tabs[$activeTab] = include(APPLICATION_PATH . "includes/participants/{$activeTab}.php");
+$tabFile = APPLICATION_PATH . "includes/info/bla.php";
+if (file_exists($tabFile)) {
+    $tabs[$activeTab] = include(APPLICATION_PATH . "includes/participants/{$activeTab}.php");
+}
 
 return [
     'filename' => 'participants.phtml',
