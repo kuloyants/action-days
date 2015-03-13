@@ -9,9 +9,9 @@ if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
     $activeTab = 'friday';
 }
 
-$tabFile = APPLICATION_PATH . "includes/info/bla.php";
+$tabFile = APPLICATION_PATH . "includes/participants/{$activeTab}.php";
 if (file_exists($tabFile)) {
-    $tabs[$activeTab] = include(APPLICATION_PATH . "includes/participants/{$activeTab}.php");
+    $tabs[$activeTab] = include($tabFile);
 }
 
 return [

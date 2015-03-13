@@ -874,7 +874,9 @@ aside.cta-quote span.quote {
 	cursor: pointer;
 }
 
-.portfolio-filter #filters li .filter.active {
+.portfolio-filter #filters li .filter.active,
+.portfolio-filter #filters li .filter:hover,
+.portfolio-filter #filters li .filter:focus {
 	border-color: #0a8fd5;
 	color: #fff;
 	background-color: #0a8fd5;

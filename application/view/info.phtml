@@ -8,25 +8,23 @@ $activeTab =$data['activeTab'];
         <hr class="colored">
         <div class="row content-row">
             <div class="col-lg-12">
-                <div class="slider-buttons portfolio-filter">
+                <div class="portfolio-filter">
                     <ul id="filters" class="clearfix">
                         <? foreach ($tabs as $name => $tab) : ?>
                             <li>
-                                <span class="filter<?=$activeTab == $name ? ' active' : ''?>" data-filter="<?=$name?>"><?=translate('tab.' . $name)?></span>
+                                <a href="?section=info&tab=<?=$name?>">
+                                    <span class="filter<?=$activeTab == $name ? ' active' : ''?>" data-filter="<?=$name?>"><?=translate('tab.' . $name)?></span>
+                                </a>
                             </li>
                         <? endforeach ?>
                     </ul>
                 </div>
             </div>
         </div>
-        <div id="sliderlist">
-            <div id="<?=$activeTab?>">
-                <? foreach($tabs as $name => $dataPartial) : ?>
-                    <div class="content <?=$name?> <?=$activeTab == $name ? 'active' : ''?> text-left" data-cat="<?=$name?>>" data-toggle="modal">
-                        <? $data = $dataPartial?>
-                        <? include("info/{$name}.phtml") ?>
-                    </div>
-                <? endforeach ?>
+        <div id="<?=$activeTab?>" class="text-left">
+            <? $data = $tabs[$activeTab] ?>
+            <div class="content active" data-cat="<?=$activeTab?>" data-toggle="modal">
+                <? include("info/{$activeTab}.phtml") ?>
             </div>
         </div>
     </div>
