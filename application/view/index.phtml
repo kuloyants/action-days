@@ -41,7 +41,7 @@ $carouselItems = [
             <hr class="colored">
         </div>
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
                 <div id="<?=$carouselId?>" class="carousel slide margin-bottom" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -74,15 +74,18 @@ $carouselItems = [
                     </a>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
                 <? if ($GLOBALS['locale'] == 'de') : ?>
                     <p>Vom 01. -03. Mai 2015 ist es wieder so weit, der Billardsportverein Playhouse FFB veranstaltet die zweiten Playhouse Actiondays Fürstenfeldbruck.</p>
                     <p>Wie auch schon bei den ersten Actiondays im November 2013 werden wieder internationale Stars, darunter auch amtierende Welt- und Europameister mit dabei sein und dem Turnier ein internationales Flair verleihen.</p>
                     <p>Insgesamt wird das Turnier 64 Teilnehmer plus 16 gesetzte Topspieler aus der europäischen Elite umfassen. Außerdem erwähnenswert, das Gesamtpreisgeld von 9.000 €.</p>
-                    <p>Neben dem Hauptturnier wird es noch zahlreiche weitere Billard-Highlights geben: Am Samstag, den 02. Mai 2015 ab 12 Uhr der „Nations-Cup“ gespielt. Dieser ist an den legendären, weltweit bekannten World Cup of Pool angelehnt und verspricht durch 8 Teams mit je zwei National-Spielern, Billard vom Feinsten. Die Spieler vertreten bei diesem Turnier ihr jeweiliges Heimatland und versuchen sich das Preisgeld von insgesamt 2.000 € zu sichern.</p>
+                    <p>Neben dem Hauptturnier wird es noch zahlreiche weitere Billard-Highlights geben: Am Samstag, den 02. Mai 2015 wird ab 12 Uhr der „Nation-Cup“ ausgetragen. Dieser ist an den legendären, weltweit bekannten World Cup of Pool angelehnt und verspricht durch 8 Teams mit je zwei National-Spielern, Billard vom Feinsten. Die Spieler vertreten bei diesem Turnier ihr jeweiliges Heimatland und versuchen sich das Preisgeld von insgesamt 2.000 € zu sichern.</p>
                 <? else : ?>
+                    <p>From 1–3 May 2015, BSV Playhouse FFB hosts the second Playhouse Actiondays in Fürstenfeldbruck.</p>
+                    <p>Like the first Actiondays in November 2013, international stars, including World and European champions will give the tournament a special flair.</p>
+                    <p>The tournament will include 64 players. Additionally, 16 seeded players from the European elite will participate. The prize money is € 9.000.</p>
+                    <p>There will be a lot more billard highlights in addition to the main event: On Saturday, the 2nd of May, at 12 p.m., the „Nation Cup“ will be held. It is inspired by the legendary, worldwide known World Cup of Pool. The event promises billard at its best with 8 teams having 2 national players each. The players representing their home country will try to secure the prize money of € 2.000.</p>
                 <? endif ?>
-
             </div>
         </div>
         <div class="row">
@@ -90,13 +93,19 @@ $carouselItems = [
                 <? if ($GLOBALS['locale'] == 'de') : ?>
                     <p>Das Alleinstellungsmerkmal der ActionDays sind die MoneyMatches. So können auch dieses Jahr am Freitag und Samstag ab 18 Uhr MoneyMatches gespielt werden. An diesen kann jeder teilnehmen und sich vor Ort einen Spielpartner suchen. </p>
                     <p>Auch bei den diesjährigen ActionDays wird am Samstag, parallel zum Billardturnier, ein Pokerturnier veranstaltet. An diesem Event kann ebenfalls jeder teilnehmen.</p>
-                    <p>Eines der Highlights wird zweifelsohne das MoneyMatch am Freitag Abend um 20 Uhr mit der Schweizer Nr. 1 Dimitri Jungo sein. Dieses findet in der eigens für solche Veranstaltungen gebauten ActionArena mit zwei Zuschauertribünen, einem Technik-Podest und einem Pool-Tisch statt. Wer als Gewinner aus diesem Match herausgeht wird sich nicht nur die Anerkennung zahlreicher Zuschauer sichern, zusätzlich gibt es auch noch 2.000 €.  </p>
-                    <p>Das Feedback von Simon D’Vali, eine feste Größe im internationalen Billardsport und Betreuer des Team England 2013, bei den ersten Playhouse ActionDays Fürstenfeldbruck sagt alles.
-                        <i>„The courtesy, hospitality and love the English Team were shown was beyond measure and has completely overwhelmed us. We were all collected at the airport like superstars and taken to the hotel which was yards from the venue where we were playing. The club itself is a really fine place that clearly looks after the players. The Arena…..well…..look at the pictures. The atmosphere during the matches was borderline fanatical.“</i>
-                    </p>
-                    <p>Allein diese Aussage ist einen Besuch bei den 2nd Playhouse ActionDays wert. Dieses Turnier besticht nicht nur durch die hohe Zahl an internationalen Stars, sondern auch durch eine fantastische, atemberaubende Atmosphäre.</p>
+                    <p>Eines der Highlights wird zweifelsohne das MoneyMatch am Freitag Abend um 20 Uhr mit der Schweizer Nr. 1 Dimitri Jungo, am Freitag Abend um 20 Uhr sein. Dieses findet in der eigens für solche Veranstaltungen gebauten ActionArena mit zwei Zuschauertribünen, einem Technik-Podest und einem Pool-Tisch statt. Wer als Gewinner aus diesem Match hervorgeht, wird sich nicht nur die Anerkennung zahlreicher Zuschauer sichern, zusätzlich gibt es auch noch 2.000 €.</p>
+                    <p>Das Feedback von Simon D’Vali, eine feste Größe im internationalen Billardsport und Betreuer des Team England 2013, bei den ersten Playhouse ActionDays Fürstenfeldbruck sagt alles.</p>
+                    <p><i>„The courtesy, hospitality and love the English Team were shown was beyond measure and has completely overwhelmed us. We were all collected at the airport like superstars and taken to the hotel which was yards from the venue where we were playing. The club itself is a really fine place that clearly looks after the players. The Arena…..well…..look at the pictures. The atmosphere during the matches was borderline fanatical.“</i></p>
+                    <p>Allein diese Aussage zeigt, dass sich ein Besuch bei den zweiten Playhouse ActionDays 2015 in Fürstenfeldbruck lohnt. Dieses Turnier besticht nicht nur durch die hohe Zahl an internationalen Stars, sondern auch durch eine fantastische, atemberaubende Atmosphäre.</p>
                     <p>Wir freuen uns auf euren Besuch.</p>
                 <? else :?>
+                    <p>The MoneyMatches are the emotional selling propositions of the Actiondays. For the first time this year, everbody is allowed to take part at these suspense-packed matches. The MoneyMatches start at 6 p.m on Saturday and Sunday.</p>
+                    <p>Also this year, a poker tourrnament will take place parallel to the billard tournament. Everyone is welcome to join the poker event.</p>
+                    <p>One of the highlights is the MoneyMatch of the Swiss number one player, Dimitri Jungo, on Friday evening, at 8 p.m. This event will be held in the specially constructed ActionArena with two grand stands. Who will win this MoneyMatch is not only going to receive recognition, but a prize money of € 2.000.</p>
+                    <p>The feedback of Simon D’Vali, a constant in the international billard sport and carer of Team England at the first Actiondays 2013, says it all:</p>
+                    <p><i>„The courtesy, hospitality and love the English Team were shown was beyond measure and has completely overwhelmed us. We were all collected at the airport like superstars and taken to the hotel which was yards from the venue where we were playing. The club itself is a really fine place that clearly looks after the players. The Arena…..well…..look at the pictures. The atmosphere during the matches was borderline fanatical.“</i></p>
+                    <p>This statement alone shows that the Actiondays is worth a visit. The tournament does not only bring together a high number of international players, but also guarantees a fantastic and stunning atmosphere.</p>
+                    <p>We are looking forward to your visit.</p>
                 <? endif?>
             </div>
         </div>

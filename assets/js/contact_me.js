@@ -1,4 +1,5 @@
 $(document).ready($(function() {
+    $('#registerForm').trigger("reset");
     $("input,select").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
