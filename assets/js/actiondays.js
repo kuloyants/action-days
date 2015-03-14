@@ -25,8 +25,9 @@ $(document).ready(function () {
     $("[data-role=languages]").on("click", "a", function(event) {
         event.preventDefault();
         var lang = $(this).data("url");
-        window.location = (window.location.href.replace(/[&\?]lang=[^&]*/i, ''))
-                            + (window.location.href.indexOf('?') != -1 ? "&lang=" + lang : "?lang=" + lang);
+        var cleanUrl = window.location.href.replace(/[&\?]lang=[^&]*/i, '');
+        var langParam = cleanUrl.indexOf('?') != -1 ? "&lang=" + lang : "?lang=" + lang;
+        window.location = cleanUrl + langParam;
     });
 
     $(".match_score").each(function() {
