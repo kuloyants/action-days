@@ -1,63 +1,124 @@
 <?php
 $return['countries'] = [
-    'de' => [
+//    'de' => [
+//        'player1' => [
+//            'firstname' => 'Valery',
+//            'surname' => 'Kuloyants'
+//        ],
+//        'player2' => [
+//            'firstname' => 'Harry',
+//            'surname' => 'Stolka'
+//        ]
+//    ],
+//    'cz' => [
+//        'player1' => [
+//            'firstname' => 'Roman',
+//            'surname' => 'Hybler'
+//        ],
+//        'player2' => [
+//            'firstname' => 'Michal',
+//            'surname' => 'Gavenciak'
+//        ]
+//    ],
+//    'ch' => [
+//        'player1' => [
+//            'firstname' => 'Dimitri',
+//            'surname' => 'Jungo'
+//        ],
+//        'player2' => [
+//            'firstname' => 'Ronald',
+//            'surname' => 'Regli'
+//        ]
+//    ],
+//    'gb' => [
+//        'player1' => [
+//            'firstname' => 'Chris',
+//            'surname' => 'Melling'
+//        ],
+//        'player2' => [
+//            'firstname' => 'Raj',
+//            'surname' => 'Hundal'
+//        ]
+//    ],
+//    'hr' => [
+//        'player1' => [
+//            'firstname' => 'Ivica',
+//            'surname' => 'Putnik'
+//        ],
+//        'player2' => [
+//            'firstname' => 'Philipp',
+//            'surname' => 'Stojanovic'
+//        ]
+//    ],
+//    'it' => [
+//        'player1' => [
+//            'firstname' => 'Antonio',
+//            'surname' => 'Benvenuto'
+//        ],
+//        'player2' => [
+//            'firstname' => 'Patrick',
+//            'surname' => 'Menillo'
+//        ]
+//    ],
+
+    'team1' => [
         'player1' => [
-            'firstname' => 'Valery',
-            'surname' => 'Kuloyants'
+            'firstname' => '',
+            'surname' => 'unknown'
         ],
         'player2' => [
-            'firstname' => 'Harry',
-            'surname' => 'Stolka'
+            'firstname' => '',
+            'surname' => 'unknown'
         ]
     ],
-    'cz' => [
+    'team2' => [
         'player1' => [
-            'firstname' => 'Roman',
-            'surname' => 'Hybler'
+            'firstname' => '',
+            'surname' => 'unknown'
         ],
         'player2' => [
-            'firstname' => 'Michal',
-            'surname' => 'Gavenciak'
+            'firstname' => '',
+            'surname' => 'unknown'
         ]
     ],
-    'ch' => [
+    'team3' => [
         'player1' => [
-            'firstname' => 'Dimitri',
-            'surname' => 'Jungo'
+            'firstname' => '',
+            'surname' => 'unknown'
         ],
         'player2' => [
-            'firstname' => 'Ronald',
-            'surname' => 'Regli'
+            'firstname' => '',
+            'surname' => 'unknown'
         ]
     ],
-    'gb' => [
+    'team4' => [
         'player1' => [
-            'firstname' => 'Chris',
-            'surname' => 'Melling'
+            'firstname' => '',
+            'surname' => 'unknown'
         ],
         'player2' => [
-            'firstname' => 'Raj',
-            'surname' => 'Hundal'
+            'firstname' => '',
+            'surname' => 'unknown'
         ]
     ],
-    'hr' => [
+    'team5' => [
         'player1' => [
-            'firstname' => 'Ivica',
-            'surname' => 'Putnik'
+            'firstname' => '',
+            'surname' => 'unknown'
         ],
         'player2' => [
-            'firstname' => 'Philipp',
-            'surname' => 'Stojanovic'
+            'firstname' => '',
+            'surname' => 'unknown'
         ]
     ],
-    'it' => [
+    'team6' => [
         'player1' => [
-            'firstname' => 'Antonio',
-            'surname' => 'Benvenuto'
+            'firstname' => '',
+            'surname' => 'unknown'
         ],
         'player2' => [
-            'firstname' => 'Patrick',
-            'surname' => 'Menillo'
+            'firstname' => '',
+            'surname' => 'unknown'
         ]
     ],
     'team7' => [

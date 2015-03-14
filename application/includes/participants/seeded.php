@@ -1,5 +1,5 @@
 <?php
-$return = [];
+$return['players'] = [];
 
 $db = Db::getInstance();
 
@@ -17,12 +17,9 @@ $result = $db->query($sql);
 if (!$result) {
     throw new \Exception('Konnte den Folgenden Query nicht senden: '.$sql."<br />\nFehlermeldung: ".$db->error);
 }
-if (!$result->num_rows) {
-    throw new \Exception('no players found');
-} else {
-    while ($row = $result->fetch_assoc()) {
-        $return['players'][] = $row;
-    }
+
+while ($row = $result->fetch_assoc()) {
+    $return['players'][] = $row;
 }
 
 return $return;
