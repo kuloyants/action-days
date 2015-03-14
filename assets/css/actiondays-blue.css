@@ -165,7 +165,7 @@ hr.colored {
 .navbar-default .navbar-brand,
 .navbar-inverse .navbar-brand {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     padding: 0 15px;
     text-decoration: none;
     color: #0a8fd5;
@@ -1104,10 +1104,8 @@ footer.footer {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-footer.footer a {
-    color: rgba(255,255,255,.7);
+    background-color: #333;
+    color: #0a8fd5;
 }
 
 footer.footer a:hover {

@@ -4,7 +4,7 @@
             <strong>Participants</strong>
         </div>
         <div class="col-md-8">
-            <a href="?section=participants&tab=main_tournament">Main tournament: 64 Teilnehmer</a>
+            <a href="?section=participants&tab=main_tournament">64 Teilnehmer</a>
             +
             <a href="?section=participants&tab=seeded">16 seeded Top Players</a>
         </div>
@@ -54,14 +54,10 @@
             <strong>Knock-Out-Challenge</strong>
         </div>
         <div class="col-md-8">
-            <p>
-                Sunday, 03 May, 2015
-                16 seeded players + 16 qualifiers
-                First round (last 32): 10 am
-            </p>
-            <p>
-                Compulsary attendance is 30 min. before starting time.
-            </p>
+            <p>Sunday, 03 May, 2015</p>
+            <p>16 seeded players + 16 qualifiers</p>
+            <p>First round (last 32): 10 am</p>
+            <p>Compulsary attendance is 30 min. before starting time.</p>
         </div>
     </div>
 
@@ -70,7 +66,7 @@
             <strong>Dresscode</strong>
         </div>
         <div class="col-md-8">
-            Es wird auf ein gepflegtes Erscheinungsbild Wert gelegt.
+            Value is put on a neat appearance.
         </div>
     </div>
 
@@ -91,15 +87,15 @@
         <div class="col-md-8">
             <div class="row">
                 <? foreach ($priceMoney as $place => $price) : ?>
-                    <div class="col-md-3">
+                    <div class="col-xs-6 col-sm-4 col-md-3">
                         <?=$place?>:
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-xs-6 col-sm-8 col-md-9">
                         <?=$price?>
                     </div>
                 <? endforeach ?>
             </div>
-            Receipt of prize money is taxable.
+            <p class="margin-top">Receipt of prize money is taxable.</p>
         </div>
     </div>
 
@@ -111,8 +107,7 @@
             The registration has to be done via the registration form or on location at the tournament management.
             Registration obligates to payment of the starting fee.
             <br><br>
-            <p class="label label-danger">The starting place will be reserved not until money receipt. </p>
-            <br><br>
+            <p class="text-center alert alert-danger">The starting place will be reserved not until money receipt. </p>
             In case of deregistration after payment the registration fee will be refunded if the chosen field is completely filled.
         </div>
     </div>
@@ -130,21 +125,18 @@
 
     <div class="row">
         <div class="col-md-4">
-            <strong>Konto</strong>
+            <strong>Bank account:</strong>
         </div>
         <div class="col-md-8">
             BSV Playhouse Fürstenfeldbruck e.V.
             <br>
-            Account: 31817885
+            Account No.: 31817885
             <br>
             IBAN: DE59700530700031817885
         </div>
     </div>
 
     <div class="alert alert-danger margin-top text-center">
-        By registration the participants agree that tournament results including name,
-        photos and videos are published in various media (press, internet etc.).
-        The transfer of personal data to third parties is excluded.
+        <?=translate('registration.media.confirmation')?>
     </div>
-
 </div>

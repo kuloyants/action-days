@@ -12,7 +12,6 @@ foreach ($data['formElements'] as $elementName => $element) {
     <h2><?=translate('registration.title')?></h2>
     <div class="col-lg-12 text-center">
         <hr class="colored">
-        <p>Please tell us about your next project and we will let you know what we can do to help you.</p>
     </div>
 </div>
 <div class="row content-row text-left">
@@ -183,9 +182,7 @@ foreach ($data['formElements'] as $elementName => $element) {
             <br>
             <div id="success"></div>
             <div class="alert alert-danger margin-top text-center">
-                Mit Abgabe der Anmeldung erklären sich die Teilnehmer einverstanden,
-                dass Turnierergebnisse mit Namen sowie Fotos und Videos in den Medien (Presse, Internet etc.) veröffentlicht werden.
-                Die Weitergabe an Dritte ist ausgeschlossen.
+                <?=translate('registration.media.confirmation')?>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">

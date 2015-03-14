@@ -23,7 +23,7 @@
                 <? for ($i=0;$i<16;$i++) : ?>
                     <? if (array_key_exists($i, $players)) : ?>
                         <tr>
-                            <td style="border-right: 1px solid #dfdfdf" class="border-right"><?=$i+1?></td>
+                            <td style="border-right: 1px solid #dfdfdf;" class="border-right"><?=$i+1?></td>
                             <td>
                                 <span title="<?=translate('country.' . mb_strtolower($players[$i]['country_code']))?>"
                                       class="glyphicon bfh-flag-<?=$players[$i]['country_code']?>">&nbsp;</span>
@@ -35,7 +35,7 @@
                         </tr>
                     <? else : ?>
                         <tr>
-                            <td><?=$i+1?></td>
+                            <td width="10"><?=$i+1?></td>
                             <td></td>
                             <td></td>
                         </tr>

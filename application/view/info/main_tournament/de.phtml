@@ -4,7 +4,7 @@
             <strong>Teilnehmerzahl</strong>
         </div>
         <div class="col-md-8">
-            <a href="?section=participants&tab=main_tournament">Hauptfeld: 64 Teilnehmer</a>
+            <a href="?section=participants&tab=main_tournament">64 Teilnehmer</a>
             +
             <a href="?section=participants&tab=seeded">16 gesetzte Top Spieler</a>
         </div>
@@ -51,14 +51,10 @@
             <strong>Knock-Out-Challenge</strong>
         </div>
         <div class="col-md-8">
-            <p>
-                Sonntag, 03.05.2015
-                Anstoß um 10 Uhr
-                16 gesetzte Top Spieler + 16 Qualifikanten
-            </p>
-            <p>
-                Anwesenheitspflicht ist jeweils 30 Min. vor Startzeit.
-            </p>
+            <p>Sonntag, 03.05.2015</p>
+            <p>Anstoß um 10 Uhr</p>
+            <p>16 gesetzte Top Spieler + 16 Qualifikanten</p>
+            <p>Anwesenheitspflicht ist jeweils 30 Min. vor Startzeit.</p>
         </div>
     </div>
     <div class="row">
@@ -86,15 +82,15 @@
         <div class="col-md-8">
             <div class="row">
                 <? foreach ($priceMoney as $place => $price) : ?>
-                    <div class="col-md-3">
+                    <div class="col-xs-6 col-sm-4 col-md-3">
                         <?=$place?>:
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-xs-6 col-sm-8 col-md-9">
                         <?=$price?>
                     </div>
                 <? endforeach ?>
             </div>
-            Die Einnahme von Preisgeld ist steuerpflichtig.
+            <p class="margin-top">Die Einnahme von Preisgeld ist steuerpflichtig.</p>
         </div>
     </div>
     <div class="row">
@@ -104,8 +100,7 @@
         <div class="col-md-8">
             Die Anmeldung erfolgt über das <a href="?section=registration">Anmeldeformular</a> oder vor Ort und verpflichtet zur Zahlung des Startgeldes.
             <br><br>
-            <p class="label label-danger">Der Startplatz wird erst durch Geldeingang reserviert.</p>
-            <br><br>
+            <p class="text-center alert alert-danger">Der Startplatz wird erst durch Geldeingang reserviert.</p>
             Bei Abmeldung nach Geldeingang wird das Startgeld zurückerstattet, wenn das gewählte Feld komplett besetzt ist.
         </div>
     </div>
@@ -132,8 +127,6 @@
         </div>
     </div>
     <div class="alert alert-danger margin-top text-center">
-        Mit Abgabe der Anmeldung erklären sich die Teilnehmer einverstanden,
-        dass Turnierergebnisse mit Namen sowie Fotos und Videos in den Medien (Presse, Internet etc.) veröffentlicht werden.
-        Die Weitergabe an Dritte ist ausgeschlossen.
+        <?=translate('registration.media.confirmation')?>
     </div>
 </div>

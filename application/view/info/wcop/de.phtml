@@ -13,7 +13,7 @@
             <strong>Teilnehmer</strong>
         </div>
         <div class="col-md-8">
-            <a href="?section=participants&tab=wcop">8 Länder vertreten durch jeweils 2 Spieler</a>
+            <p>8 Länder vertreten durch jeweils 2 Spieler</p>
         </div>
     </div>
     <div class="row">
@@ -21,6 +21,7 @@
             <strong>Spielmodus</strong>
         </div>
         <div class="col-md-8">
+            <p>10 Ball</p>
             <p>Wechselstoß</p>
             <p>Einfach-KO</p>
             <p>7 Gewinnspiele, Winnerbreak</p>
@@ -43,10 +44,10 @@
         <div class="col-md-8">
             <div class="row">
                 <? foreach ($priceMoney as $place => $price) : ?>
-                    <div class="col-md-3">
+                    <div class="col-xs-6 col-sm-4 col-md-3">
                         <?=$place?>:
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-xs-6 col-sm-8 col-md-9">
                         <?=$price?>
                     </div>
                 <? endforeach ?>
