@@ -95,7 +95,7 @@ $formElements = [
         'type'  => 'tel',
         'required' => true,
         'options' => [
-            'label' => 'common.phone',
+            'label' => 'common.mobilephone',
         ],
         'attributes' => [
             'id' => 'phone',

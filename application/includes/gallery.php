@@ -1,7 +1,6 @@
 <?php
 $tabs = [
     'previous_2013'      => [],
-    'venue'     => [],
     'friday'    => [],
     'saturday'  => [],
     'sunday'    => [],

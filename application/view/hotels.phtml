@@ -1,0 +1,94 @@
+<?php
+$hotels = [
+    [
+        'name' => 'Gasthof Hasenheide',
+        'street' => 'Hasenheide 1',
+        'zip_city' => '82256 Fürstenfeldbruck',
+        'distance' => '300m',
+        'website' => 'gasthof-hasenheide.de',
+        'phone' => '0049 8141 91959',
+        'prices' => [
+            'single' => 'ca 55,00 €',
+            'double' => 'ca 75,00 €',
+            'triple' => 'ca 110,00 €'
+        ],
+    ],
+    [
+        'name' => 'Hotel Gasthof Groß',
+        'street' => 'Mühlstr. 2',
+        'zip_city' => '85232 Bergkirchen',
+        'distance' => '15 km',
+        'website' => 'hotel-gasthof-gross.de',
+        'phone' => '0049 8131 272090',
+        'prices' => [
+            'single' => 'ca 80,00 €',
+            'double' => 'ca 95,00 €',
+            'triple' => 'ca 130,00 €'
+        ],
+    ],
+    [
+        'name' => 'Romantik Hotel zur Post',
+        'street' => 'Hauptstr. 7',
+        'zip_city' => '82256 Fürstenfeldbruck',
+        'distance' => '1,5 km',
+        'website' => 'hotelpost-ffb.de',
+        'phone' => '0049 8141 31420',
+        'prices' => [
+            'single' => 'ca. 90,00 - 100,00 €',
+            'double' => 'ca. 100,00 - 125,00 €',
+        ],
+    ],
+]
+?>
+<section id="info">
+    <div class="container text-center wow fadeIn animated">
+        <h2><?=translate('hotels.title')?></h2>
+        <hr class="colored">
+        <div class="information-details">
+            <?foreach($hotels as $hotel) : ?>
+                <div class="row text-left">
+                    <div class="col-md-12">
+                        <h3><?=$hotel['name']?></h3>
+                    </div>
+                    <div class="col-md-4">
+                        <strong><?=translate('common.address')?></strong>
+                    </div>
+                    <div class="col-md-8">
+                        <p><?=$hotel['street']?><br>
+                            <?=$hotel['zip_city']?></p>
+                    </div>
+                    <div class="col-md-4">
+                        <strong><?=translate('hotels.distance.to.venue')?></strong>
+                    </div>
+                    <div class="col-md-8">
+                        <p><?=$hotel['distance']?></p>
+                    </div>
+                    <div class="col-md-4">
+                        <strong><?=translate('common.website')?></strong>
+                    </div>
+                    <div class="col-md-8">
+                        <p><a href="http://<?=$hotel['website']?>" target="_blank">www.<?=$hotel['website']?></a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <strong><?=translate('common.prices')?></strong>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            <?=translate('hotels.room.single')?>: <?=$hotel['prices']['single']?><br>
+                            <?=translate('hotels.room.double')?>: <?=$hotel['prices']['double']?><br>
+                            <? if (isset($hotel['prices']['triple'])) : ?>
+                                <?=translate('hotels.room.triple')?>: <?=$hotel['prices']['triple']?>
+                            <?endif?>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <strong><?=translate('common.phone')?>  </strong>
+                    </div>
+                    <div class="col-md-8">
+                        <p><?=$hotel['phone']?></p>
+                    </div>
+                </div>
+            <?endforeach?>
+        </div>
+    </div>
+</section>
