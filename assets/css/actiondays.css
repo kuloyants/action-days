@@ -399,6 +399,13 @@ footer .margin-top {
     font-size: 16px;
 }
 
+@media(max-width:768px) {
+    #info .information-details > .row div,
+    #info .information-details > .row p {
+        font-size: 14px;
+    }
+}
+
 #info .btn-blue i {
     padding-left: 13px;
 }
@@ -408,4 +415,48 @@ footer .margin-top {
     border-bottom: 2px solid #fff;
     /*margin: 10px 0;*/
     padding: 10px 0;
+}
+
+#homepage #homePageCarousel .item {
+    background-color: #333;
+}
+
+.carousel-indicators {
+    top: 7px;
+    bottom: inherit;
+}
+
+.carousel-inner > .item > img {
+    margin: auto;
+}
+
+.carousel-caption {
+    background-color: #0a8fd5;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    padding: 0 10px;
+    right: 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.carousel-caption h3 {
+    font-size: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.carousel-caption p {
+    font-size: 14px;
+}
+
+@media(max-width:450px) {
+    .carousel-caption h3 {
+        font-size: 12px;
+    }
+
+    .carousel-caption p {
+        font-size: 9px;
+    }
 }
