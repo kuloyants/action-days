@@ -12,6 +12,7 @@ include('service/Db.php');
 include('config.php');
 include(APPLICATION_PATH . 'view/helpers.php');
 $section = [
+    'index'         => APPLICATION_PATH . 'includes/index.php',
     'info'          => APPLICATION_PATH . 'includes/info.php',
     'participants'  => APPLICATION_PATH . 'includes/participants.php',
     'results'       => APPLICATION_PATH . 'includes/results.php',
@@ -60,7 +61,7 @@ if (isset($_GET['section'], $section[$_GET['section']])) {
     }
 } else {
     //load default section
-    $ret = include $section['participants'];
+    $ret = include $section['index'];
 }
 
 if (
