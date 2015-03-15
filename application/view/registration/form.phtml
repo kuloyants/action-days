@@ -181,6 +181,13 @@ foreach ($data['formElements'] as $elementName => $element) {
             </div>
             <br>
             <div id="success"></div>
+            <? if($GLOBALS['locale'] == 'de') : ?>
+                <div class="alert alert-danger text-center">
+                    ACHTUNG WICHTIG!!!<br>
+                    Aufgrund von Terminüberschneidungen wird zum gleichen Zeitpunkt ein Damen Grand Prix der DBU stattfinden.<br>
+                    Deshalb ist die Teilnahme von Damen offiziell nicht genehmigt.
+                </div>
+            <? endif ?>
             <div class="alert alert-danger margin-top text-center">
                 <?=translate('registration.media.confirmation')?>
             </div>
