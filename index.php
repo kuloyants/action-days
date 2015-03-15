@@ -21,6 +21,7 @@ $section = [
     'gallery'       => APPLICATION_PATH . 'includes/gallery.php',
     'profile'       => APPLICATION_PATH . 'includes/profile.php',
     'hotels'        => APPLICATION_PATH . 'includes/hotels.php',
+    'sponsors'      => APPLICATION_PATH . 'includes/sponsors.php',
 ];
 
 $isXmlHttpRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';

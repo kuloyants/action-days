@@ -491,4 +491,17 @@ footer .margin-top {
     -moz-transform: rotate(-19deg);
     -webkit-transform: rotate(-19deg);
     transform: rotate(-19deg);
+    left: 0;
+}
+
+@media(max-width:768px) {
+    #gallery .commingsoon .caption  {
+        font-size: 30px;
+    }
+}
+
+@media(max-width:450px) {
+    #gallery .commingsoon .caption  {
+        font-size: 15px;
+    }
 }
