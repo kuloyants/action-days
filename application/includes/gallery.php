@@ -1,9 +1,10 @@
 <?php
 $tabs = [
-    'previous_2013'      => [],
-    'friday'    => [],
-    'saturday'  => [],
-    'sunday'    => [],
+    'previous_2013'         => [],
+    'action_nights_141205'  => [],
+    'friday'                => [],
+    'saturday'              => [],
+    'sunday'                => [],
 ];
 
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
