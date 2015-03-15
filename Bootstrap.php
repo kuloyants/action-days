@@ -93,7 +93,7 @@ function exceptionHandler($exception)
         // (prevents passwords from ever getting logged as anything other than 'string')
         if (array_key_exists('args', $trace[$key])) {
             $trace[$key]['args'] = array_map('gettype', $trace[$key]['args']);
-        }
+            }
     }
 
     // build your tracelines

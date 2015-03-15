@@ -1,13 +1,13 @@
 <?php
 include('Bootstrap.php');
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-ini_set('log_errors', 0);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+ini_set('log_errors', 1);
 ini_set('error_log', 'logs/application.log');
-//set_error_handler("errorHandler");
-//set_exception_handler("exceptionHandler");
-//register_shutdown_function("fatalHandler");
+set_error_handler("errorHandler");
+set_exception_handler("exceptionHandler");
+register_shutdown_function("fatalHandler");
 include('service/Db.php');
 include('config.php');
 include(APPLICATION_PATH . 'view/helpers.php');
@@ -22,6 +22,7 @@ $section = [
     'profile'       => APPLICATION_PATH . 'includes/profile.php',
     'hotels'        => APPLICATION_PATH . 'includes/hotels.php',
     'sponsors'      => APPLICATION_PATH . 'includes/sponsors.php',
+    'errors'        => APPLICATION_PATH . 'includes/errors.php',
 ];
 
 $isXmlHttpRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';

@@ -468,13 +468,13 @@ footer .margin-top {
     }
 }
 
-#gallery .commingsoon {
+.commingsoon {
     /*background: url(../img/bg_arena_sw.jpg) no-repeat center center;*/
     position: relative;
     min-height: 100%;
 }
 
-#gallery .commingsoon .caption  {
+.commingsoon .caption  {
     margin: 0;
     position: absolute;
     top: 44%;
@@ -486,13 +486,13 @@ footer .margin-top {
 }
 
 @media(max-width:768px) {
-    #gallery .commingsoon .caption  {
+    .commingsoon .caption  {
         font-size: 30px;
     }
 }
 
 @media(max-width:450px) {
-    #gallery .commingsoon .caption  {
+    .commingsoon .caption  {
         font-size: 15px;
     }
 }

@@ -1,0 +1,11 @@
+<?php
+?>
+<section id="error">
+    <div class="container text-center">
+        <?if (!empty($data) && isset($data['activeTab'])): ?>
+            <? include 'errors/' . $data['activeTab'] . '.phtml'?>
+        <?else :?>
+            <? include 'errors/general.phtml'?>
+        <? endif?>
+    </div>
+</section>
