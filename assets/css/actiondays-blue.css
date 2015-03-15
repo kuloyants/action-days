@@ -149,7 +149,8 @@ hr.colored {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: rgba(255,255,255,.5);
+    border-color: rgba(255,255,255,.5),
+    max-height: 400px;
 }
 
 .navbar-inverse {

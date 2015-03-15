@@ -29,15 +29,6 @@ section .container {
     color: #0a8fd5
 }
 
-@media (min-width: 768px) and (max-width: 1000px) {
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse.collapse {
-        display: none !important;
-    }
-}
-
 
 /*---------------------------------------
  **   SECTION:  PORTFOLIO          -----
