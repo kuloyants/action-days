@@ -6,10 +6,11 @@ $folder = IMG_PATH . "gallery/{$activeTab}/";
 $filetype = '*.*';
 $files = glob($folder.$filetype);
 $filenames = [];
-//@todo check if we have some pictures
-foreach ($files as $file) {
-    $pathinfo = pathinfo($file);
-    $filenames[$pathinfo['filename']] = "assets/img/gallery/{$activeTab}/{$pathinfo['basename']}";
+if (!empty($files)) {
+    foreach ($files as $file) {
+        $pathinfo = pathinfo($file);
+        $filenames[$pathinfo['filename']] = "assets/img/gallery/{$activeTab}/{$pathinfo['basename']}";
+    }
 }
 ?>
 <section id="gallery">
