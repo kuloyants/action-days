@@ -254,6 +254,10 @@ section .container {
     color: #fff;
 }
 
+#participants table td span[class*=bfh-flag] {
+    top: 3px;
+}
+
 #results table {
     width: 1139px;
     background-color: #444;
