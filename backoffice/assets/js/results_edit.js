@@ -26,10 +26,21 @@ $(document).ready(function () {
             }
         });
 
+		var switchBetweenLoaderAndButton = function(){
+			$match.find('.buttonConfirm').toggleClass("hidden");
+			$match.find('#waitTillConfirmed').toggleClass("hidden");
+		};
+
         $.ajax({
             url: "?section=results",
             type: "POST",
             data: data,
+			beforeSend: function(){
+				switchBetweenLoaderAndButton();
+			},
+			complete: function(){
+				switchBetweenLoaderAndButton();
+			},
             success: function(response) {
 
             },

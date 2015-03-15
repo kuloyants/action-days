@@ -6,6 +6,7 @@ $folder = IMG_PATH . "gallery/{$activeTab}/";
 $filetype = '*.*';
 $files = glob($folder.$filetype);
 $filenames = [];
+//@todo check if we have some pictures
 foreach ($files as $file) {
     $pathinfo = pathinfo($file);
     $filenames[$pathinfo['filename']] = "assets/img/gallery/{$activeTab}/{$pathinfo['basename']}";
@@ -34,17 +35,17 @@ foreach ($files as $file) {
         </div>
         <div id="sliderlist">
             <div class="content active" data-cat="<?=$activeTab?>" data-toggle="modal">
-                <div id="galleryContainer" >
-                    <? if (!empty($filenames)) : ?>
+                <? if (!empty($filenames)) : ?>
+                    <div id="galleryContainer" >
                         <? foreach ($filenames as $name => $path) : ?>
                             <a href="<?=$path?>">
-                                <img alt="<?=$name?>" src="<?=$path?>" />
+                                <img alt="Action Days 2013" src="<?="assets/img/gallery/{$activeTab}/thumbnails/{$name}.jpg"?>" />
                             </a>
                         <? endforeach ?>
-                    <? else : ?>
-                        <?=translate('common.cominng_soon')?>
-                    <? endif ?>
-                </div>
+                    </div>
+                <? else : ?>
+                    <? include ('partials/p_comming_soon.phtml')?>
+                <? endif ?>
             </div>
         </div>
     </div>

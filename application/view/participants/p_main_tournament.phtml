@@ -1,0 +1,69 @@
+<?php
+/**
+ * 'players' = []
+ * 'activeTab' = string
+ */
+?>
+
+<p class="alert alert-danger"><?=translate('participants.main.hint.entryfee')?></p>
+<div class="row">
+    <? foreach ($data['players'] as $playstart => $players) : ?>
+        <div class="col-md-6">
+            <table class="table table-bordered table-hover text-left">
+                <thead>
+                <tr>
+                    <th colspan="3" class="text-center"><?=translate('table.playstart.' . $playstart)?></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="2" class="text-center"><?=translate('table.player.name')?></td>
+                    <td class="text-center"><?=translate('table.register_status')?></td>
+                </tr>
+                <? for ($i=0;$i<16;$i++) : ?>
+                    <? if (array_key_exists($i, $players)) : ?>
+                        <tr>
+                            <td style="border-right: 1px solid #dfdfdf;" class="border-right"><?=$i+1?></td>
+                            <td>
+                                <span title="<?=translate('country.' . mb_strtolower($players[$i]['country_code']))?>"
+                                      class="glyphicon bfh-flag-<?=$players[$i]['country_code']?>">&nbsp;</span>
+                                <?=$view->playerName($players[$i]['firstname'], $players[$i]['surname'])?>
+                            </td>
+                            <td class="text-center">
+                                <span class="label label-<?=$players[$i]['reg_status'] == 'confirmed' ? 'success' : 'danger'?>">
+                                <?=translate("player.register_status." . $players[$i]['reg_status'])?></span></td>
+                        </tr>
+                    <? else : ?>
+                        <tr>
+                            <td width="10"><?=$i+1?></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <? endif ?>
+                    <?unset($players[$i])?>
+                <? endfor ?>
+                <? if (!empty($players)) : ?>
+                    <tr>
+                        <th colspan="3" class="text-center"><?=translate('table.column.waitinglist')?> (<?=count($players)?>)</th>
+                    </tr>
+                    <? $currentWaitingListCount = 0 ?>
+                    <? $maxWaitingListItems = 3 ?>
+                    <? foreach ($players as $playerWaitingList) : ?>
+                        <? if ($currentWaitingListCount == $maxWaitingListItems) : ?>
+                            <?break;?>
+                        <?endif?>
+                        <tr>
+                            <td></td>
+                            <td><?=$view->playerName($playerWaitingList['firstname'], $playerWaitingList['surname'])?></td>
+                            <td class="text-center">
+                                <span class="label label-<?=$playerWaitingList['reg_status'] == 'confirmed' ? 'success' : 'danger'?>">
+                                <?=translate("player.register_status." . $playerWaitingList['reg_status'])?></span></td>
+                        </tr>
+                        <? $currentWaitingListCount++ ?>
+                    <? endforeach ?>
+                <?endif?>
+                </tbody>
+            </table>
+        </div>
+    <? endforeach ?>
+</div>

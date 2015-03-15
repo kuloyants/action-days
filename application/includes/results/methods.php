@@ -16,7 +16,7 @@ function getMatchesForDay($day)
             $matchNr = 'SU%';
             break;
         case 'wcop':
-            $matchNr = '';
+            $matchNr = 'NC%';
             break;
         default:
             throw new Exception("unknown play day {$day} given");
@@ -86,12 +86,8 @@ function getPlayersForDay($day)
     if (!$result) {
         throw new \Exception('Konnte den Folgenden Query nicht senden: '.$sql."<br />\nFehlermeldung: ".$db->error);
     }
-    if (!$result->num_rows) {
-        throw new \Exception('no players found');
-    } else {
-        while ($row = $result->fetch_assoc()) {
-            $players[] = $row;
-        }
+    while ($row = $result->fetch_assoc()) {
+        $players[] = $row;
     }
 
     return $players;

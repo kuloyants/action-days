@@ -10,7 +10,19 @@ if (isset($data['valid']) && $data['valid'] === true) {
         <? if ($renderForm) : ?>
             <? include("registration/form.phtml") ?>
         <? else : ?>
-            <? include("registration/success.phtml") ?>
+        <div class="success">
+            <div class="row">
+                <h2><?=translate('registration.success.title')?></h2>
+                <div class="col-lg-12 text-center">
+                    <hr class="colored">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <? include("registration/success_{$GLOBALS['locale']}.phtml") ?>
+                </div>
+            </div>
+        </div>
         <? endif ?>
     </div>
 </section>

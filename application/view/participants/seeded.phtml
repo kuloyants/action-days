@@ -1,47 +1,52 @@
 <?php
+$players = $data['players'];
 ?>
 <div class="row projects">
-    <div id="loader" style="display: none;">
-        <div class="loader-icon"></div>
-    </div>
     <div class="col-md-12" id="portfolio-list" style="margin-left: 0px; display: block;">
         <!-- PLAYER ITEMS-->
-        <ul class="cbp-rfgrid">
-            <? foreach($data['players'] as $player) : ?>
-                <?$playerFullName = "{$player['firstname']}  {$player['nickname']} {$player['surname']}"?>
-                <? if($player['surname'] != 'unknown') : ?>
-                    <li data-profile="<?=mb_strtolower($player['id'])?>" class="moreDialog zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
-                        <a class="">
-                            <div data-dialog="dialog">
-                                <img height="300" src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.png'?>" alt="<?=$playerFullName?>">
-                                <div class="project-info">
-                                    <div class="project-details">
-                                        <h5 class="white-text blue-border-bottom">
-                                            <?=$playerFullName?>
-                                        </h5>
-                                        <div class="details white-text">
-                                            <?=translate("country." . mb_strtolower($player['country_code']) . "")?>
+        <div style="background-color: #0a8fd5;">
+            <ul class="cbp-rfgrid">
+                <? for ($i=0;$i<16;$i++) : ?>
+                    <? if (array_key_exists($i, $players)) : ?>
+                        <?$player = $players[$i]?>
+                        <?$playerFullName = "{$player['firstname']} <br><i style='text-transform: capitalize'>{$player['nickname']}</i><br> {$player['surname']}"?>
+                        <li data-profile="<?=mb_strtolower($player['id'])?>" class="moreDialog zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
+                            <a class="">
+                                <div data-dialog="dialog">
+                                    <img src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.jpg'?>" alt="<?=$playerFullName?>">
+                                    <div class="project-info">
+                                        <div class="project-details">
+                                            <h5 class="white-text blue-border-bottom">
+                                                <?=$playerFullName?>
+                                            </h5>
+                                            <img style="margin: auto" height="50" src="<?=IMG_PATH . "icons/country/" . mb_strtolower($player['country_code']) . '.png'?>"
+                                                 alt="<?=translate("country." . mb_strtolower($player['country_code']))?>">
+                                            <div class="details white-text">
+                                                <?=translate("country." . mb_strtolower($player['country_code']))?>
+                                            </div>
+                                            <p class="description white-text"><?=translate('seeded.player.desc.' . mb_strtolower($player['surname']))?></p>
                                         </div>
-                                        <p class="description white-text"><?=translate('seeded.player.desc.' . mb_strtolower($player['surname']))?></p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                <?else:?>
-                    <li class="zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
-                        <a class="">
-                            <img height="300" src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.png'?>" alt="<?=$playerFullName?>">
-                            <div class="project-info">
-                                <div class="project-details">
-                                    <h5>COMMING SOON</h5>
+                            </a>
+                        </li>
+                    <?else:?>
+                        <li class="zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
+                            <a class="">
+                                <img src="<?=IMG_PATH . 'seeded/unknown.jpg'?>" alt="COMMING SOON">
+                                <div class="project-info" style="background: none;opacity: 1;top:84px">
+                                        <h5 class="white-text blue-border-bottom">
+                                            <?=translate('common.seeded_player')?>
+                                        </h5>
+                                        <div class="details white-text">
+                                            COMMING SOON
+                                        </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                <?endif?>
-            <? endforeach ?>
-        </ul>
+                            </a>
+                        </li>
+                    <?endif?>
+                <? endfor ?>
+            </ul>
+        </div>
     </div>
-    <!-- END OF PORTFOLIO ITEMS-->
 </div>
