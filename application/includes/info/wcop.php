@@ -40,16 +40,16 @@ $return['countries'] = [
 //            'surname' => 'Hundal'
 //        ]
 //    ],
-//    'hr' => [
-//        'player1' => [
-//            'firstname' => 'Ivica',
-//            'surname' => 'Putnik'
-//        ],
-//        'player2' => [
-//            'firstname' => 'Philipp',
-//            'surname' => 'Stojanovic'
-//        ]
-//    ],
+    'hr' => [
+        'player1' => [
+            'firstname' => 'Ivica',
+            'surname' => 'Putnik'
+        ],
+        'player2' => [
+            'firstname' => 'Philipp',
+            'surname' => 'Stojanovic'
+        ]
+    ],
 //    'it' => [
 //        'player1' => [
 //            'firstname' => 'Antonio',
@@ -61,16 +61,6 @@ $return['countries'] = [
 //        ]
 //    ],
 
-    'team1' => [
-        'player1' => [
-            'firstname' => '',
-            'surname' => 'unknown'
-        ],
-        'player2' => [
-            'firstname' => '',
-            'surname' => 'unknown'
-        ]
-    ],
     'team2' => [
         'player1' => [
             'firstname' => '',
