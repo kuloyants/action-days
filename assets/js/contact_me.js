@@ -15,10 +15,8 @@ $(document).ready($(function() {
                 success: function(response) {
                     if ( "content" in response) {
                         $("#registration").replaceWith($(response.content));
-                    } else if ( "php_error" in response ) {
-                        $("#registration").replaceWith($(response.php_error));
                     }
-                },
+                }
             })
         },
         filter: function() {

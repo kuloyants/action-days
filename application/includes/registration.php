@@ -215,8 +215,22 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
     }
     $return['data']['valid'] = true;
 
-//    mail('admin@localhost', 'Bestätigung', 'Sie wurden registriert', 'From: info@stage.action-days.de');
+    include("service/Mail.php");
 
+    $headers = "From: info@action-days.de\r\n" .
+        "Content-Type: text/plain;charset=UTF-8\r\n";
+    mail(
+        $_POST['playerEmail'],
+        getRegistrationSuccessSubject($GLOBALS['locale']),
+        getRegistrationSuccessMail($_POST['firstname'], $_POST['surname'], $GLOBALS['locale']),
+        $headers
+    );
+    mail(
+        'info@action-days.de',
+        "Anmeldung {$_POST['firstname']} {$_POST['surname']}",
+        "Nachricht: {$_POST['message']}",
+        $headers
+    );
     return $return;
 } else {
     $return['data']['formElements'] = $formElements;
