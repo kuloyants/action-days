@@ -13,7 +13,7 @@ $players = $data['players'];
                         <li data-profile="<?=mb_strtolower($player['id'])?>" class="moreDialog zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
                             <a class="">
                                 <div data-dialog="dialog">
-                                    <img src="<?=IMG_PATH . "seeded/" . $player['surname'] . '.jpg'?>" alt="<?=$playerFullName?>">
+                                    <img src="<?=IMG_PATH . "seeded/" . $player['surname'] . '_thumbnail.jpg'?>" alt="<?=$playerFullName?>">
                                     <div class="project-info">
                                         <div class="project-details">
                                             <h5 class="white-text blue-border-bottom">
@@ -33,7 +33,7 @@ $players = $data['players'];
                     <?else:?>
                         <li class="zoomIn animated fadeInLeft" style="visibility: visible;-webkit-animation-duration: 1.5s; -moz-animation-duration: 1.5s; animation-duration: 1.5s;-webkit-animation-delay: 0.15s; -moz-animation-delay: 0.15s; animation-delay: 0.15s;">
                             <a class="">
-                                <img src="<?=IMG_PATH . 'seeded/unknown.jpg'?>" alt="COMMING SOON">
+                                <img src="<?=IMG_PATH . 'seeded/unknown_thumbnail.jpg'?>" alt="COMMING SOON">
                                 <div class="project-info" style="background: none;opacity: 1;top:84px">
                                         <h5 class="white-text blue-border-bottom">
                                             <?=translate('common.seeded_player')?>
