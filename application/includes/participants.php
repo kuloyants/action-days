@@ -22,7 +22,7 @@ return [
     ]
 ];
 
-function getParticipants($day, $time, $sort) {
+function getParticipants($day, $time) {
     $db = Db::getInstance();
 
     $players = [];
@@ -34,7 +34,7 @@ function getParticipants($day, $time, $sort) {
         pr.reg_status
         FROM player AS p INNER JOIN player_registration AS pr ON p.id = pr.player_id
         WHERE pr.reg_status in ('confirmed', 'pending') AND pr.start_day = '$day' AND pr.start_time = '$time'
-        ORDER BY $sort ASC, p.created ASC";
+        ORDER BY pr.reg_status ASC, p.created ASC";
     $result = $db->query($sql);
 
     if (!$result) {
