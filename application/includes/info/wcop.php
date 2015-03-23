@@ -1,15 +1,15 @@
 <?php
 $return['countries'] = [
-//    'de' => [
-//        'player1' => [
-//            'firstname' => 'Valery',
-//            'surname' => 'Kuloyants'
-//        ],
-//        'player2' => [
-//            'firstname' => 'Harry',
-//            'surname' => 'Stolka'
-//        ]
-//    ],
+    'de' => [
+        'player1' => [
+            'firstname' => 'Valery',
+            'surname' => 'Kuloyants'
+        ],
+        'player2' => [
+            'firstname' => 'Harry',
+            'surname' => 'Stolka'
+        ]
+    ],
     'cz' => [
         'player1' => [
             'firstname' => 'Roman',
@@ -60,16 +60,6 @@ $return['countries'] = [
 //            'surname' => 'Menillo'
 //        ]
 //    ],
-    'team5' => [
-        'player1' => [
-            'firstname' => '',
-            'surname' => 'unknown'
-        ],
-        'player2' => [
-            'firstname' => '',
-            'surname' => 'unknown'
-        ]
-    ],
     'team6' => [
         'player1' => [
             'firstname' => '',
