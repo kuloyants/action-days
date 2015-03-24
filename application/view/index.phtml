@@ -8,6 +8,11 @@ $carouselItems = [
         'captionText' => translate('index.carousel.caption.text.arena'),
     ],
     [
+        'imgUrl' => $pathToSliderImages . 'jungo_vs_melling.jpg',
+        'captionHeader' => translate('index.carousel.caption.header.jungo_melling'),
+        'captionText' => translate('index.carousel.caption.text.jungo_melling'),
+    ],
+    [
         'imgUrl' => $pathToSliderImages . 'hundal_hybler.jpg',
         'captionHeader' => translate('index.carousel.caption.header.hundal_hybler'),
         'captionText' => translate('index.carousel.caption.text.hundal_hybler'),
@@ -42,7 +47,7 @@ $carouselItems = [
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                <div id="<?=$carouselId?>" class="carousel slide margin-bottom" data-ride="carousel">
+                <div id="<?=$carouselId?>" class="carousel slide margin-bottom" data-ride="carousel" data-interval="10000">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <? for ($i=0; $i<count($carouselItems); $i++) : ?>
