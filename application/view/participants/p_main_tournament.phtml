@@ -23,7 +23,7 @@
                 <? for ($i=0;$i<16;$i++) : ?>
                     <? if (array_key_exists($i, $players)) : ?>
                         <tr>
-                            <td style="border-right: 1px solid #dfdfdf;" class="border-right"><?=$i+1?></td>
+                            <td width="10" style="border-right: 1px solid #dfdfdf;" class="border-right text-center"><?=$i+1?></td>
                             <td>
                                 <span title="<?=translate('country.' . mb_strtolower($players[$i]['country_code']))?>"
                                       class="glyphicon bfh-flag-<?=$players[$i]['country_code']?>">&nbsp;</span>
@@ -35,7 +35,7 @@
                         </tr>
                     <? else : ?>
                         <tr>
-                            <td width="10"><?=$i+1?></td>
+                            <td width="10" class="text-center"><?=$i+1?></td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -48,18 +48,23 @@
                     </tr>
                     <? $currentWaitingListCount = 0 ?>
                     <? $maxWaitingListItems = 3 ?>
+                    <?=$i=1?>
                     <? foreach ($players as $playerWaitingList) : ?>
                         <? if ($currentWaitingListCount == $maxWaitingListItems) : ?>
                             <?break;?>
                         <?endif?>
                         <tr>
-                            <td></td>
-                            <td><?=$view->playerName($playerWaitingList['firstname'], $playerWaitingList['surname'])?></td>
+                            <td width="10" class="text-center"><?=$i?></td>
+                            <td>
+                                <span title="<?=translate('country.' . mb_strtolower($playerWaitingList['country_code']))?>"
+                                      class="glyphicon bfh-flag-<?=$playerWaitingList['country_code']?>">&nbsp;</span>
+                                <?=$view->playerName($playerWaitingList['firstname'], $playerWaitingList['surname'])?></td>
                             <td class="text-center">
                                 <span class="label label-<?=$playerWaitingList['reg_status'] == 'confirmed' ? 'success' : 'danger'?>">
                                 <?=translate("player.register_status." . $playerWaitingList['reg_status'])?></span></td>
                         </tr>
                         <? $currentWaitingListCount++ ?>
+                        <? $i++;?>
                     <? endforeach ?>
                 <?endif?>
                 </tbody>
