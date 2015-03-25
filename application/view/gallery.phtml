@@ -36,17 +36,21 @@ if (!empty($files)) {
         </div>
         <div id="sliderlist">
             <div class="content active" data-cat="<?=$activeTab?>" data-toggle="modal">
-                <? if (!empty($filenames)) : ?>
-                    <div id="galleryContainer" >
-                        <? foreach ($filenames as $name => $path) : ?>
-                            <a href="<?=$path?>">
-                                <img alt="Action Days 2013" src="<?="assets/img/gallery/{$activeTab}/thumbnails/{$name}.jpg"?>" />
-                            </a>
-                        <? endforeach ?>
-                    </div>
-                <? else : ?>
-                    <? include ('partials/p_comming_soon.phtml')?>
-                <? endif ?>
+                <?if($activeTab == 'videos_2013'):?>
+                    <? include("gallery/videos_2013.phtml") ?>
+                <?else:?>
+                    <? if (!empty($filenames)) : ?>
+                        <div id="galleryContainer" >
+                            <? foreach ($filenames as $name => $path) : ?>
+                                <a href="<?=$path?>">
+                                    <img alt="Action Days 2013" src="<?="assets/img/gallery/{$activeTab}/thumbnails/{$name}.jpg"?>" />
+                                </a>
+                            <? endforeach ?>
+                        </div>
+                    <? else : ?>
+                        <? include ('partials/p_comming_soon.phtml')?>
+                    <? endif ?>
+                <?endif?>
             </div>
         </div>
     </div>
