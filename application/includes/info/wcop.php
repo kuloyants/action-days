@@ -1,5 +1,15 @@
 <?php
 $return['countries'] = [
+    'it' => [
+        'player1' => [
+            'firstname' => 'Antonio',
+            'surname' => 'Benvenuto'
+        ],
+        'player2' => [
+            'firstname' => 'Patrick',
+            'surname' => 'Menillo'
+        ]
+    ],
     'de' => [
         'player1' => [
             'firstname' => 'Valery',
@@ -48,26 +58,6 @@ $return['countries'] = [
         'player2' => [
             'firstname' => 'Philipp',
             'surname' => 'Stojanovic'
-        ]
-    ],
-//    'it' => [
-//        'player1' => [
-//            'firstname' => 'Antonio',
-//            'surname' => 'Benvenuto'
-//        ],
-//        'player2' => [
-//            'firstname' => 'Patrick',
-//            'surname' => 'Menillo'
-//        ]
-//    ],
-    'team6' => [
-        'player1' => [
-            'firstname' => '',
-            'surname' => 'unknown'
-        ],
-        'player2' => [
-            'firstname' => '',
-            'surname' => 'unknown'
         ]
     ],
     'team7' => [
