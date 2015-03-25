@@ -307,6 +307,10 @@ section .container {
     background-color: #444444;
 }
 
+#results table [class*=bfh-flag] {
+    top: 2px;
+}
+
 @media screen and (max-width: 640px) {
     #results table {
         overflow-x: auto;
@@ -315,6 +319,10 @@ section .container {
     }
     #results table td.match_score{
         font-size: 12px;
+    }
+
+    #results table [class*=bfh-flag] {
+        top: -2px;
     }
 }
 
@@ -422,9 +430,7 @@ footer .margin-top {
 }
 
 #info #wcop .countryTeam {
-    background-color: #0a8fd5;
     border-bottom: 2px solid #fff;
-    /*margin: 10px 0;*/
     padding: 10px 0;
 }
 
