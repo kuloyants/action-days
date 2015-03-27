@@ -2,12 +2,12 @@
 $return['countries'] = [
     'de1' => [
         'player1' => [
-            'firstname' => 'Sebastian',
-            'surname' => 'Staab'
+            'firstname' => 'Tobias',
+            'surname' => 'Hoiss'
         ],
         'player2' => [
-            'firstname' => 'Tobias',
-            'surname' => 'Hoiß'
+            'firstname' => 'Sebastian',
+            'surname' => 'Staab'
         ]
     ],
     'it' => [
