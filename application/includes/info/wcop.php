@@ -1,5 +1,15 @@
 <?php
 $return['countries'] = [
+    'de1' => [
+        'player1' => [
+            'firstname' => 'Tobias',
+            'surname' => 'Hoiss'
+        ],
+        'player2' => [
+            'firstname' => 'Sebastian',
+            'surname' => 'Staab'
+        ]
+    ],
     'it' => [
         'player1' => [
             'firstname' => 'Antonio',
@@ -10,14 +20,14 @@ $return['countries'] = [
             'surname' => 'Menillo'
         ]
     ],
-    'de' => [
+    'ch' => [
         'player1' => [
-            'firstname' => 'Valery',
-            'surname' => 'Kuloyants'
+            'firstname' => 'Dimitri',
+            'surname' => 'Jungo'
         ],
         'player2' => [
-            'firstname' => 'Harry',
-            'surname' => 'Stolka'
+            'firstname' => 'Ronald',
+            'surname' => 'Regli'
         ]
     ],
     'cz' => [
@@ -40,14 +50,14 @@ $return['countries'] = [
             'surname' => 'Hundal'
         ]
     ],
-    'ch' => [
+    'de2' => [
         'player1' => [
-            'firstname' => 'Dimitri',
-            'surname' => 'Jungo'
+            'firstname' => 'Valery',
+            'surname' => 'Kuloyants'
         ],
         'player2' => [
-            'firstname' => 'Ronald',
-            'surname' => 'Regli'
+            'firstname' => 'Harry',
+            'surname' => 'Stolka'
         ]
     ],
     'hr' => [
@@ -58,16 +68,6 @@ $return['countries'] = [
         'player2' => [
             'firstname' => 'Philipp',
             'surname' => 'Stojanovic'
-        ]
-    ],
-    'team7' => [
-        'player1' => [
-            'firstname' => '',
-            'surname' => 'unknown'
-        ],
-        'player2' => [
-            'firstname' => '',
-            'surname' => 'unknown'
         ]
     ],
     'team8' => [
