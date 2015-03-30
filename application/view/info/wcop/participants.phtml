@@ -7,9 +7,9 @@ $imgHeight = '33%';
     <? foreach($countries as $countryCode => $countryData) : ?>
         <div class="col-md-6">
             <div class="countryTeam">
-                <img title="<?=$countryData['player1']['firstname'] . ' ' . $countryData['player1']['surname']?>" width="24%" src="<?=IMG_PATH . 'seeded/' . str_replace(' ', '_', $countryData['player1']['surname']) . '_thumbnail.jpg'?>" alt="<?=$countryData['player1']['firstname'] . ' ' . $countryData['player1']['surname']?>">
+                <img title="<?=$countryData['player1']['firstname'] . ' ' . $countryData['player1']['surname']?>" width="24%" src="<?=IMG_PATH . 'seeded/' . str_replace(' ', '_', ucfirst($countryData['player1']['surname'])) . '_thumbnail.jpg'?>" alt="<?=$countryData['player1']['firstname'] . ' ' . $countryData['player1']['surname']?>">
                 <img title="<?=translate('country.' . $countryCode)?>" width="42%" src="<?=IMG_PATH . 'wcop/participants/' . $countryCode . '_thumbnail.jpg'?>" alt="<?=translate('country.' . $countryCode)?>">
-                <img title="<?=$countryData['player2']['firstname'] . ' ' . $countryData['player2']['surname']?>" width="24%" src="<?=IMG_PATH . 'seeded/' . str_replace(' ', '_', $countryData['player2']['surname']) . '_thumbnail.jpg'?>" alt="<?=$countryData['player2']['firstname'] . ' ' . $countryData['player2']['surname']?>">
+                <img title="<?=$countryData['player2']['firstname'] . ' ' . $countryData['player2']['surname']?>" width="24%" src="<?=IMG_PATH . 'seeded/' . str_replace(' ', '_', ucfirst($countryData['player2']['surname'])) . '_thumbnail.jpg'?>" alt="<?=$countryData['player2']['firstname'] . ' ' . $countryData['player2']['surname']?>">
             </div>
         </div>
     <?endforeach?>
