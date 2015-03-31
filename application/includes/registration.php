@@ -166,6 +166,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
         if (!array_key_exists($element, $formElements)) {
             throw new Exception('unregistered post param: ' . $element . ' => '. $value);
         }
+        $_POST[$element] = trim($value);
     }
 
     $errorMessages = [];
@@ -173,7 +174,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
         if (
             (isset($config['required']) && $config['required'] == true)
             &&
-            (!isset($_POST[$element]) || '' == trim($_POST[$element]))
+            (!isset($_POST[$element]) || '' == $_POST[$element])
         ) {
             $errorMessages[$element] = translate('error.validate.required.' . $element);
         }
