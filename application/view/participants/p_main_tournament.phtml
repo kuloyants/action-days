@@ -47,7 +47,7 @@
                         <th colspan="3" class="text-center"><?=translate('table.column.waitinglist')?> (<?=count($players)?>)</th>
                     </tr>
                     <? $currentWaitingListCount = 0 ?>
-                    <? $maxWaitingListItems = 3 ?>
+                    <? $maxWaitingListItems = 10 ?>
                     <?$i=1?>
                     <? foreach ($players as $playerWaitingList) : ?>
                         <? if ($currentWaitingListCount == $maxWaitingListItems) : ?>
