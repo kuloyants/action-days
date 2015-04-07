@@ -72,8 +72,8 @@ $return['countries'] = [
     ],
     'hr' => [
         'player1' => [
-            'firstname' => 'Ivica',
-            'surname' => 'Putnik'
+            'firstname' => 'Karlo',
+            'surname' => 'Dalmatin'
         ],
         'player2' => [
             'firstname' => 'Philipp',
