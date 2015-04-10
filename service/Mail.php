@@ -18,6 +18,7 @@ Kontoverbindung:
 BSV Playhouse Fürstenfeldbruck e.V.
 Konto Nr.: 31817885
 IBAN: DE59700530700031817885
+BIC: BYLADEM1FFB
 Sparkasse Fürstenfeldbruck
 
 Bei der Überweisung bitte Name, Gruppe (Freitag oder Samstag) und Uhrzeit angeben.
@@ -48,6 +49,7 @@ Bank account: Sparkasse Fuerstenfeldbruck
 Account holder: BSV Playhouse Fürstenfeldbruck e.V.
 Account-No. 31817885
 IBAN: DE59700530700031817885
+BIC: BYLADEM1FFB
 
 Upon payment please provide your name, group (Friday or Saturday) and time.
 
