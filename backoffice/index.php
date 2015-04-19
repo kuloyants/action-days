@@ -5,6 +5,7 @@ include('../Bootstrap.php');
 include('../service/Db.php');
 include('../config.php');
 include(APPLICATION_PATH . 'view/helpers.php');
+header("Cache-Control: no-cache, must-revalidate");
 
 $section = [
     'login'         => APPLICATION_PATH . 'backoffice/includes/login.php',

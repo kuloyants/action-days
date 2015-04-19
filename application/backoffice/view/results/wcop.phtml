@@ -1,13 +1,27 @@
 <?php
-/**
- * @var $matches array
- * @var $players array
- * @var $rounds array
- * @var $matchRac int
- * @var $setsRace array
- */
-?>
+$matches = $data['matches'];
+$players = $data['players'];
 
+$matchRace = 7;
+
+$rounds = [
+    'qf' => [
+        'title' => 'results.table.quarters',
+        'iterationStart' => 0,
+        'iterationEnd' => 4
+    ],
+    'sf' => [
+        'title' => 'results.table.semis',
+        'iterationStart' => 4,
+        'iterationEnd' => 6
+    ],
+    'f' => [
+        'title' => 'results.table.finals',
+        'iterationStart' => 6,
+        'iterationEnd' => 7
+    ]
+]
+?>
 <? foreach ($rounds as $roundName => $roundData) : ?>
     <table class="table table-hover table-bordered text-left">
         <thead>
@@ -15,7 +29,7 @@
             <th><?=translate('results.table.match_nr')?></th>
             <th><?=translate('results.table.startdate')?></th>
             <th><?=translate('results.table.starttime')?></th>
-            <th colspan="6"><?=translate($roundData['title'])?></th>
+            <th colspan="5"><?=translate($roundData['title'])?></th>
             <th><?=translate('results.table.match_status')?></th>
             <th></th>
         </tr>
@@ -23,12 +37,12 @@
         <tbody>
         <? for ($i=$roundData['iterationStart'];$i<$roundData['iterationEnd'];$i++) : ?>
             <? if (array_key_exists($i, $matches)) : ?>
-                <tr data-winnertomatch="<?=$matches[$i]['winner_to_match']?>" data-winnertoslot="<?=$matches[$i]['winner_to_slot']?>">
+                <tr data-raceto="<?=$matchRace?>" data-winnertomatch="<?=$matches[$i]['winner_to_match']?>" data-winnertoslot="<?=$matches[$i]['winner_to_slot']?>">
                     <td class="text-center"><?=$matches[$i]['Nr']?></td>
                     <td class="text-center"><?=$matches[$i]['startdate']?></td>
                     <td class="text-center"><?=$matches[$i]['starttime']?></td>
                     <td class="text-right col-md-2">
-                        <? if ($roundName == 'l32') : ?>
+                        <? if ($roundName == 'qf') : ?>
                             <select type="select" class="form-control" name="player1">
                                 <option selected="selected" value="">&nbsp;</option>
                                 <? foreach ($players as $index => $player) : ?>
@@ -37,14 +51,14 @@
                                         <? $selected = 'selected'?>
                                     <? endif ?>
                                     <option <?=$selected?> value="<?=$player['id']?>">
-                                        <?=$view->playerName($player['firstname'], $player['surname'])?>
+                                        <?=translate($player['firstname'])?>
                                     </option>
                                 <? endforeach ?>
                             </select>
                         <? else :?>
                             <select type="select" class="form-control" name="player1">
                                 <option selected="selected" value="<?=$matches[$i]['player_1']?>">
-                                    <?=$view->playerName($matches[$i]['p1_firstname'], $matches[$i]['p1_surname'])?>
+                                    <?=translate($matches[$i]['p1_firstname'])?>
                                 </option>
                             </select>
                         <? endif ?>
@@ -60,32 +74,7 @@
                             <? endfor ?>
                         </select>
                     <td class="text-center">
-                        <? foreach ($setsRace as $setNr => $race) : ?>
-                            <? $elementName = 'score_p1_set' . $setNr ?>
-                            <select type="select" class="form-control" name="<?=$elementName?>">
-                                <? for ($k=0;$k<=$race;$k++) : ?>
-                                    <? $selected = ''?>
-                                    <? if ($k == $matches[$i][$elementName]) : ?>
-                                        <? $selected = 'selected'?>
-                                    <? endif ?>
-                                    <option <?=$selected?> value="<?=$k?>"><?=$k?></option>
-                                <? endfor ?>
-                            </select>
-                        <? endforeach ?>
-                    </td>
-                    <td class="text-center">
-                        <? foreach ($setsRace as $setNr => $race) : ?>
-                            <? $elementName = 'score_p2_set' . $setNr ?>
-                            <select type="select" class="form-control" name="<?=$elementName?>">
-                                <? for ($k=0;$k<=$race;$k++) : ?>
-                                    <? $selected = ''?>
-                                    <? if ($k == $matches[$i][$elementName]) : ?>
-                                        <? $selected = 'selected'?>
-                                    <? endif ?>
-                                    <option <?=$selected?> value="<?=$k?>"><?=$k?></option>
-                                <? endfor ?>
-                            </select>
-                        <? endforeach ?>
+                        :
                     </td>
                     <td class="text-center" data-role="score" data-player="player2">
                         <select type="select" class="form-control" name="score_p2_match">
@@ -99,7 +88,7 @@
                         </select>
                     </td>
                     <td class="text-left col-md-2">
-                        <? if ($roundName == 'l32') : ?>
+                        <? if ($roundName == 'qf') : ?>
                             <select type="select" class="form-control" name="player2">
                                 <option selected="selected" value="">&nbsp;</option>
                                 <? foreach ($players as $player) : ?>
@@ -108,14 +97,14 @@
                                         <? $selected = 'selected'?>
                                     <? endif ?>
                                     <option <?=$selected?> value="<?=$player['id']?>">
-                                        <?=$view->playerName($player['firstname'], $player['surname'])?>
+                                        <?=translate($player['firstname'])?>
                                     </option>
                                 <? endforeach ?>
                             </select>
                         <? else :?>
                             <select type="select" class="form-control" name="player2">
                                 <option selected="selected" value="<?=$matches[$i]['player_2']?>">
-                                    <?=$view->playerName($matches[$i]['p2_firstname'], $matches[$i]['p2_surname'])?>
+                                    <?=translate($matches[$i]['p2_firstname'])?>
                                 </option>
                             </select>
                         <? endif ?>
@@ -146,3 +135,4 @@
         </tbody>
     </table>
 <? endforeach ?>
+

@@ -34,7 +34,8 @@ $(document).ready(function () {
     });
 
     $(".match_score").each(function() {
-        if ($(this).text() == 2) {
+        $match = $(this).closest("tr");
+        if ($(this).text() == $match.data( "raceto" )) {
             var dataScore = $(this).data("score");
             $(this).addClass("winner");
             $(this).closest("tr").find("[data-player=" + dataScore + "]").addClass("winner");

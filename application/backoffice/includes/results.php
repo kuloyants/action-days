@@ -5,7 +5,6 @@ $tabs = [
     'saturday'  => [],
     'sunday'    => [],
     'wcop'      => [],
-    'gambling'  => []
 ];
 if (!(isset($activeTab) && array_key_exists($activeTab, $tabs))) {
     $activeTab = 'friday';

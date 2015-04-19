@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $("[data-role='edit']").on("click", function(event) {
         event.preventDefault(); // prevent default submit behaviour
         var data = {};
@@ -18,7 +17,8 @@ $(document).ready(function () {
         data.status             = $match.find("select[name='status']").val();
 
         $match.find("[data-role=score]").each(function (){
-            if ($(this).find("select").val() == 2) {
+            console.log($match.data("raceto"))
+            if ($(this).find("select").val() == $match.data("raceto")) {
                 var winnerSelector = "select[name='" + $(this).data("player") + "']";
                 data.winner = $match.find(winnerSelector).val();
                 data.winnerToMatch = $match.data("winnertomatch");
@@ -26,38 +26,24 @@ $(document).ready(function () {
             }
         });
 
-		var switchBetweenLoaderAndButton = function(){
-			$match.find('.buttonConfirm').toggleClass("hidden");
-			$match.find('#waitTillConfirmed').toggleClass("hidden");
-		};
+        var switchBetweenLoaderAndButton = function(){
+            $match.find('.buttonConfirm').toggleClass("hidden");
+            $match.find('#waitTillConfirmed').toggleClass("hidden");
+        };
 
         $.ajax({
             url: "?section=results",
             type: "POST",
             data: data,
-			beforeSend: function(){
-				switchBetweenLoaderAndButton();
-			},
-			complete: function(){
-				switchBetweenLoaderAndButton();
-			},
-            success: function(response) {
-
+            beforeSend: function(){
+                switchBetweenLoaderAndButton();
             },
-            error: function() {
-                $( '<div/>' ).dialog({
-                    dialogClass: "no-close",
-                    autoOpen: true,
-                    buttons: [
-                        {
-                            text: "OK",
-                            click: function() {
-                                $( this ).dialog( "close" );
-                            }
-                        }
-                    ]
-                });
+            complete: function(){
+                switchBetweenLoaderAndButton();
+            },
+            success: function(response) {
+                window.location.reload(true)
             }
         })
-    })
+    });
 });

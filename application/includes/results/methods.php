@@ -93,6 +93,37 @@ function getPlayersForDay($day)
     return $players;
 }
 
+function getPlayersForWCOP()
+{
+    $db = Db::getInstance();
+    $players = [];
+
+    $sql = "
+        SELECT
+        p.id,
+        p.firstname,
+        p.surname,
+        p.country_code,
+        pr.reg_status
+        FROM player AS p INNER JOIN player_registration AS pr ON p.id = pr.player_id
+        WHERE pr.reg_status in ('wcop')
+        ";
+    $result = $db->query($sql);
+
+    if (!$result) {
+        throw new \Exception('Konnte den Folgenden Query nicht senden: '.$sql."<br />\nFehlermeldung: ".$db->error);
+    }
+    if (!$result->num_rows) {
+        throw new \Exception('no players found');
+    } else {
+        while ($row = $result->fetch_assoc()) {
+            $players[] = $row;
+        }
+    }
+
+    return $players;
+}
+
 function getPlayersForSunday()
 {
     $db = Db::getInstance();
@@ -106,19 +137,16 @@ function getPlayersForSunday()
         p.country_code,
         pr.reg_status
         FROM player AS p INNER JOIN player_registration AS pr ON p.id = pr.player_id
-        WHERE pr.reg_status in ('seeded', 'qualified')
+        WHERE p.qualified = 1
         ";
     $result = $db->query($sql);
 
     if (!$result) {
         throw new \Exception('Konnte den Folgenden Query nicht senden: '.$sql."<br />\nFehlermeldung: ".$db->error);
     }
-    if (!$result->num_rows) {
-        throw new \Exception('no players found');
-    } else {
-        while ($row = $result->fetch_assoc()) {
-            $players[] = $row;
-        }
+
+    while ($row = $result->fetch_assoc()) {
+        $players[] = $row;
     }
 
     return $players;
@@ -223,9 +251,9 @@ function updateMatch()
             $qualifiedMatchNrs = ['FR25', 'FR26', 'FR27', 'FR28', 'SA25', 'SA26', 'SA27', 'SA28'];
             if (in_array($winnerToMatch, $qualifiedMatchNrs)) {
                 $sql = "
-                        UPDATE player_registration AS pr
-                        SET pr.reg_status = 'qualified'
-                        WHERE pr.player_id = ?";
+                        UPDATE player AS p
+                        SET p.qualified = 1
+                        WHERE p.id = ?";
                 $stmt = $db->prepare($sql);
                 if (!$stmt) {
                     return $db->error;
