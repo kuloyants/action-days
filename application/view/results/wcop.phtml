@@ -1,5 +1,6 @@
 <?php
 $matches = $data['matches'];
+$matchRace = 7;
 $rounds = [
     'qf' => [
         'title' => 'results.table.quarters',
@@ -18,4 +19,70 @@ $rounds = [
     ]
 ]
 ?>
-<? include("p_results_brackets.phtml") ?>
+<?php
+/**
+ * @var $matches array
+ * @var $rounds array
+ */
+?>
+<? foreach ($rounds as $roundName => $roundData) : ?>
+    <table class="table table-hover table-bordered text-left">
+        <thead>
+        <tr>
+            <th><?=translate('results.table.match_nr')?></th>
+            <th><?=translate('results.table.startdate')?></th>
+            <th><?=translate('results.table.starttime')?></th>
+            <th colspan="5"><?=translate($roundData['title'])?></th>
+            <th><?=translate('results.table.match_status')?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <? for ($i=$roundData['iterationStart'];$i<$roundData['iterationEnd'];$i++) : ?>
+            <tr data-raceto="<?=$matchRace?>">
+                <? if (array_key_exists($i, $matches)) : ?>
+                    <td class="matchNr text-center"><?=$matches[$i]['Nr']?></td>
+                    <td class="startDate text-center"><?=$matches[$i]['startdate']?></td>
+                    <td class="startTime text-center"><?=$matches[$i]['starttime']?></td>
+                    <td data-player="<?=$matches[$i]['player_1']?>" class="player1 text-right">
+                        <span
+                            title="<?=$matches[$i]['p1_surname']?>"
+                            id="<?=$matches[$i]['p1_firstname']?>">
+                            <?=translate($matches[$i]['p1_firstname'])?>
+                        </span>
+                        &nbsp;
+                        <span
+                            title="<?=translate('country.' . mb_strtolower($matches[$i]['p1_country']))?>"
+                            class="glyphicon bfh-flag-<?=$matches[$i]['p1_country']?>">&nbsp;</span>
+                    </td>
+                    <td data-score="<?=$matches[$i]['player_1']?>" class="match_score text-center"><?=$matches[$i]['score_p1_match']?></td>
+                    <td class="set_score text-center">
+                        :
+                    </td>
+                    <td data-score="<?=$matches[$i]['player_2']?>" class="match_score text-center"><?=$matches[$i]['score_p2_match']?></td>
+                    <td data-player="<?=$matches[$i]['player_2']?>" class="player2 text-left">
+                        <span
+                            title="<?=translate('country.' . mb_strtolower($matches[$i]['p2_country']))?>"
+                            class="glyphicon bfh-flag-<?=$matches[$i]['p2_country']?>">&nbsp;</span>
+                        <span
+                            title="<?=$matches[$i]['p1_surname']?>"
+                            id="<?=$matches[$i]['p2_firstname']?>">
+                            <?=translate($matches[$i]['p2_firstname'])?>
+                        </span></td>
+                    <td class="status text-center"><?=$matches[$i]['status']?></td>
+                <? else : ?>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <? endif ?>
+            </tr>
+            <?unset($matches[$i])?>
+        <? endfor ?>
+        </tbody>
+    </table>
+<? endforeach ?>

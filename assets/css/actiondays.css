@@ -308,7 +308,7 @@ section .container {
 }
 
 #results table [class*=bfh-flag] {
-    top: 2px;
+    top: 3px;
 }
 
 @media screen and (max-width: 640px) {
