@@ -13,7 +13,8 @@ $activeTab =$data['activeTab'];
                         <? foreach ($tabs as $name => $tab) : ?>
                             <li>
                                 <a href="?section=results&tab=<?=$name?>">
-                                    <span class="filter<?=$activeTab == $name ? ' active' : ''?>" data-filter="<?=$name?>"><?=translate('tab.' . $name)?></span>
+                                    <span class="filter<?=$activeTab == $name ? ' active' : ''?>"
+                                          data-filter="<?=$name?>"><?=translate("tab.$name")?></span>
                                 </a>
                             </li>
                         <? endforeach ?>
@@ -27,3 +28,9 @@ $activeTab =$data['activeTab'];
         </div>
     </div>
 </section>
+<script>
+    function refresh() {
+        window.location.reload(true);
+    }
+    setTimeout(refresh, 30000);
+</script>

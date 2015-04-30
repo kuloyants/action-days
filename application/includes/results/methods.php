@@ -167,13 +167,18 @@ function updateMatch()
     $score_p2_set2      = trim($_POST['score_p2_set2']);
     $score_p2_set3      = trim($_POST['score_p2_set3']);
     $status             = trim($_POST['status']);
+    $walkover           = trim($_POST['walkover']);
 
-    if (empty($player1_id)) {
+    if (empty($player1_id) || $player1_id == 'walkover') {
         $player1_id = null;
     }
 
-    if (empty($player2_id)) {
+    if (empty($player2_id) || $player2_id == 'walkover') {
         $player2_id = null;
+    }
+
+    if (empty($walkover)) {
+        $walkover = null;
     }
 
     $sql = "UPDATE matches AS m
@@ -188,7 +193,8 @@ function updateMatch()
     m.score_p2_set1 = ?,
     m.score_p2_set2 = ?,
     m.score_p2_set3 = ?,
-    m.status = ?
+    m.status = ?,
+    m.walkover = ?
     WHERE m.Nr = ?
     ";
     $stmt = $db->prepare($sql);
@@ -197,7 +203,7 @@ function updateMatch()
     }
 
     $stmt->bind_param(
-        'iissssssssss',
+        'iisssssssssss',
         $player1_id,
         $player2_id,
         $score_p1_match,
@@ -209,7 +215,9 @@ function updateMatch()
         $score_p2_set2,
         $score_p2_set3,
         $status,
-        $match_nr);
+        $walkover,
+        $match_nr
+    );
     if (!$stmt->execute()) {
         return $stmt->error;
     }

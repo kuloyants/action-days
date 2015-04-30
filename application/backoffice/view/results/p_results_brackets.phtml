@@ -23,14 +23,19 @@
         <tbody>
         <? for ($i=$roundData['iterationStart'];$i<$roundData['iterationEnd'];$i++) : ?>
             <? if (array_key_exists($i, $matches)) : ?>
-                <tr data-winnertomatch="<?=$matches[$i]['winner_to_match']?>" data-winnertoslot="<?=$matches[$i]['winner_to_slot']?>">
+                <?$walkover = ''?>
+                <?if($matches[$i]['walkover'] !== null):?>
+                    <?$walkover = $matches[$i]['walkover']?>
+                <?endif?>
+                <tr data-winnertomatch="<?=$matches[$i]['winner_to_match']?>" data-winnertoslot="<?=$matches[$i]['winner_to_slot']?>" data-raceto="<?=$matchRace?>">
                     <td class="text-center"><?=$matches[$i]['Nr']?></td>
                     <td class="text-center"><?=$matches[$i]['startdate']?></td>
                     <td class="text-center"><?=$matches[$i]['starttime']?></td>
                     <td class="text-right col-md-2">
-                        <? if ($roundName == 'l32') : ?>
-                            <select type="select" class="form-control" name="player1">
-                                <option selected="selected" value="">&nbsp;</option>
+                        <select type="select" class="form-control" name="player1">
+                            <option selected="selected" value="">&nbsp;</option>
+                            <? if ($roundName == 'l32') : ?>
+                                <option value="walkover" <?=$walkover == 1 ? 'selected' : ''?>><?=translate('common.walkover')?></option>
                                 <? foreach ($players as $index => $player) : ?>
                                     <? $selected = ''?>
                                     <? if ($player['id'] == $matches[$i]['player_1']) : ?>
@@ -40,14 +45,12 @@
                                         <?=$view->playerName($player['firstname'], $player['surname'])?>
                                     </option>
                                 <? endforeach ?>
-                            </select>
-                        <? else :?>
-                            <select type="select" class="form-control" name="player1">
+                            <? else :?>
                                 <option selected="selected" value="<?=$matches[$i]['player_1']?>">
                                     <?=$view->playerName($matches[$i]['p1_firstname'], $matches[$i]['p1_surname'])?>
                                 </option>
-                            </select>
-                        <? endif ?>
+                            <? endif ?>
+                        </select>
                     </td>
                     <td class="text-center" data-role="score" data-player="player1">
                         <select type="select" class="form-control" name="score_p1_match">
@@ -99,9 +102,10 @@
                         </select>
                     </td>
                     <td class="text-left col-md-2">
-                        <? if ($roundName == 'l32') : ?>
-                            <select type="select" class="form-control" name="player2">
-                                <option selected="selected" value="">&nbsp;</option>
+                        <select type="select" class="form-control" name="player2">
+                            <option selected="selected" value="">&nbsp;</option>
+                            <? if ($roundName == 'l32') : ?>
+                                <option value="walkover" <?=$walkover == 2 ? 'selected' : ''?>><?=translate('common.walkover')?></option>
                                 <? foreach ($players as $player) : ?>
                                     <? $selected = ''?>
                                     <? if ($player['id'] == $matches[$i]['player_2']) : ?>
@@ -111,14 +115,12 @@
                                         <?=$view->playerName($player['firstname'], $player['surname'])?>
                                     </option>
                                 <? endforeach ?>
-                            </select>
-                        <? else :?>
-                            <select type="select" class="form-control" name="player2">
+                            <? else :?>
                                 <option selected="selected" value="<?=$matches[$i]['player_2']?>">
                                     <?=$view->playerName($matches[$i]['p2_firstname'], $matches[$i]['p2_surname'])?>
                                 </option>
-                            </select>
-                        <? endif ?>
+                            <? endif ?>
+                        </select>
                     </td>
                     <td>
                         <select type="select" class="form-control" name="status">

@@ -1,17 +1,21 @@
 <?php
 $matches = $data['matches'];
+$raceToTitle = '(' . translate('common.race.2sets.5games') . ')';
 $rounds = [
     'l32' => [
+        'raceToTitle' => $raceToTitle,
         'title' => 'results.table.l32',
         'iterationStart' => 0,
         'iterationEnd' => 16
     ],
     'l16' => [
+        'raceToTitle' => $raceToTitle,
         'title' => 'results.table.qualification',
         'iterationStart' => 16,
         'iterationEnd' => 24
     ],
     'qf' => [
+        'raceToTitle' => null,
         'title' => 'results.table.qualified',
         'iterationStart' => 24,
         'iterationEnd' => 28
