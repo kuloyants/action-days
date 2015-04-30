@@ -17,7 +17,6 @@ $(document).ready(function () {
         data.status             = $match.find("select[name='status']").val();
 
         $match.find("[data-role=score]").each(function (){
-            console.log($match.data("raceto"))
             if ($(this).find("select").val() == $match.data("raceto")) {
                 var winnerSelector = "select[name='" + $(this).data("player") + "']";
                 data.winner = $match.find(winnerSelector).val();
