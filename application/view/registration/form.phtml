@@ -36,37 +36,6 @@ foreach ($data['formElements'] as $elementName => $element) {
             <div class="row">
                 <div class="col-md-6">
                     <div class="control-group">
-                        <div class="form-group controls">
-                            <? if (array_key_exists('gender', $data['formElements'])) : ?>
-                                <? $element = $data['formElements']['gender'] ?>
-                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="<?=translate('validate.message.required')?>">
-                                    <option value="" selected="selected"><?=translate($element['options']['label'])?></option>
-                                    <? foreach ($element['options']['value_options'] as $value => $option) : ?>
-                                        <option value="<?=$value?>"><?=translate($option)?></option>
-                                    <? endforeach?>
-                                </select>
-                                <p class="help-block text-danger"></p>
-                            <? endif ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="control-group">
-                        <div class="form-group controls">
-                            <? if (array_key_exists('country', $data['formElements'])) : ?>
-                                <? $element = $data['formElements']['country'];?>
-                                    <select name="<?=$element['name']?>" class="form-control">
-                                        <? include(VIEW_PATH . "/partials/countries_select_options_" . getLang() . ".phtml")?>
-                                    </select>
-
-                            <? endif ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <? if (array_key_exists('firstname', $data['formElements'])) : ?>
                                 <? $element = $data['formElements']['firstname'] ?>
@@ -83,13 +52,12 @@ foreach ($data['formElements'] as $elementName => $element) {
                 <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <? if (array_key_exists('playerEmail', $data['formElements'])) : ?>
-                                <? $element = $data['formElements']['playerEmail'] ?>
+                            <? if (array_key_exists('surname', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['surname'] ?>
                                 <label><?=translate($element['options']['label'])?></label>
                                 <input type="<?=$element['type']?>" class="form-control"
                                        placeholder="<?=translate($element['options']['label'])?>"
                                        name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
-                                       data-validation-validemail-message="<?=translate($element['attributes']['data-validation-validemail-message'])?>"
                                     <?=$required[$element['name']]?>>
                                 <p class="help-block text-danger"></p>
                             <? endif ?>
@@ -101,12 +69,13 @@ foreach ($data['formElements'] as $elementName => $element) {
                 <div class="col-md-6">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <? if (array_key_exists('surname', $data['formElements'])) : ?>
-                                <? $element = $data['formElements']['surname'] ?>
+                            <? if (array_key_exists('playerEmail', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['playerEmail'] ?>
                                 <label><?=translate($element['options']['label'])?></label>
                                 <input type="<?=$element['type']?>" class="form-control"
                                        placeholder="<?=translate($element['options']['label'])?>"
                                        name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
+                                       data-validation-validemail-message="<?=translate($element['attributes']['data-validation-validemail-message'])?>"
                                     <?=$required[$element['name']]?>>
                                 <p class="help-block text-danger"></p>
                             <? endif ?>
@@ -123,6 +92,36 @@ foreach ($data['formElements'] as $elementName => $element) {
                                        placeholder="<?=translate($element['options']['label'])?>"
                                        name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>"
                                     <?=$required[$element['name']]?>>
+                                <p class="help-block text-danger"></p>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top">
+                <div class="col-md-6">
+                    <div class="control-group">
+                        <div class="form-group controls">
+                            <? if (array_key_exists('country', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['country'];?>
+                                <select name="<?=$element['name']?>" class="form-control">
+                                    <? include(VIEW_PATH . "/partials/countries_select_options_" . getLang() . ".phtml")?>
+                                </select>
+                            <? endif ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="control-group">
+                        <div class="form-group controls">
+                            <? if (array_key_exists('gender', $data['formElements'])) : ?>
+                                <? $element = $data['formElements']['gender'] ?>
+                                <select type="<?=$element['type']?>" class="form-control" name="<?=$element['name']?>" id="<?=$element['attributes']['id']?>" required data-validation-required-message="<?=translate('validate.message.required')?>">
+                                    <option value="" selected="selected"><?=translate($element['options']['label'])?></option>
+                                    <? foreach ($element['options']['value_options'] as $value => $option) : ?>
+                                        <option value="<?=$value?>"><?=translate($option)?></option>
+                                    <? endforeach?>
+                                </select>
                                 <p class="help-block text-danger"></p>
                             <? endif ?>
                         </div>
