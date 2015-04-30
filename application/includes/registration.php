@@ -25,23 +25,23 @@ $formElements = [
             'value' => time()
         ]
     ],
-    'gender' => [
-        'name' => 'gender',
-        'type' => 'select',
-        'required' => true,
-        'options' => [
-            'label' => 'common.gender',
-            'value_options' => [
-                'male' => 'common.gender.male',
-                'female' => 'common.gender.female'
-            ]
-        ],
-        'attributes' => [
-            'id' => 'gender',
-            'value' => 'common.gender.male',
-            'data-validation-required-message' => 'validate.message.required'
-        ]
-    ],
+//    'gender' => [
+//        'name' => 'gender',
+//        'type' => 'select',
+//        'required' => true,
+//        'options' => [
+//            'label' => 'common.gender',
+//            'value_options' => [
+//                'male' => 'common.gender.male',
+//                'female' => 'common.gender.female'
+//            ]
+//        ],
+//        'attributes' => [
+//            'id' => 'gender',
+//            'value' => 'common.gender.male',
+//            'data-validation-required-message' => 'validate.message.required'
+//        ]
+//    ],
     'firstname' => [
         'name' => 'firstname',
         'type'  => 'text',
@@ -189,15 +189,15 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
     }
 
     $sql = 'INSERT INTO
-              player (created, firstname, surname, email, phone, country_code, gender)
+              player (created, firstname, surname, email, phone, country_code)
             VALUES
-              (NOW(), ?, ?, ?, ?, ?, ?)';
+              (NOW(), ?, ?, ?, ?, ?)';
     $stmt = $db->prepare($sql);
     if (!$stmt) {
         throw new Exception('Es konnte kein SQL-Query vorbereitet werden: '.$db->error);
     }
 
-    $stmt->bind_param('ssssss', $_POST['firstname'], $_POST['surname'], $_POST['playerEmail'], $_POST['playerPhone'], $_POST['country'], $_POST['gender']);
+    $stmt->bind_param('sssss', $_POST['firstname'], $_POST['surname'], $_POST['playerEmail'], $_POST['playerPhone'], $_POST['country']);
     if (!$stmt->execute()) {
         throw new Exception ('Query konnte nicht ausgeführt werden: '.$stmt->error);
     }
