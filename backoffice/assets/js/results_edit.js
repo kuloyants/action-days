@@ -15,6 +15,7 @@ $(document).ready(function () {
         data.score_p2_set2      = $match.find("select[name='score_p2_set2']").val();
         data.score_p2_set3      = $match.find("select[name='score_p2_set3']").val();
         data.status             = $match.find("select[name='status']").val();
+        data.walkover           = '';
 
         $match.find("[data-role=score]").each(function (){
             if ($(this).find("select").val() == $match.data("raceto")) {
@@ -24,6 +25,19 @@ $(document).ready(function () {
                 data.winnerToSlot = $match.data("winnertoslot");
             }
         });
+
+        if (data.player1_id == "walkover") {
+            data.winner = $match.find("select[name='player2']").val();
+            data.winnerToMatch = $match.data("winnertomatch");
+            data.winnerToSlot = $match.data("winnertoslot");
+            data.walkover = "1";
+        }
+        if (data.player2_id == "walkover") {
+            data.winner = $match.find("select[name='player1']").val();
+            data.winnerToMatch = $match.data("winnertomatch");
+            data.winnerToSlot = $match.data("winnertoslot");
+            data.walkover = "2";
+        }
 
         var switchBetweenLoaderAndButton = function(){
             $match.find('.buttonConfirm').toggleClass("hidden");
