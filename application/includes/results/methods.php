@@ -137,7 +137,8 @@ function getPlayersForSunday()
         p.country_code,
         pr.reg_status
         FROM player AS p INNER JOIN player_registration AS pr ON p.id = pr.player_id
-        WHERE p.qualified = 1
+        WHERE p.qualified = 1 OR pr.reg_status = 'seeded'
+        ORDER BY p.surname
         ";
     $result = $db->query($sql);
 
