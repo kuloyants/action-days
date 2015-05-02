@@ -48,6 +48,7 @@ $rounds = [
                             title="<?=$matches[$i]['p1_surname']?>"
                             id="<?=$matches[$i]['p1_firstname']?>">
                             <?=translate($matches[$i]['p1_firstname'])?>
+                            <?=$matches[$i]['p1_surname'] ? "({$matches[$i]['p1_surname']})" : ''?>
                         </span>
                         &nbsp;
                         <span
@@ -67,6 +68,7 @@ $rounds = [
                             title="<?=$matches[$i]['p2_surname']?>"
                             id="<?=$matches[$i]['p2_firstname']?>">
                             <?=translate($matches[$i]['p2_firstname'])?>
+                            <?=$matches[$i]['p2_surname'] ? "({$matches[$i]['p2_surname']})" : ''?>
                         </span></td>
                     <td class="status text-center"><?=$matches[$i]['status']?></td>
                 <? else : ?>
