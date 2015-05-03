@@ -37,8 +37,8 @@ $matchRace = 2;
                     <td data-score="<?=$matches[$i]['player_1']?>" class="match_score text-center"><?=$matches[$i]['score_p1_match']?></td>
                     <td class="set_score text-center">
                         <?=$matches[$i]['score_p1_set1']?>:<?=$matches[$i]['score_p2_set1']?><br>
-                        <?=$matches[$i]['score_p1_set2']?>:<?=$matches[$i]['score_p2_set2']?>
-                        <? if (!empty($matches[$i]['score_p1_set3']) || !empty($matches[$i]['score_p2_set3'])) : ?><br>
+                        <?=$matches[$i]['score_p1_set2']?>:<?=$matches[$i]['score_p2_set2']?><br>
+                        <? if (!empty($matches[$i]['score_p1_set3']) || !empty($matches[$i]['score_p2_set3'])) : ?>
                             <?=$matches[$i]['score_p1_set3']?>:<?=$matches[$i]['score_p2_set3']?>
                         <?endif?>
                     </td>
